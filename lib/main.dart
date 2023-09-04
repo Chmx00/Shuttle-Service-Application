@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
+import 'pages/contact.dart';
+import 'pages/lf.dart';
+import 'pages/login.dart';
+import 'pages/shedule.dart';
 
 import 'package:intl/intl.dart';
 
@@ -248,16 +252,44 @@ class _HomeScreenState extends State<HomeScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      buildTile('assets/Bus.png', 'Bus Schedule'),
-                      buildTile('assets/cn.png', 'Important Contact'),
+                      buildTile('assets/Bus.png', 'Bus Schedule', () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  BusSchedulePage()), // Replace with the appropriate page
+                        );
+                      }),
+                      buildTile('assets/cn.png', 'Important Contact', () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  ImportantContactPage()), // Replace with the appropriate page
+                        );
+                      }),
                     ],
                   ),
                   SizedBox(height: 20), // Add spacing between rows
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      buildTile('assets/Lf.png', 'Losts and Founds'),
-                      buildTile('assets/tik.png', 'Reservations'),
+                      buildTile('assets/Lf.png', 'Losts and Founds', () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  LostAndFoundPage()), // Replace with the appropriate page
+                        );
+                      }),
+                      buildTile('assets/tik.png', 'Reservations', () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  ReservationsPage()), // Replace with the appropriate page
+                        );
+                      }),
                     ],
                   ),
                 ],
@@ -302,32 +334,39 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-Widget buildTile(String imagePath, String title) {
-  return Container(
-    width: 150,
-    height: 150,
-    decoration: BoxDecoration(
-      color: Color.fromARGB(124, 161, 159, 159), // Adjust the container color
-      borderRadius: BorderRadius.circular(20), // Rounded corners
-    ),
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Image.asset(
-          imagePath, // Replace with the path to your icon
-          width: 50,
-          height: 50,
-        ),
-        SizedBox(height: 10), // Add spacing between icon and text
-        Text(
-          title,
-          style: TextStyle(
-            color: Color.fromRGBO(20, 17, 34, 1),
-            fontSize: 15, // Adjust the font size here
-            fontWeight: FontWeight.bold, // Adjust the font weight here
+Widget buildTile(
+  String imagePath,
+  String title,
+  VoidCallback? onPressed,
+) {
+  return GestureDetector(
+    onTap: onPressed,
+    child: Container(
+      width: 150,
+      height: 150,
+      decoration: BoxDecoration(
+        color: Color.fromARGB(124, 161, 159, 159),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.asset(
+            imagePath,
+            width: 50,
+            height: 50,
           ),
-        ),
-      ],
+          SizedBox(height: 10),
+          Text(
+            title,
+            style: TextStyle(
+              color: Color.fromRGBO(20, 17, 34, 1),
+              fontSize: 15,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ],
+      ),
     ),
   );
 }

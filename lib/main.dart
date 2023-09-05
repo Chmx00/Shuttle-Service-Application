@@ -4,6 +4,7 @@ import 'pages/contact.dart';
 import 'pages/lf.dart';
 import 'pages/login.dart';
 import 'pages/shedule.dart';
+import 'pages/route.dart';
 
 import 'package:intl/intl.dart';
 
@@ -172,13 +173,23 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         Align(
                           alignment: Alignment.centerRight,
-                          child: Padding(
-                            padding: const EdgeInsets.all(1),
-                            child: Image.asset(
-                              'assets/swap.png',
-                              fit: BoxFit.contain,
-                              width: 70,
-                              height: 70,
+                          child: GestureDetector(
+                            onTap: () {
+                              // Navigate to the new page when the image is tapped
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        RoutePage()), // Replace with your new page
+                              );
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(1),
+                              child: Image.asset(
+                                'assets/swap.png',
+                                fit: BoxFit.contain,
+                                width: 70,
+                                height: 70,
+                              ),
                             ),
                           ),
                         ),

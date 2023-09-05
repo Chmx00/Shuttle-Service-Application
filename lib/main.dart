@@ -32,8 +32,8 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     // Simulate a loading process
-    Future.delayed(Duration(seconds: 3), () {
-      // Navigate to the next screen after loading
+    Future.delayed(const Duration(seconds: 3), () {
+      // Navigate to home screen
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => HomeScreen()),
@@ -47,21 +47,23 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Stack(
         fit: StackFit.expand,
         children: [
+          // background image
           Image.asset(
-            'assets/Home.png', // Replace with your background image
+            'assets/Home.png',
             fit: BoxFit.cover,
           ),
           Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                // logo image
                 Image.asset(
-                  'assets/logo.png', // Replace with your logo image
+                  'assets/logo.png',
                   width: 150,
                   height: 150,
                 ),
-                SizedBox(height: 20),
-                CircularProgressIndicator(), // Replace with your loading animation
+                const SizedBox(height: 20),
+                const CircularProgressIndicator(),
               ],
             ),
           ),
@@ -83,19 +85,19 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(
-                'assets/bg.png'), // Replace with your background image
+            // background image
+            image: AssetImage('assets/bg.png'),
             fit: BoxFit.cover,
           ),
         ),
         child: Stack(
           children: [
+            //current date and time
             Positioned(
               top: 40,
               right: 20,
               child: StreamBuilder(
-                stream: Stream.periodic(
-                    Duration(seconds: 1)), // Update every second
+                stream: Stream.periodic(const Duration(seconds: 1)),
                 builder: (context, snapshot) {
                   DateTime now = DateTime.now();
                   String formattedTime = DateFormat('HH:mm').format(now);
@@ -110,9 +112,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       Text(
                         formattedTime,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 24), // Adjust the font size here
+                        style: TextStyle(color: Colors.white, fontSize: 24),
                       ),
                     ],
                   );
@@ -128,7 +128,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Container(
                     width: 300,
                     height: 80,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Colors.yellow,
                       borderRadius: BorderRadius.only(
                         topRight: Radius.circular(20),
@@ -178,8 +178,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               // Navigate to the new page when the image is tapped
                               Navigator.of(context).push(
                                 MaterialPageRoute(
-                                    builder: (context) =>
-                                        RoutePage()), // Replace with your new page
+                                    builder: (context) => RoutePage()),
                               );
                             },
                             child: Padding(
@@ -200,16 +199,15 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Positioned(
-              top: 290, // Adjust the top position as needed
+              top: 290,
               left: 20,
               right: 20,
               child: Container(
                 width: 300,
                 height: 100,
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(
-                      93, 36, 109, 77), // Adjust the container color
-                  borderRadius: BorderRadius.circular(20), // Rounded corners
+                  color: Color.fromARGB(93, 36, 109, 77),
+                  borderRadius: BorderRadius.circular(20),
                 ),
                 child: const Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -225,16 +223,15 @@ class _HomeScreenState extends State<HomeScreen> {
                               'Unavailability',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 18, // Adjust the font size here
-                                fontWeight: FontWeight
-                                    .bold, // Adjust the font weight here
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
                             Text(
                               'KOTTAWA - NSBM 07.30 a.m Bus not available today as technical errors on the bus',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 14, // Adjust the font size here
+                                fontSize: 14,
                               ),
                             ),
                           ],
@@ -244,10 +241,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Icon(
-                        Icons
-                            .notification_important, // Replace with your desired icon
+                        Icons.notification_important,
                         color: Color.fromARGB(255, 255, 255, 255),
-                        size: 40, // Adjust the icon size here
+                        size: 40,
                       ),
                     ),
                   ],
@@ -255,7 +251,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Positioned(
-              top: 430, // Adjust the top position as needed
+              top: 430,
               left: 40,
               right: 40,
               child: Column(
@@ -267,21 +263,19 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) =>
-                                  BusSchedulePage()), // Replace with the appropriate page
+                              builder: (context) => BusSchedulePage()),
                         );
                       }),
                       buildTile('assets/cn.png', 'Important Contact', () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) =>
-                                  ImportantContactPage()), // Replace with the appropriate page
+                              builder: (context) => ImportantContactPage()),
                         );
                       }),
                     ],
                   ),
-                  SizedBox(height: 20), // Add spacing between rows
+                  SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -289,16 +283,14 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) =>
-                                  LostAndFoundPage()), // Replace with the appropriate page
+                              builder: (context) => LostAndFoundPage()),
                         );
                       }),
                       buildTile('assets/tik.png', 'Reservations', () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) =>
-                                  ReservationsPage()), // Replace with the appropriate page
+                              builder: (context) => ReservationsPage()),
                         );
                       }),
                     ],

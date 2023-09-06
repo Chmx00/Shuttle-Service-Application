@@ -66,6 +66,7 @@ class PaymentPage extends StatelessWidget {
                         SizedBox(height: 20),
                         Container(
                           width: MediaQuery.of(context).size.width * 5,
+                          height: MediaQuery.of(context).size.width * 2,
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.only(
@@ -79,7 +80,7 @@ class PaymentPage extends StatelessWidget {
                             vertical: 20.0,
                           ),
                           child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 'Select the Route',

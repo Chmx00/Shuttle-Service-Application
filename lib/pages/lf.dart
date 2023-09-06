@@ -4,21 +4,21 @@ class LostAndFoundPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Losts and Founds'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'This is the Losts and Founds page.',
-              style: TextStyle(fontSize: 24.0),
-            ),
-            // Add your content for the Losts and Founds page here
-          ],
+        extendBodyBehindAppBar: true,
+        appBar: AppBar(
+          leading:IconButton(
+            icon: Icon(Icons.arrow_back),
+            color: Colors.black,
+            onPressed: () {  },
+          ),
+          title: Text("Lost & Founds", style: TextStyle(
+            color: Color.fromRGBO(68, 67, 67, 1),
+            fontSize: 23,
+            fontWeight: FontWeight.bold
+          ),),
+          elevation: 0,
+          backgroundColor: Colors.transparent,
         ),
-      ),
-    );
+  
   }
 }

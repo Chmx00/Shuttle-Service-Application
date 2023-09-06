@@ -29,12 +29,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   flutter:
-<<<<<<< HEAD
-    sdk: flutter
-=======
     sdk: flutter    
->>>>>>> 7c1628dff3d8a920c9e5f57c46b7c9330b040b8d
-
 
 
   # The following adds the Cupertino Icons font to your application.

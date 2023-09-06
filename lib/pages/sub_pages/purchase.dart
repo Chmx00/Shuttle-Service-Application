@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +14,14 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class PaymentPage extends StatelessWidget {
+class PaymentPage extends StatefulWidget {
+  @override
+  _PaymentPageState createState() => _PaymentPageState();
+}
+
+class _PaymentPageState extends State<PaymentPage> {
+  String? selectedRoute = 'Select Your Route';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -99,8 +104,12 @@ class PaymentPage extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: DropdownButton<String>(
-                                  value: 'Select Your Route',
-                                  onChanged: (String? newValue) {},
+                                  value: selectedRoute,
+                                  onChanged: (String? newValue) {
+                                    setState(() {
+                                      selectedRoute = newValue;
+                                    });
+                                  },
                                   items: <String>[
                                     'Select Your Route',
                                     'Matale - NSBM',

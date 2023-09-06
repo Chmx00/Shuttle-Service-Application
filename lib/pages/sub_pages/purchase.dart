@@ -136,7 +136,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                 ),
                               ),
                               SizedBox(height: 10),
-                              // Text box for entering the bus name
+                              // Text box for entering the bus
                               Container(
                                 width: double.infinity,
                                 height: 50,

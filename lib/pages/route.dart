@@ -1,10 +1,10 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 
 class RoutePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       body: Stack(
         children: <Widget>[
@@ -33,17 +33,15 @@ class RoutePage extends StatelessWidget {
           Positioned(
             top: 80.0,
             left: 0,
-            right: 0, // Adjust the left position as needed
+            right: 0,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment:
-                  MainAxisAlignment.center, // Align to center vertically
-              // ignore: prefer_const_literals_to_create_immutables
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   'Change Your',
                   style: TextStyle(
-                    fontSize: 24.0,
+                    fontSize: screenWidth * 0.06, // Responsive font size
                     color: const Color.fromARGB(255, 150, 149, 149),
                     fontWeight: FontWeight.bold,
                   ),
@@ -51,7 +49,7 @@ class RoutePage extends StatelessWidget {
                 Text(
                   'Route',
                   style: TextStyle(
-                    fontSize: 24.0,
+                    fontSize: screenWidth * 0.06, // Responsive font size
                     color: const Color.fromARGB(255, 150, 149, 149),
                     fontWeight: FontWeight.bold,
                   ),
@@ -60,38 +58,74 @@ class RoutePage extends StatelessWidget {
             ),
           ),
           // Content
-
           // Large Container at the Bottom with Rounded Top Corners
           Positioned(
             bottom: 0,
             left: 0,
             right: 0,
-            child: Container(
-              height: 500,
+            child: SizedBox(
+              height: 450.0,
               width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.white, // Set your desired color
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(30.0),
-                  topRight: Radius.circular(30.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white, // Set your desired color
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30.0),
+                    topRight: Radius.circular(30.0),
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.2),
+                      spreadRadius: 8,
+                      blurRadius: 10,
+                      offset: Offset(0, 3),
+                    ),
+                  ],
                 ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.2), // Shadow color
-                    spreadRadius: 8,
-                    blurRadius: 10,
-                    offset: Offset(
-                        0, 3), // Offset in the positive direction of y-axis
-                  ),
-                ],
-              ),
-              child: Center(
-                child: Text(
-                  'Your Content Here',
-                  style: TextStyle(
-                    fontSize: 24.0,
-                    color: Colors.black,
-                  ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    SizedBox(
+                      width: 300.0,
+                      height: 60.0,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(15.0),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 300.0,
+                      height: 60.0,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(15.0),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 300.0,
+                      height: 60.0,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(15.0),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 300.0,
+                      height: 60.0,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(15.0),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -100,8 +134,4 @@ class RoutePage extends StatelessWidget {
       ),
     );
   }
-}
-
-void main() {
-  runApp(MaterialApp(home: RoutePage()));
 }

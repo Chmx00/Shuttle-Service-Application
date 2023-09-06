@@ -21,6 +21,7 @@ class PaymentPage extends StatefulWidget {
 
 class _PaymentPageState extends State<PaymentPage> {
   String? selectedRoute = 'Select Your Route';
+  String busName = ''; // Store the bus name here
 
   @override
   Widget build(BuildContext context) {
@@ -123,6 +124,31 @@ class _PaymentPageState extends State<PaymentPage> {
                                       child: Text(value),
                                     );
                                   }).toList(),
+                                ),
+                              ),
+                              SizedBox(height: 20),
+                              Text(
+                                'Name of the bus',
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.blue,
+                                ),
+                              ),
+                              SizedBox(height: 10),
+                              // Text box for entering the bus name
+                              TextField(
+                                onChanged: (value) {
+                                  // Store the entered bus name
+                                  setState(() {
+                                    busName = value;
+                                  });
+                                },
+                                decoration: InputDecoration(
+                                  hintText: 'Enter Bus Name',
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
                                 ),
                               ),
                             ],

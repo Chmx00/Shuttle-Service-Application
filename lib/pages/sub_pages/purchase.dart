@@ -65,7 +65,7 @@ class PaymentPage extends StatelessWidget {
                         ),
                         SizedBox(height: 20),
                         Container(
-                          width: MediaQuery.of(context).size.width * 5,
+                          width: double.infinity,
                           height: MediaQuery.of(context).size.width * 2,
                           decoration: BoxDecoration(
                             color: Colors.white,

@@ -127,6 +127,16 @@ class _PaymentPageState extends State<PaymentPage> {
                                   }).toList(),
                                 ),
                               ),
+                              SizedBox(height: 20),
+                              Text(
+                                'Name of the bus',
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color.fromARGB(255, 110, 178, 234),
+                                ),
+                              ),
+                              // Add your bus name input field here
                             ],
                           ),
                         ),

@@ -1,4 +1,7 @@
+// ignore_for_file: prefer_const_constructors, library_private_types_in_public_api, use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
+import 'package:table_calendar/table_calendar.dart';
 
 void main() {
   runApp(MyApp());
@@ -93,7 +96,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                 style: TextStyle(
                                   fontSize: 18.0,
                                   fontWeight: FontWeight.bold,
-                                  color: Color.fromARGB(255, 110, 178, 234),
+                                  color: Color.fromARGB(255, 82, 167, 237),
                                 ),
                               ),
                               SizedBox(height: 10),
@@ -126,13 +129,22 @@ class _PaymentPageState extends State<PaymentPage> {
                                   }).toList(),
                                 ),
                               ),
-                              SizedBox(height: 20),
+                              // Horizontal black line
+                              Divider(
+                                color: const Color.fromARGB(255, 93, 90, 90),
+                                height: 25, // Adjust the height as needed
+                                thickness: 1, // Adjust the thickness as needed
+                                indent: 2, // Adjust the left indent as needed
+                                endIndent:
+                                    2, // Adjust the right indent as needed
+                              ),
+                              SizedBox(height: 0),
                               Text(
                                 'Name of the bus',
                                 style: TextStyle(
                                   fontSize: 18.0,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.blue,
+                                  color: Color.fromARGB(255, 82, 167, 237),
                                 ),
                               ),
                               SizedBox(height: 10),
@@ -145,24 +157,35 @@ class _PaymentPageState extends State<PaymentPage> {
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                  padding: const EdgeInsets.all(15.0),
                                   child: Text(
                                     'Name of the bus',
                                     style: TextStyle(
-                                      fontSize: 18.0,
+                                      fontSize: 17.0,
                                       fontWeight: FontWeight.normal,
                                       color:
                                           const Color.fromARGB(255, 51, 52, 52),
                                     ),
                                   ),
                                 ),
-                                //TextField(
-                                //decoration: InputDecoration(
-                                //hintText: 'Enter Bus Name',
-                                //border: OutlineInputBorder(
-                                //borderRadius: BorderRadius.circular(10.0),
-                                //),
-                                //),
+                              ),
+                              // Horizontal black line
+                              Divider(
+                                color: const Color.fromARGB(255, 93, 90, 90),
+                                height: 25, // Adjust the height as needed
+                                thickness: 1, // Adjust the thickness as needed
+                                indent: 02, // Adjust the left indent as needed
+                                endIndent:
+                                    02, // Adjust the right indent as needed
+                              ),
+                              SizedBox(height: 0),
+                              Text(
+                                'Number of Days',
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color.fromARGB(255, 82, 167, 237),
+                                ),
                               ),
                             ],
                           ),

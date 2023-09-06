@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class RoutePage extends StatelessWidget {
@@ -36,6 +38,7 @@ class RoutePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment:
                   MainAxisAlignment.center, // Align to center vertically
+              // ignore: prefer_const_literals_to_create_immutables
               children: [
                 Text(
                   'Change Your',

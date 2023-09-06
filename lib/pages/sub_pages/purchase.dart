@@ -26,7 +26,7 @@ class PaymentPage extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/bg.png'),
+                image: AssetImage('assets/Payment.png'),
                 fit: BoxFit.cover,
               ),
             ),

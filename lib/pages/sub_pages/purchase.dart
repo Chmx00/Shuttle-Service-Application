@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -93,7 +95,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                 style: TextStyle(
                                   fontSize: 18.0,
                                   fontWeight: FontWeight.bold,
-                                  color: Color.fromARGB(255, 110, 178, 234),
+                                  color: Color.fromARGB(255, 62, 113, 155),
                                 ),
                               ),
                               SizedBox(height: 10),
@@ -156,13 +158,6 @@ class _PaymentPageState extends State<PaymentPage> {
                                     ),
                                   ),
                                 ),
-                                //TextField(
-                                //decoration: InputDecoration(
-                                //hintText: 'Enter Bus Name',
-                                //border: OutlineInputBorder(
-                                //borderRadius: BorderRadius.circular(10.0),
-                                //),
-                                //),
                               ),
                             ],
                           ),

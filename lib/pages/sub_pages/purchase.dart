@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -23,6 +21,7 @@ class PaymentPage extends StatefulWidget {
 
 class _PaymentPageState extends State<PaymentPage> {
   String? selectedRoute = 'Select Your Route';
+  String busName = ''; // Store the bus name here
 
   @override
   Widget build(BuildContext context) {
@@ -133,10 +132,25 @@ class _PaymentPageState extends State<PaymentPage> {
                                 style: TextStyle(
                                   fontSize: 18.0,
                                   fontWeight: FontWeight.bold,
-                                  color: Color.fromARGB(255, 110, 178, 234),
+                                  color: Colors.blue,
                                 ),
                               ),
-                              // Add your bus name input field here
+                              SizedBox(height: 10),
+                              // Text box for entering the bus name
+                              TextField(
+                                onChanged: (value) {
+                                  // Store the entered bus name
+                                  setState(() {
+                                    busName = value;
+                                  });
+                                },
+                                decoration: InputDecoration(
+                                  hintText: 'Enter Bus Name',
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
+                                ),
+                              ),
                             ],
                           ),
                         ),

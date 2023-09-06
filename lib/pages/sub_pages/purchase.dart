@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,7 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: PaymentPage(), // Set the PaymentPage as the home page
+      home: PaymentPage(),
     );
   }
 }
@@ -26,91 +24,91 @@ class PaymentPage extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(
-                    'assets/Payment.png'), // Replace with your background image asset
+                image: AssetImage('assets/bg.png'),
                 fit: BoxFit.cover,
               ),
             ),
           ),
           // Content on top of the background image
           Center(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                const Padding(
-                  padding: EdgeInsets.only(top: 60.0),
-                  child: Text(
-                    'Ticket\n Purchase',
-                    style: TextStyle(
-                      fontSize: 24.0,
-                      fontWeight: FontWeight.bold,
-                      color: Color.fromARGB(255, 81, 79, 79),
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                SizedBox(height: 20), // Add some space below the text
-                // Add your payment-related widgets here
-                Image.asset(
-                  'assets/girl.png', // Replace with your image asset
-                  width: 180, // Set the width as per your design
-                  height: 180, // Set the height as per your design
-                  fit: BoxFit.contain, // Adjust the fit as needed
-                ),
-                SizedBox(
-                    height:
-                        20), // Add some space between the image and card details
-
-                // Large container with rounded top corners for card payment details
-                Container(
-                  width: double.infinity,
-                  height: 554.2,
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(50.0),
-                      topRight: Radius.circular(50.0),
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 30.0),
+                    child: Text(
+                      'Ticket\nPurchase',
+                      style: TextStyle(
+                        fontSize: 32.0,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 81, 79, 79),
+                      ),
+                      textAlign: TextAlign.center,
                     ),
                   ),
-                  padding: EdgeInsets.only(left: 35),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      // Add your card payment details widgets here
-                      SizedBox(height: 30),
-                      Text(
-                        'Select the Route',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromARGB(255, 110, 178, 234),
+                  SizedBox(height: 20),
+                  Image.asset(
+                    'assets/girl.png',
+                    width: MediaQuery.of(context).size.width * 0.5,
+                    height: MediaQuery.of(context).size.width * 0.5,
+                    fit: BoxFit.contain,
+                  ),
+                  SizedBox(height: 20),
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.9,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(50.0),
+                        topRight: Radius.circular(50.0),
+                      ),
+                    ),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: MediaQuery.of(context).size.width * 0.05,
+                      vertical: 20.0,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Select the Route',
+                          style: TextStyle(
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(255, 110, 178, 234),
+                          ),
                         ),
-                      ),
-                      DropdownButton<String>(
-                        value:
-                            'Select Your Route', // Replace with your selected value
-                        onChanged: (String? newValue) {
-                          // Implement dropdown value change logic
-                        },
-                        items: <String>[
-                          'Select Your Route',
-                          'Matale - NSBM',
-                          'Kandy - NSBM',
-                          'Wennappuwa - NSBM',
-                          'Panadura - NSBM',
-
-                          // Add your route options
-                        ].map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value),
-                          );
-                        }).toList(),
-                      ),
-                    ],
+                        SizedBox(height: 10),
+                        Container(
+                          width: double.infinity,
+                          padding: EdgeInsets.symmetric(horizontal: 10.0),
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.grey),
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          child: DropdownButton<String>(
+                            value: 'Select Your Route',
+                            onChanged: (String? newValue) {},
+                            items: <String>[
+                              'Select Your Route',
+                              'Matale - NSBM',
+                              'Kandy - NSBM',
+                              'Wennappuwa - NSBM',
+                              'Panadura - NSBM',
+                            ].map<DropdownMenuItem<String>>((String value) {
+                              return DropdownMenuItem<String>(
+                                value: value,
+                                child: Text(value),
+                              );
+                            }).toList(),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ],

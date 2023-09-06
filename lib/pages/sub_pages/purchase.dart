@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -40,9 +42,9 @@ class PaymentPage extends StatelessWidget {
                     child: Text(
                       'Ticket\nPurchase',
                       style: TextStyle(
-                        fontSize: 32.0,
+                        fontSize: 30.0,
                         fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 81, 79, 79),
+                        color: Color.fromARGB(255, 82, 81, 81),
                       ),
                       textAlign: TextAlign.center,
                     ),
@@ -53,16 +55,17 @@ class PaymentPage extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        SizedBox(height: 20),
-                        Image.asset(
-                          'assets/girl.png',
-                          width: MediaQuery.of(context).size.width * 0.5,
-                          height: MediaQuery.of(context).size.width * 0.5,
-                          fit: BoxFit.contain,
+                        Center(
+                          child: Image.asset(
+                            'assets/girl.png',
+                            width: MediaQuery.of(context).size.width * 0.4,
+                            height: MediaQuery.of(context).size.width * 0.3,
+                            fit: BoxFit.contain,
+                          ),
                         ),
                         SizedBox(height: 20),
                         Container(
-                          width: MediaQuery.of(context).size.width * 0.9,
+                          width: MediaQuery.of(context).size.width * 5,
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.only(

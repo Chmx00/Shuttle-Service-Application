@@ -26,7 +26,7 @@ class PaymentPage extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/bg.png'),
+                image: AssetImage('assets/Payment.png'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -79,7 +79,7 @@ class PaymentPage extends StatelessWidget {
                             vertical: 20.0,
                           ),
                           child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 'Select the Route',

@@ -137,19 +137,32 @@ class _PaymentPageState extends State<PaymentPage> {
                               ),
                               SizedBox(height: 10),
                               // Text box for entering the bus name
-                              TextField(
-                                onChanged: (value) {
-                                  // Store the entered bus name
-                                  setState(() {
-                                    busName = value;
-                                  });
-                                },
-                                decoration: InputDecoration(
-                                  hintText: 'Enter Bus Name',
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(10.0),
+                              Container(
+                                width: double.infinity,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  border: Border.all(color: Colors.grey),
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    'Name of the bus',
+                                    style: TextStyle(
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.normal,
+                                      color:
+                                          const Color.fromARGB(255, 51, 52, 52),
+                                    ),
                                   ),
                                 ),
+                                //TextField(
+                                //decoration: InputDecoration(
+                                //hintText: 'Enter Bus Name',
+                                //border: OutlineInputBorder(
+                                //borderRadius: BorderRadius.circular(10.0),
+                                //),
+                                //),
                               ),
                             ],
                           ),

@@ -28,6 +28,21 @@ class _PaymentPageState extends State<PaymentPage> {
   String busName = ''; // Store the bus name here
 
   int seatCount = 0;
+  DateTime selectedDate = DateTime.now();
+  Future<void> _selectDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: selectedDate,
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2101),
+    );
+
+    if (picked != null && picked != selectedDate) {
+      setState(() {
+        selectedDate = picked;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -220,6 +235,8 @@ class _PaymentPageState extends State<PaymentPage> {
                                   ),
                                   SizedBox(width: 20),
                                   Container(
+                                    width: 40,
+                                    height: 40,
                                     decoration: BoxDecoration(
                                       border: Border.all(
                                         color: Colors
@@ -243,6 +260,8 @@ class _PaymentPageState extends State<PaymentPage> {
                                   ),
                                   SizedBox(width: 10),
                                   Container(
+                                    width: 40,
+                                    height: 40,
                                     decoration: BoxDecoration(
                                       border: Border.all(
                                         color: Colors
@@ -272,6 +291,30 @@ class _PaymentPageState extends State<PaymentPage> {
                                 indent: 02, // Adjust the left indent as needed
                                 endIndent:
                                     02, // Adjust the right indent as needed
+                              ),
+                              Text(
+                                'Select your Date',
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color.fromARGB(255, 82, 167, 237),
+                                ),
+                              ),
+                              SizedBox(height: 10),
+                              ElevatedButton(
+                                onPressed: () => _selectDate(
+                                    context), // Call the function to show the date picker
+                                child: Text('Pick a date'),
+                              ),
+                              SizedBox(height: 10),
+                              Text(
+                                'Selected Date: ${selectedDate.toLocal()}'
+                                    .split(' ')[0],
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color.fromARGB(255, 82, 167, 237),
+                                ),
                               ),
                             ],
                           ),

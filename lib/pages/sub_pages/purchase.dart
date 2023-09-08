@@ -1,22 +1,32 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, library_private_types_in_public_api, use_key_in_widget_constructors, unused_import
 
 import 'package:flutter/material.dart';
+import 'package:table_calendar/table_calendar.dart';
 
 void main() {
   runApp(MyApp());
 }
+//jnj
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: PaymentPage(), // Set the PaymentPage as the home page
+      home: PaymentPage(),
     );
   }
 }
 
-class PaymentPage extends StatelessWidget {
+class PaymentPage extends StatefulWidget {
+  @override
+  _PaymentPageState createState() => _PaymentPageState();
+}
+
+class _PaymentPageState extends State<PaymentPage> {
+  String? selectedRoute = 'Select Your Route';
+  String busName = ''; // Store the bus name here
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,8 +36,7 @@ class PaymentPage extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(
-                    'assets/Payment.png'), // Replace with your background image asset
+                image: AssetImage('assets/Payment.png'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -37,77 +46,153 @@ class PaymentPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Padding(
-                  padding: EdgeInsets.only(top: 60.0),
-                  child: Text(
-                    'Ticket\n Purchase',
-                    style: TextStyle(
-                      fontSize: 24.0,
-                      fontWeight: FontWeight.bold,
-                      color: Color.fromARGB(255, 81, 79, 79),
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                SizedBox(height: 20), // Add some space below the text
-                // Add your payment-related widgets here
-                Image.asset(
-                  'assets/girl.png', // Replace with your image asset
-                  width: 180, // Set the width as per your design
-                  height: 180, // Set the height as per your design
-                  fit: BoxFit.contain, // Adjust the fit as needed
-                ),
-                SizedBox(
-                    height:
-                        20), // Add some space between the image and card details
-
-                // Large container with rounded top corners for card payment details
-                Container(
-                  width: double.infinity,
-                  height: 554.2,
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(50.0),
-                      topRight: Radius.circular(50.0),
+                Padding(
+                  padding: const EdgeInsets.only(top: 100.0),
+                  child: Center(
+                    child: Text(
+                      'Ticket\nPurchase',
+                      style: TextStyle(
+                        fontSize: 30.0,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 82, 81, 81),
+                      ),
+                      textAlign: TextAlign.center,
                     ),
                   ),
-                  padding: EdgeInsets.only(left: 35),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      // Add your card payment details widgets here
-                      SizedBox(height: 30),
-                      Text(
-                        'Select the Route',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromARGB(255, 110, 178, 234),
+                ),
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Center(
+                          child: Image.asset(
+                            'assets/girl.png',
+                            width: MediaQuery.of(context).size.width * 0.4,
+                            height: MediaQuery.of(context).size.width * 0.3,
+                            fit: BoxFit.contain,
+                          ),
                         ),
-                      ),
-                      DropdownButton<String>(
-                        value:
-                            'Select Your Route', // Replace with your selected value
-                        onChanged: (String? newValue) {
-                          // Implement dropdown value change logic
-                        },
-                        items: <String>[
-                          'Select Your Route',
-                          'Matale - NSBM',
-                          'Kandy - NSBM',
-                          'Wennappuwa - NSBM',
-                          'Panadura - NSBM',
-
-                          // Add your route options
-                        ].map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value),
-                          );
-                        }).toList(),
-                      ),
-                    ],
+                        SizedBox(height: 20),
+                        Container(
+                          width: double.infinity,
+                          height: MediaQuery.of(context).size.width * 2,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(50.0),
+                              topRight: Radius.circular(50.0),
+                            ),
+                          ),
+                          padding: EdgeInsets.symmetric(
+                            horizontal:
+                                MediaQuery.of(context).size.width * 0.05,
+                            vertical: 20.0,
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Select the Route',
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color.fromARGB(255, 82, 167, 237),
+                                ),
+                              ),
+                              SizedBox(height: 10),
+                              Container(
+                                width: double.infinity,
+                                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                                decoration: BoxDecoration(
+                                  border: Border.all(color: Colors.grey),
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                child: DropdownButton<String>(
+                                  value: selectedRoute,
+                                  onChanged: (String? newValue) {
+                                    setState(() {
+                                      selectedRoute = newValue;
+                                    });
+                                  },
+                                  items: <String>[
+                                    'Select Your Route',
+                                    'Matale - NSBM',
+                                    'Kandy - NSBM',
+                                    'Wennappuwa - NSBM',
+                                    'Panadura - NSBM',
+                                  ].map<DropdownMenuItem<String>>(
+                                      (String value) {
+                                    return DropdownMenuItem<String>(
+                                      value: value,
+                                      child: Text(value),
+                                    );
+                                  }).toList(),
+                                ),
+                              ),
+                              // Horizontal black line
+                              Divider(
+                                color: const Color.fromARGB(255, 93, 90, 90),
+                                height: 25, // Adjust the height as needed
+                                thickness: 1, // Adjust the thickness as needed
+                                indent: 2, // Adjust the left indent as needed
+                                endIndent:
+                                    2, // Adjust the right indent as needed
+                              ),
+                              SizedBox(height: 0),
+                              Text(
+                                'Name of the bus',
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color.fromARGB(255, 82, 167, 237),
+                                ),
+                              ),
+                              SizedBox(height: 10),
+                              // Text box for entering the bus
+                              Container(
+                                width: double.infinity,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  border: Border.all(color: Colors.grey),
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(15.0),
+                                  child: Text(
+                                    'Name of the bus',
+                                    style: TextStyle(
+                                      fontSize: 17.0,
+                                      fontWeight: FontWeight.normal,
+                                      color:
+                                          const Color.fromARGB(255, 51, 52, 52),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              // Horizontal black line
+                              Divider(
+                                color: const Color.fromARGB(255, 93, 90, 90),
+                                height: 25, // Adjust the height as needed
+                                thickness: 1, // Adjust the thickness as needed
+                                indent: 02, // Adjust the left indent as needed
+                                endIndent:
+                                    02, // Adjust the right indent as needed
+                              ),
+                              SizedBox(height: 0),
+                              Text(
+                                'Number of Days',
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color.fromARGB(255, 82, 167, 237),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],

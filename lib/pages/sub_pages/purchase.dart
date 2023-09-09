@@ -301,38 +301,30 @@ class _PaymentPageState extends State<PaymentPage> {
                                 ),
                               ),
                               SizedBox(height: 10),
-                              InkWell(
-                                onTap: () => _selectDate(context),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      'Select Date',
-                                      style: TextStyle(
-                                        fontSize: 16.0,
-                                        fontWeight: FontWeight.bold,
-                                      ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    '${DateFormat('yyyy-MM-dd').format(selectedDate)}',
+                                    style: TextStyle(
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.bold,
+                                      color: Color.fromARGB(255, 12, 12, 12),
                                     ),
-                                    SizedBox(
-                                        width:
-                                            8.0), // Add some space between text and GIF
-                                    Image.network(
-                                      ' assets/calendar.gif', // Replace with your GIF URL
-                                      width: 24.0, // Set the desired width
-                                      height: 24.0, // Set the desired height
+                                  ),
+                                  SizedBox(
+                                      width:
+                                          10), // Add some spacing between the text and the calendar icon
+                                  InkWell(
+                                    onTap: () => _selectDate(context),
+                                    child: Image.asset(
+                                      'assets/calendar.gif', // Corrected the path
+                                      width: 24.0,
+                                      height: 24.0,
                                     ),
-                                  ],
-                                ),
-                              ),
-                              SizedBox(height: 10),
-                              Text(
-                                'Selected Date: ${DateFormat('yyyy-MM-dd').format(selectedDate)}',
-                                style: TextStyle(
-                                  fontSize: 18.0,
-                                  fontWeight: FontWeight.bold,
-                                  color: Color.fromARGB(255, 12, 12, 12),
-                                ),
-                              ),
+                                  ),
+                                ],
+                              )
                             ],
                           ),
                         ),

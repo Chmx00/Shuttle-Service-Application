@@ -301,10 +301,28 @@ class _PaymentPageState extends State<PaymentPage> {
                                 ),
                               ),
                               SizedBox(height: 10),
-                              ElevatedButton(
-                                onPressed: () => _selectDate(
-                                    context), // Call the function to show the date picker
-                                child: Text('Date'),
+                              InkWell(
+                                onTap: () => _selectDate(context),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'Select Date',
+                                      style: TextStyle(
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                        width:
+                                            8.0), // Add some space between text and GIF
+                                    Image.network(
+                                      ' assets/calendar.gif', // Replace with your GIF URL
+                                      width: 24.0, // Set the desired width
+                                      height: 24.0, // Set the desired height
+                                    ),
+                                  ],
+                                ),
                               ),
                               SizedBox(height: 10),
                               Text(

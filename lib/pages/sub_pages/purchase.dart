@@ -2,11 +2,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'package:intl/intl.dart';
 
 void main() {
   runApp(MyApp());
 }
-//jnj
 
 class MyApp extends StatelessWidget {
   @override
@@ -26,6 +26,23 @@ class PaymentPage extends StatefulWidget {
 class _PaymentPageState extends State<PaymentPage> {
   String? selectedRoute = 'Select Your Route';
   String busName = ''; // Store the bus name here
+
+  int seatCount = 0;
+  DateTime selectedDate = DateTime.now();
+  Future<void> _selectDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: selectedDate,
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2101),
+    );
+
+    if (picked != null && picked != selectedDate) {
+      setState(() {
+        selectedDate = picked;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -181,11 +198,121 @@ class _PaymentPageState extends State<PaymentPage> {
                               ),
                               SizedBox(height: 0),
                               Text(
-                                'Number of Days',
+                                'Number of Seats',
                                 style: TextStyle(
                                   fontSize: 18.0,
                                   fontWeight: FontWeight.bold,
                                   color: Color.fromARGB(255, 82, 167, 237),
+                                ),
+                              ),
+                              SizedBox(height: 10),
+                              // Row containing the seat number, up arrow, and down arrow buttons
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: Colors
+                                            .grey, // Define the border color
+                                      ),
+                                      borderRadius: BorderRadius.circular(
+                                          10.0), // Optional: Add rounded corners
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(
+                                          8.0), // Optional: Add padding inside the box
+                                      child: Text(
+                                        '$seatCount',
+                                        style: TextStyle(
+                                          fontSize: 18.0,
+                                          fontWeight: FontWeight.bold,
+                                          color:
+                                              Color.fromARGB(255, 82, 167, 237),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(width: 20),
+                                  Container(
+                                    width: 40,
+                                    height: 40,
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: Colors
+                                            .grey, // Define the border color
+                                      ),
+                                      borderRadius: BorderRadius.circular(
+                                          30.0), // Optional: Add rounded corners
+                                    ),
+                                    child: IconButton(
+                                      icon: Icon(Icons.arrow_drop_down),
+                                      onPressed: () {
+                                        setState(() {
+                                          if (seatCount > 0) {
+                                            seatCount--; // Decrement the seat count, but ensure it's not negative
+                                          }
+                                        });
+                                      },
+                                      color: Colors
+                                          .grey, // Set the icon color to gray
+                                    ),
+                                  ),
+                                  SizedBox(width: 10),
+                                  Container(
+                                    width: 40,
+                                    height: 40,
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: Colors
+                                            .grey, // Define the border color
+                                      ),
+                                      borderRadius: BorderRadius.circular(
+                                          30.0), // Optional: Add rounded corners
+                                    ),
+                                    child: IconButton(
+                                      icon: Icon(Icons.arrow_drop_up),
+                                      onPressed: () {
+                                        setState(() {
+                                          seatCount++; // Increment the seat count
+                                        });
+                                      },
+                                      color: Colors
+                                          .grey, // Set the icon color to gray
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              // Horizontal black line
+                              Divider(
+                                color: const Color.fromARGB(255, 93, 90, 90),
+                                height: 25, // Adjust the height as needed
+                                thickness: 1, // Adjust the thickness as needed
+                                indent: 02, // Adjust the left indent as needed
+                                endIndent:
+                                    02, // Adjust the right indent as needed
+                              ),
+                              Text(
+                                'Select your Date',
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color.fromARGB(255, 82, 167, 237),
+                                ),
+                              ),
+                              SizedBox(height: 10),
+                              ElevatedButton(
+                                onPressed: () => _selectDate(
+                                    context), // Call the function to show the date picker
+                                child: Text('Date'),
+                              ),
+                              SizedBox(height: 10),
+                              Text(
+                                'Selected Date: ${DateFormat('yyyy-MM-dd').format(selectedDate)}',
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color.fromARGB(255, 12, 12, 12),
                                 ),
                               ),
                             ],

@@ -2,11 +2,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'package:intl/intl.dart';
 
 void main() {
   runApp(MyApp());
 }
-//jnj
 
 class MyApp extends StatelessWidget {
   @override
@@ -308,8 +308,7 @@ class _PaymentPageState extends State<PaymentPage> {
                               ),
                               SizedBox(height: 10),
                               Text(
-                                'Selected Date: ${selectedDate.toLocal()}'
-                                    .split(' ')[0],
+                                'Selected Date: ${DateFormat('yyyy-MM-dd').format(selectedDate)}',
                                 style: TextStyle(
                                   fontSize: 18.0,
                                   fontWeight: FontWeight.bold,

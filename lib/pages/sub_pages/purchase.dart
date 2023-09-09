@@ -304,7 +304,7 @@ class _PaymentPageState extends State<PaymentPage> {
                               ElevatedButton(
                                 onPressed: () => _selectDate(
                                     context), // Call the function to show the date picker
-                                child: Text('Pick a date'),
+                                child: Text('Date'),
                               ),
                               SizedBox(height: 10),
                               Text(
@@ -312,7 +312,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                 style: TextStyle(
                                   fontSize: 18.0,
                                   fontWeight: FontWeight.bold,
-                                  color: Color.fromARGB(255, 82, 167, 237),
+                                  color: Color.fromARGB(255, 12, 12, 12),
                                 ),
                               ),
                             ],

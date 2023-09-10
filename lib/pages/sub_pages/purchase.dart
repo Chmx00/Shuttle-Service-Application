@@ -306,22 +306,22 @@ class _PaymentPageState extends State<PaymentPage> {
                                 children: [
                                   Container(
                                     // Wrap the Row with a Container
-                                    color: Colors
-                                        .lightBlue, // Set the background color
-                                    padding: EdgeInsets.all(
-                                        8.0), // Add padding to the container
+                                    color: Color.fromARGB(255, 205, 246,
+                                        184), // Set the background color
+                                    padding: EdgeInsets.all(18.0),
+                                    width: 370, // Add padding to the container
                                     child: Row(
                                       // Nested Row containing the date and icon
                                       children: [
                                         Container(
                                           // Add another Container for the selected date
                                           padding: EdgeInsets.all(
-                                              8.0), // Adjust the padding as needed
+                                              10.0), // Adjust the padding as needed
                                           decoration: BoxDecoration(
-                                            color: Colors
-                                                .white, // Background color for the selected date container
+                                            color: Color.fromARGB(255, 136, 229,
+                                                70), // Background color for the selected date container
                                             borderRadius: BorderRadius.circular(
-                                                8.0), // Optional: Add rounded corners
+                                                15.0), // Optional: Add rounded corners
                                           ),
                                           child: Text(
                                             '${DateFormat('yyyy-MM-dd').format(selectedDate)}',

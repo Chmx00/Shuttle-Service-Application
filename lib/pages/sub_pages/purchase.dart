@@ -461,6 +461,53 @@ class _PaymentPageState extends State<PaymentPage> {
                                   ),
                                 ],
                               ),
+                              // Add a workable "Already Purchased" button below the "Buy Tickets" button
+                              Container(
+                                width: 150.0, // Set the width
+                                height: 60.0, // Set the height
+                                child: ElevatedButton(
+                                  onPressed: () {
+                                    // Add your logic for handling "Already purchased" here
+                                    // For example, you can show a message or navigate to a different screen
+                                    showDialog(
+                                      context: context,
+                                      builder: (context) {
+                                        return AlertDialog(
+                                          title: Text("Already Purchased"),
+                                          content: Text(
+                                              "You have already purchased tickets."),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () {
+                                                Navigator.of(context)
+                                                    .pop(); // Close the dialog
+                                              },
+                                              child: Text("OK"),
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                    padding: EdgeInsets.all(16.0),
+                                    primary: Colors
+                                        .green, // Button color for "Already purchased"
+                                    onPrimary: Colors
+                                        .white, // Text color for "Already purchased"
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(40.0),
+                                    ),
+                                  ),
+                                  child: Text(
+                                    'Already Purchased',
+                                    style: TextStyle(
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ],
                           ),
                         ),

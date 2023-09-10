@@ -80,10 +80,14 @@ class ReservationsPage extends StatelessWidget {
     ],
                   ),
                   padding: const EdgeInsets.only(
+<<<<<<< HEAD
                     top: 100,
                     left: 20,
                     right: 20,
                     bottom: 20),
+=======
+                      top: 60, left: 20, right: 20, bottom: 20),
+>>>>>>> 8caee1140a119f873fc284754274eb3d110d706d
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -157,12 +161,18 @@ class ReservationsPage extends StatelessWidget {
                           ),
                         ),
                       ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
+<<<<<<< HEAD
           ],
           ),
           ),
+=======
+>>>>>>> 8caee1140a119f873fc284754274eb3d110d706d
         ],
           ),
           ); 

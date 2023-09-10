@@ -63,16 +63,28 @@ class ReservationsPage extends StatelessWidget {
                 ),
                 Container(
                   width: double.infinity,
-                  height: 355,
+                  height: 465.8,
                   decoration: BoxDecoration(
                     color: Color.fromARGB(252, 255, 255, 255),
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(50.0),
                       topRight: Radius.circular(50.0),
                     ),
+                    boxShadow: [
+      BoxShadow(
+        color: Colors.grey.withOpacity(0.5), // Shadow color
+        spreadRadius: 2, // Spread radius
+        blurRadius: 5, // Blur radius
+        offset: Offset(0, 3), // Offset to control the shadow's position
+      ),
+    ],
                   ),
                   padding: const EdgeInsets.only(
-                      top: 60, left: 20, right: 20, bottom: 20),
+                    top: 100,
+                    left: 20,
+                    right: 20,
+                    bottom: 20),
+
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -97,7 +109,7 @@ class ReservationsPage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(height: 20),
+                      SizedBox(height: 30),
                       // Card Number
                       Center(
                         child: Container(
@@ -121,12 +133,20 @@ class ReservationsPage extends StatelessWidget {
                       ),
                       SizedBox(height: 80),
                       Container(
-                        width: 200,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          color: Colors.orange,
-                          borderRadius: BorderRadius.circular(25.0),
-                        ),
+  width: 200,
+  height: 50,
+  decoration: BoxDecoration(
+    color: Color.fromARGB(255, 31, 158, 69),
+    borderRadius: BorderRadius.circular(25.0),
+    boxShadow: [
+      BoxShadow(
+        color: Colors.grey.withOpacity(0.7), // Shadow color
+        spreadRadius: 2, // Spread radius
+        blurRadius: 5, // Blur radius
+        offset: Offset(0, 3), // Offset to control the shadow's position
+      ),
+    ],
+  ),
                         child: Center(
                           child: Text(
                             'Login',
@@ -141,11 +161,11 @@ class ReservationsPage extends StatelessWidget {
                     ],
                   ),
                 ),
+        ],
+        ),
+          ),
               ],
             ),
-          ),
-        ],
-      ),
-    );
+          );
   }
 }

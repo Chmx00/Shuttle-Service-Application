@@ -461,7 +461,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                   ),
                                 ],
                               ),
-                              SizedBox(height: 80),
+                              SizedBox(height: 70),
                               // Add a workable "Already Purchased" button below the "Buy Tickets" button
                               Container(
                                 padding: const EdgeInsets.only(

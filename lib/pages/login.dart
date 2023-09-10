@@ -61,9 +61,101 @@ class ReservationsPage extends StatelessWidget {
                     ],
                   ),
                 ),
+                Container(
+                  width: double.infinity,
+                  height: 355,
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(252, 255, 255, 255),
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(50.0),
+                      topRight: Radius.circular(50.0),
+                    ),
+                  ),
+                  padding: const EdgeInsets.only(
+                    top: 60,
+                    left: 20,
+                    right: 20,
+                    bottom: 20),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Center(
+                        child: Container(
+                          width: double.infinity,
+                          height: 50,
+                          padding: EdgeInsets.all(15),
+                          decoration: BoxDecoration(
+                            color: Color.fromARGB(
+                                255, 236, 236, 236), // Gray color
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          child: TextField(
+                            textAlign: TextAlign.left,
+                            textAlignVertical: TextAlignVertical.center,
+                            decoration: InputDecoration(
+                              hintText: 'Username',
+                              border: InputBorder.none,
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      // Card Number
+                      Center(
+                        child: Container(
+                          width: double.infinity,
+                          height: 50,
+                          padding: EdgeInsets.all(15),
+                          decoration: BoxDecoration(
+                            color: Color.fromARGB(
+                                255, 236, 236, 236), // Gray color
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          child: TextField(
+                            textAlign: TextAlign.left,
+                            textAlignVertical: TextAlignVertical.center,
+                            decoration: InputDecoration(
+                              hintText: 'Password',
+                              border: InputBorder.none,
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 80),
+                      Container(
+                        width: 200,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          color: Colors.orange,
+                          borderRadius: BorderRadius.circular(25.0),
+                        ),
+                        child: Center(
+                          child: Text(
+                            'Login',
+                            style: TextStyle(
+                              fontSize: 18.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
               ],
             ),
           ),
+<<<<<<< HEAD
+=======
+=======
+          ), 
+<<<<<<< HEAD
+          ],
+          ),
+          ),
+=======
+>>>>>>> a07ad45a3465e71c64a38955e83970b9dce4cfd8
+>>>>>>> b29b693e8dfd005c97fb6f64e3fa9f0ddacaaed7
+>>>>>>> 7133102bc8452c0b14ceaf6a719a62c89ba1d07a
         ],
       ),
     );

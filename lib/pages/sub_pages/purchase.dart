@@ -461,9 +461,12 @@ class _PaymentPageState extends State<PaymentPage> {
                                   ),
                                 ],
                               ),
+                              SizedBox(height: 80),
                               // Add a workable "Already Purchased" button below the "Buy Tickets" button
                               Container(
-                                width: 150.0, // Set the width
+                                padding: const EdgeInsets.only(
+                                    top: 0, left: 60, right: 0, bottom: 0),
+                                width: 300.0, // Set the width
                                 height: 60.0, // Set the height
                                 child: ElevatedButton(
                                   onPressed: () {

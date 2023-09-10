@@ -323,7 +323,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                             ),
                                             child: Column(
                                               crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
+                                                  CrossAxisAlignment.center,
                                               children: [
                                                 Text(
                                                   '${DateFormat('dd MMMM').format(selectedDate)}', // Date and month name format

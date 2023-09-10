@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-//login okay
+
 class ReservationsPage extends StatelessWidget {
-   @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
@@ -10,7 +10,7 @@ class ReservationsPage extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/bg.png'),
+                image: AssetImage('assets/background.png'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -46,9 +46,34 @@ class ReservationsPage extends StatelessWidget {
                     ),
                   ),
                 ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 60.0), // Adjust the padding as needed
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'assets/logo.png', // Replace with your image path
+                        width: 175, // Adjust the width as needed
+                        height: 175, // Adjust the height as needed
+                        // You can also use other properties like fit, alignment, etc.
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
-          ),
+            Container(
+                  width: double.infinity,
+                  height: 582.2,
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(252, 255, 255, 255),
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(50.0),
+                      topRight: Radius.circular(50.0),
+                    ),
+                  ),
+            ),
+          ), 
         ],
       ),
     );

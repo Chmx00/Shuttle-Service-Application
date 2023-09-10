@@ -96,8 +96,10 @@ class LostAndFoundPage extends StatelessWidget {
                           ],
                         ),
                         SizedBox(height: 20),
-              ),
-           ],
+          ],
+          ),
+       ),
+        ],
         ), //Stack
      );
   }

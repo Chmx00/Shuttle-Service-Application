@@ -72,10 +72,7 @@ class ReservationsPage extends StatelessWidget {
                     ),
                   ),
                   padding: const EdgeInsets.only(
-                    top: 60,
-                    left: 20,
-                    right: 20,
-                    bottom: 20),
+                      top: 60, left: 20, right: 20, bottom: 20),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -141,21 +138,12 @@ class ReservationsPage extends StatelessWidget {
                           ),
                         ),
                       ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
-<<<<<<< HEAD
-=======
-=======
-          ), 
-<<<<<<< HEAD
-          ],
-          ),
-          ),
-=======
->>>>>>> a07ad45a3465e71c64a38955e83970b9dce4cfd8
->>>>>>> b29b693e8dfd005c97fb6f64e3fa9f0ddacaaed7
->>>>>>> 7133102bc8452c0b14ceaf6a719a62c89ba1d07a
         ],
       ),
     );

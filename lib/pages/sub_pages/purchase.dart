@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, library_private_types_in_public_api, use_key_in_widget_constructors, unused_import
+// ignore_for_file: prefer_const_constructors, library_private_types_in_public_api, use_key_in_widget_constructors, unused_import, unnecessary_string_interpolations
 
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -304,27 +304,40 @@ class _PaymentPageState extends State<PaymentPage> {
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  Text(
-                                    '${DateFormat('yyyy-MM-dd').format(selectedDate)}',
-                                    style: TextStyle(
-                                      fontSize: 18.0,
-                                      fontWeight: FontWeight.bold,
-                                      color: Color.fromARGB(255, 12, 12, 12),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                      width:
-                                          10), // Add some spacing between the text and the calendar icon
-                                  InkWell(
-                                    onTap: () => _selectDate(context),
-                                    child: Image.asset(
-                                      'assets/calendar.gif', // Corrected the path
-                                      width: 24.0,
-                                      height: 24.0,
+                                  Container(
+                                    // Wrap the Row with a Container
+                                    color: Colors
+                                        .lightBlue, // Set the background color
+                                    padding: EdgeInsets.all(
+                                        8.0), // Add padding to the container
+                                    child: Row(
+                                      // Nested Row containing the date and icon
+                                      children: [
+                                        Text(
+                                          '${DateFormat('yyyy-MM-dd').format(selectedDate)}',
+                                          style: TextStyle(
+                                            fontSize: 18.0,
+                                            fontWeight: FontWeight.bold,
+                                            color:
+                                                Color.fromARGB(255, 12, 12, 12),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                            width:
+                                                10), // Add some spacing between the text and the calendar icon
+                                        InkWell(
+                                          onTap: () => _selectDate(context),
+                                          child: Image.asset(
+                                            'assets/calendar.gif', // Corrected the path
+                                            width: 24.0,
+                                            height: 24.0,
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ],
-                              )
+                              ),
                             ],
                           ),
                         ),

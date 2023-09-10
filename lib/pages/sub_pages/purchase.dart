@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import, prefer_const_constructors, use_key_in_widget_constructors, library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:intl/intl.dart';
@@ -354,26 +356,31 @@ class _PaymentPageState extends State<PaymentPage> {
                                   ),
                                 ],
                               ),
-                              // Add the checkbox and text in the same row
-                              Row(
-                                children: [
-                                  Checkbox(
-                                    value: isCheckboxChecked,
-                                    onChanged: (bool? newValue) {
-                                      setState(() {
-                                        isCheckboxChecked = newValue ?? false;
-                                      });
-                                    },
-                                  ),
-                                  Text(
-                                    'Are you sure to purchase tickets',
-                                    style: TextStyle(
-                                      fontSize: 18.0,
-                                      fontWeight: FontWeight.bold,
-                                      color: Color.fromARGB(255, 82, 167, 237),
+                              // Add the checkbox and text in the same row and center them
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 0, left: 0, right: 16.0, bottom: 16.0),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Checkbox(
+                                      value: isCheckboxChecked,
+                                      onChanged: (bool? newValue) {
+                                        setState(() {
+                                          isCheckboxChecked = newValue ?? false;
+                                        });
+                                      },
                                     ),
-                                  ),
-                                ],
+                                    Text(
+                                      'Are you sure to purchase tickets',
+                                      style: TextStyle(
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold,
+                                        color: Color.fromARGB(255, 0, 0, 0),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ],
                           ),

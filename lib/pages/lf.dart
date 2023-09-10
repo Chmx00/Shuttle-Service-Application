@@ -117,9 +117,9 @@ class LostAndFoundPage extends StatelessWidget {
                                              backgroundColor: MaterialStateProperty.all(const Color.fromARGB(255, 123, 196, 255)), 
                                             ),
                                             onPressed: () { 
-                                              Navigator.of(context).push(MaterialPageRoute(
+                                            /*  Navigator.of(context).push(MaterialPageRoute(
                                                 builder: (_) {
-                                                  return SubmitLost();
+                                                  return SubmitLost(); */
                                                 }
                                               ));
                                              },

@@ -58,27 +58,12 @@ class ReservationsPage extends StatelessWidget {
                         height: 175, // Adjust the height as needed
                         // You can also use other properties like fit, alignment, etc.
                       ),
-                      Container(
-                        width: double.infinity,
-                        height: 582.2,
-                        decoration: BoxDecoration(
-                          color: Color.fromARGB(252, 255, 255, 255),
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(50.0),
-                            topRight: Radius.circular(50.0),
-                          ),
-                        ),
-                      ),
                     ],
                   ),
                 ),
               ],
             ),
-<<<<<<< HEAD
-          ), 
-=======
           ),
->>>>>>> f1c225af5d3c3dd137a7cd38718020466cb401ce
         ],
       ),
     );

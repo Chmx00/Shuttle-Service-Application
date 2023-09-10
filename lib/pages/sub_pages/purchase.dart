@@ -304,47 +304,52 @@ class _PaymentPageState extends State<PaymentPage> {
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  Container(
-                                    // Wrap the Row with a Container
-                                    color: Color.fromARGB(255, 205, 246,
-                                        184), // Set the background color
-                                    padding: EdgeInsets.all(18.0),
-                                    width: 370, // Add padding to the container
-                                    child: Row(
-                                      // Nested Row containing the date and icon
-                                      children: [
-                                        Container(
-                                          // Add another Container for the selected date
-                                          padding: EdgeInsets.all(
-                                              10.0), // Adjust the padding as needed
-                                          decoration: BoxDecoration(
-                                            color: Color.fromARGB(255, 136, 229,
-                                                70), // Background color for the selected date container
-                                            borderRadius: BorderRadius.circular(
-                                                15.0), // Optional: Add rounded corners
-                                          ),
-                                          child: Text(
-                                            '${DateFormat('yyyy-MM-dd').format(selectedDate)}',
-                                            style: TextStyle(
-                                              fontSize: 18.0,
-                                              fontWeight: FontWeight.bold,
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(15.0),
+                                    child: Container(
+                                      color: Color.fromARGB(255, 205, 246, 184),
+                                      padding: EdgeInsets.all(18.0),
+                                      width: 370,
+                                      child: Row(
+                                        children: [
+                                          Container(
+                                            padding: EdgeInsets.all(10.0),
+                                            width: 278,
+                                            decoration: BoxDecoration(
                                               color: Color.fromARGB(
-                                                  255, 12, 12, 12),
+                                                  255, 42, 205, 9),
+                                              borderRadius:
+                                                  BorderRadius.circular(15.0),
+                                            ),
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  '${DateFormat('dd MMMM').format(selectedDate)}', // Date and month name format
+                                                  style: TextStyle(
+                                                    fontSize: 18.0,
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Color.fromARGB(
+                                                        255, 255, 255, 255),
+                                                  ),
+                                                ),
+                                              ],
                                             ),
                                           ),
-                                        ),
-                                        SizedBox(
-                                            width:
-                                                10), // Add some spacing between the text and the calendar icon
-                                        InkWell(
-                                          onTap: () => _selectDate(context),
-                                          child: Image.asset(
-                                            'assets/calendar.gif', // Corrected the path
-                                            width: 24.0,
-                                            height: 24.0,
+                                          SizedBox(
+                                              width:
+                                                  10), // Add spacing between date and calendar icon
+                                          InkWell(
+                                            onTap: () => _selectDate(context),
+                                            child: Image.asset(
+                                              'assets/calendar.gif',
+                                              width: 45.0,
+                                              height: 45.0,
+                                            ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ],

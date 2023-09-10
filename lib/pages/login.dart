@@ -161,6 +161,8 @@ class ReservationsPage extends StatelessWidget {
                     ],
                   ),
                 ),
+        ],
+        ),
           ),
               ],
             ),

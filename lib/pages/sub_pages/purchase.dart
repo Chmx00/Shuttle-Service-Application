@@ -313,13 +313,24 @@ class _PaymentPageState extends State<PaymentPage> {
                                     child: Row(
                                       // Nested Row containing the date and icon
                                       children: [
-                                        Text(
-                                          '${DateFormat('yyyy-MM-dd').format(selectedDate)}',
-                                          style: TextStyle(
-                                            fontSize: 18.0,
-                                            fontWeight: FontWeight.bold,
-                                            color:
-                                                Color.fromARGB(255, 12, 12, 12),
+                                        Container(
+                                          // Add another Container for the selected date
+                                          padding: EdgeInsets.all(
+                                              8.0), // Adjust the padding as needed
+                                          decoration: BoxDecoration(
+                                            color: Colors
+                                                .white, // Background color for the selected date container
+                                            borderRadius: BorderRadius.circular(
+                                                8.0), // Optional: Add rounded corners
+                                          ),
+                                          child: Text(
+                                            '${DateFormat('yyyy-MM-dd').format(selectedDate)}',
+                                            style: TextStyle(
+                                              fontSize: 18.0,
+                                              fontWeight: FontWeight.bold,
+                                              color: Color.fromARGB(
+                                                  255, 12, 12, 12),
+                                            ),
                                           ),
                                         ),
                                         SizedBox(

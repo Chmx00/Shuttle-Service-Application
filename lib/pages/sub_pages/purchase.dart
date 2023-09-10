@@ -1,12 +1,12 @@
-// ignore_for_file: prefer_const_constructors, library_private_types_in_public_api, use_key_in_widget_constructors
+// ignore_for_file: unused_import, prefer_const_constructors, use_key_in_widget_constructors, library_private_types_in_public_api
 
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'package:intl/intl.dart';
 
 void main() {
   runApp(MyApp());
 }
-//jnj
 
 class MyApp extends StatelessWidget {
   @override
@@ -26,6 +26,25 @@ class PaymentPage extends StatefulWidget {
 class _PaymentPageState extends State<PaymentPage> {
   String? selectedRoute = 'Select Your Route';
   String busName = ''; // Store the bus name here
+
+  int seatCount = 0;
+  DateTime selectedDate = DateTime.now();
+  Future<void> _selectDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: selectedDate,
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2101),
+    );
+
+    if (picked != null && picked != selectedDate) {
+      setState(() {
+        selectedDate = picked;
+      });
+    }
+  }
+
+  bool isCheckboxChecked = false; // Track the checkbox state
 
   @override
   Widget build(BuildContext context) {
@@ -181,11 +200,205 @@ class _PaymentPageState extends State<PaymentPage> {
                               ),
                               SizedBox(height: 0),
                               Text(
-                                'Number of Days',
+                                'Number of Seats',
                                 style: TextStyle(
                                   fontSize: 18.0,
                                   fontWeight: FontWeight.bold,
                                   color: Color.fromARGB(255, 82, 167, 237),
+                                ),
+                              ),
+                              SizedBox(height: 10),
+                              // Row containing the seat number, up arrow, and down arrow buttons
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: Colors
+                                            .grey, // Define the border color
+                                      ),
+                                      borderRadius: BorderRadius.circular(
+                                          10.0), // Optional: Add rounded corners
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(
+                                          8.0), // Optional: Add padding inside the box
+                                      child: Text(
+                                        '$seatCount',
+                                        style: TextStyle(
+                                          fontSize: 18.0,
+                                          fontWeight: FontWeight.bold,
+                                          color:
+                                              Color.fromARGB(255, 82, 167, 237),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(width: 20),
+                                  Container(
+                                    width: 40,
+                                    height: 40,
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: Colors
+                                            .grey, // Define the border color
+                                      ),
+                                      borderRadius: BorderRadius.circular(
+                                          30.0), // Optional: Add rounded corners
+                                    ),
+                                    child: IconButton(
+                                      icon: Icon(Icons.arrow_drop_down),
+                                      onPressed: () {
+                                        setState(() {
+                                          if (seatCount > 0) {
+                                            seatCount--; // Decrement the seat count, but ensure it's not negative
+                                          }
+                                        });
+                                      },
+                                      color: Colors
+                                          .grey, // Set the icon color to gray
+                                    ),
+                                  ),
+                                  SizedBox(width: 10),
+                                  Container(
+                                    width: 40,
+                                    height: 40,
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: Colors
+                                            .grey, // Define the border color
+                                      ),
+                                      borderRadius: BorderRadius.circular(
+                                          30.0), // Optional: Add rounded corners
+                                    ),
+                                    child: IconButton(
+                                      icon: Icon(Icons.arrow_drop_up),
+                                      onPressed: () {
+                                        setState(() {
+                                          seatCount++; // Increment the seat count
+                                        });
+                                      },
+                                      color: Colors
+                                          .grey, // Set the icon color to gray
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              // Horizontal black line
+                              Divider(
+                                color: const Color.fromARGB(255, 93, 90, 90),
+                                height: 25, // Adjust the height as needed
+                                thickness: 1, // Adjust the thickness as needed
+                                indent: 02, // Adjust the left indent as needed
+                                endIndent:
+                                    02, // Adjust the right indent as needed
+                              ),
+                              Text(
+                                'Select your Date',
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color.fromARGB(255, 82, 167, 237),
+                                ),
+                              ),
+                              SizedBox(height: 10),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(20.0),
+                                    child: Container(
+                                      color: Color.fromARGB(255, 205, 246, 184),
+                                      padding: EdgeInsets.all(18.0),
+                                      width: 370,
+                                      child: Row(
+                                        children: [
+                                          Container(
+                                            padding: EdgeInsets.all(10.0),
+                                            width: 278,
+                                            decoration: BoxDecoration(
+                                              color: Color.fromARGB(
+                                                  255, 42, 205, 9),
+                                              borderRadius:
+                                                  BorderRadius.circular(15.0),
+                                            ),
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  '${DateFormat('dd MMMM').format(selectedDate)}', // Date and month name format
+                                                  style: TextStyle(
+                                                    fontSize: 18.0,
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Color.fromARGB(
+                                                        255, 255, 255, 255),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          SizedBox(
+                                              width:
+                                                  10), // Add spacing between date and calendar icon
+                                          InkWell(
+                                            onTap: () => _selectDate(context),
+                                            child: Image.asset(
+                                              'assets/calendar.gif',
+                                              width: 45.0,
+                                              height: 45.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              // Add the checkbox and text in the same row and center them
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 0, left: 0, right: 16.0, bottom: 16.0),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Checkbox(
+                                      value: isCheckboxChecked,
+                                      onChanged: (bool? newValue) {
+                                        setState(() {
+                                          isCheckboxChecked = newValue ?? false;
+                                        });
+                                      },
+                                    ),
+                                    Text(
+                                      'Are you sure to purchase tickets',
+                                      style: TextStyle(
+                                        fontSize: 14.0,
+                                        fontWeight: FontWeight.bold,
+                                        color: Color.fromARGB(255, 0, 0, 0),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              // buy tickets button
+                              Container(
+                                width: 150,
+                                height: 60,
+                                decoration: BoxDecoration(
+                                  color: Colors.orange,
+                                  borderRadius: BorderRadius.circular(40.0),
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    'Buy Tickets',
+                                    style: TextStyle(
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                    ),
+                                  ),
                                 ),
                               ),
                             ],

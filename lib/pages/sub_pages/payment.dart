@@ -24,7 +24,7 @@ class PaymentPage extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/bg.png'),
+                image: AssetImage('assets/Payment.png'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -61,9 +61,9 @@ class PaymentPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 20),
-                
+
                 Image.asset(
-                  'assets/grl.png',
+                  'assets/girl.png',
                   width: 180,
                   height: 180,
                   fit: BoxFit.contain,

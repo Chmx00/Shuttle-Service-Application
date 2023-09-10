@@ -159,6 +159,7 @@ class ReservationsPage extends StatelessWidget {
                       ),
               ],
             ),
+<<<<<<< HEAD
 
           ),
 
@@ -169,7 +170,10 @@ class ReservationsPage extends StatelessWidget {
           ),
 
         ],
-      ),
-    );
+          ),
+
+          ); 
+
+       
   }
 }

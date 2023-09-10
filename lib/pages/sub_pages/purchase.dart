@@ -1,4 +1,4 @@
-// ignore_for_file: unused_import, prefer_const_constructors, use_key_in_widget_constructors, library_private_types_in_public_api
+// ignore_for_file: unused_import, prefer_const_constructors, use_key_in_widget_constructors, library_private_types_in_public_api, deprecated_member_use
 
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -382,24 +382,84 @@ class _PaymentPageState extends State<PaymentPage> {
                                   ],
                                 ),
                               ),
-                              // buy tickets button
-                              Container(
-                                width: 150,
-                                height: 60,
-                                decoration: BoxDecoration(
-                                  color: Colors.orange,
-                                  borderRadius: BorderRadius.circular(40.0),
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    'Buy Tickets',
-                                    style: TextStyle(
-                                      fontSize: 18.0,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white,
+                              // Row containing the text and Buy Tickets button
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment
+                                    .spaceBetween, // Adjust alignment as needed
+                                children: [
+                                  // Container containing text
+                                  Container(
+                                    padding: const EdgeInsets.only(
+                                        top: 0,
+                                        left: 15,
+                                        right: 0,
+                                        bottom:
+                                            10), // Adjust the padding as needed
+                                    child: Text(
+                                      'Your Text Here',
+                                      style: TextStyle(
+                                        fontSize: 18.0,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black,
+                                      ),
                                     ),
                                   ),
-                                ),
+                                  // Workable Buy Tickets button with width and height
+                                  Container(
+                                    width: 150.0, // Set the width
+                                    height: 60.0, // Set the height
+                                    child: ElevatedButton(
+                                      onPressed: () {
+                                        // Add your logic for buying tickets here
+                                        // For example, you can show a confirmation dialog
+                                        showDialog(
+                                          context: context,
+                                          builder: (context) {
+                                            return AlertDialog(
+                                              title: Text("Confirmation"),
+                                              content: Text(
+                                                  "Are you sure you want to buy tickets?"),
+                                              actions: [
+                                                TextButton(
+                                                  onPressed: () {
+                                                    Navigator.of(context)
+                                                        .pop(); // Close the dialog
+                                                  },
+                                                  child: Text("Cancel"),
+                                                ),
+                                                TextButton(
+                                                  onPressed: () {
+                                                    // Place your code for purchasing tickets here
+                                                    // This is where you can perform the actual purchase action
+                                                    Navigator.of(context)
+                                                        .pop(); // Close the dialog
+                                                  },
+                                                  child: Text("Buy"),
+                                                ),
+                                              ],
+                                            );
+                                          },
+                                        );
+                                      },
+                                      style: ElevatedButton.styleFrom(
+                                        padding: EdgeInsets.all(16.0),
+                                        primary: Colors.orange,
+                                        onPrimary: Colors.white,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(40.0),
+                                        ),
+                                      ),
+                                      child: Text(
+                                        'Buy Tickets',
+                                        style: TextStyle(
+                                          fontSize: 18.0,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),

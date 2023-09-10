@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, library_private_types_in_public_api, use_key_in_widget_constructors, unused_import, unnecessary_string_interpolations, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:intl/intl.dart';
@@ -43,6 +41,8 @@ class _PaymentPageState extends State<PaymentPage> {
       });
     }
   }
+
+  bool isCheckboxChecked = false; // Track the checkbox state
 
   @override
   Widget build(BuildContext context) {
@@ -354,49 +354,24 @@ class _PaymentPageState extends State<PaymentPage> {
                                   ),
                                 ],
                               ),
-                              SizedBox(height: 20),
-                              // Checkbox and text rows
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
+                              // Add the checkbox and text in the same row
+                              Row(
                                 children: [
-                                  Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Container(
-                                        width: 30,
-                                        height: 30,
-                                        decoration: BoxDecoration(
-                                          border: Border.all(
-                                            color: Colors.black,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(5.0),
-                                        ),
-                                        child: Center(
-                                          child: Icon(
-                                            Icons.check,
-                                            size: 20.0,
-                                            color: Colors.black,
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(width: 10),
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            'Are you sure to purchase tickets',
-                                            style: TextStyle(
-                                              fontSize: 12.0,
-                                              color: Colors.black,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
+                                  Checkbox(
+                                    value: isCheckboxChecked,
+                                    onChanged: (bool? newValue) {
+                                      setState(() {
+                                        isCheckboxChecked = newValue ?? false;
+                                      });
+                                    },
+                                  ),
+                                  Text(
+                                    'Are you sure to purchase tickets',
+                                    style: TextStyle(
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.bold,
+                                      color: Color.fromARGB(255, 82, 167, 237),
+                                    ),
                                   ),
                                 ],
                               ),

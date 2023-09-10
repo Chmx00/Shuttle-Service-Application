@@ -143,10 +143,17 @@ class ReservationsPage extends StatelessWidget {
                       ),
               ],
             ),
+<<<<<<< HEAD
+          ),
+=======
           ), 
+<<<<<<< HEAD
           ],
           ),
           ),
+=======
+>>>>>>> a07ad45a3465e71c64a38955e83970b9dce4cfd8
+>>>>>>> b29b693e8dfd005c97fb6f64e3fa9f0ddacaaed7
         ],
       ),
     );

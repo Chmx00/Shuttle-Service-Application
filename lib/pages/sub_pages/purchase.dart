@@ -307,7 +307,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   ClipRRect(
-                                    borderRadius: BorderRadius.circular(15.0),
+                                    borderRadius: BorderRadius.circular(20.0),
                                     child: Container(
                                       color: Color.fromARGB(255, 205, 246, 184),
                                       padding: EdgeInsets.all(18.0),
@@ -374,12 +374,31 @@ class _PaymentPageState extends State<PaymentPage> {
                                     Text(
                                       'Are you sure to purchase tickets',
                                       style: TextStyle(
-                                        fontSize: 16.0,
+                                        fontSize: 14.0,
                                         fontWeight: FontWeight.bold,
                                         color: Color.fromARGB(255, 0, 0, 0),
                                       ),
                                     ),
                                   ],
+                                ),
+                              ),
+                              // buy tickets button
+                              Container(
+                                width: 150,
+                                height: 60,
+                                decoration: BoxDecoration(
+                                  color: Colors.orange,
+                                  borderRadius: BorderRadius.circular(40.0),
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    'Buy Tickets',
+                                    style: TextStyle(
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                    ),
+                                  ),
                                 ),
                               ),
                             ],

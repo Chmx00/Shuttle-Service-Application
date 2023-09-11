@@ -302,26 +302,21 @@ class _PaymentPageState extends State<PaymentPage> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   ClipRRect(
-                                    borderRadius: BorderRadius.circular(
-                                      screenHeight * 0.05,
-                                    ),
+                                    borderRadius: BorderRadius.circular(20.0),
                                     child: Container(
                                       color: Color.fromARGB(255, 205, 246, 184),
-                                      padding:
-                                          EdgeInsets.all(screenHeight * 0.036),
-                                      width: screenWidth * 0.92,
+                                      padding: EdgeInsets.all(18.0),
+                                      width: 370,
                                       child: Row(
                                         children: [
                                           Container(
-                                            padding: EdgeInsets.all(
-                                                screenHeight * 0.01),
-                                            width: screenWidth * 0.6,
+                                            padding: EdgeInsets.all(10.0),
+                                            width: 278,
                                             decoration: BoxDecoration(
                                               color: Color.fromARGB(
                                                   255, 42, 205, 9),
                                               borderRadius:
-                                                  BorderRadius.circular(
-                                                      screenHeight * 0.03),
+                                                  BorderRadius.circular(15.0),
                                             ),
                                             child: Column(
                                               crossAxisAlignment:
@@ -330,8 +325,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                                 Text(
                                                   '${DateFormat('dd MMMM').format(selectedDate)}', // Date and month name format
                                                   style: TextStyle(
-                                                    fontSize:
-                                                        screenHeight * 0.025,
+                                                    fontSize: 18.0,
                                                     fontWeight: FontWeight.bold,
                                                     color: Color.fromARGB(
                                                         255, 255, 255, 255),
@@ -341,14 +335,14 @@ class _PaymentPageState extends State<PaymentPage> {
                                             ),
                                           ),
                                           SizedBox(
-                                              width: screenHeight *
-                                                  0.01), // Add spacing between date and calendar icon
+                                              width:
+                                                  10), // Add spacing between date and calendar icon
                                           InkWell(
                                             onTap: () => _selectDate(context),
                                             child: Image.asset(
                                               'assets/calendar.gif',
-                                              width: screenHeight * 0.03,
-                                              height: screenHeight * 0.03,
+                                              width: 45.0,
+                                              height: 45.0,
                                             ),
                                           ),
                                         ],
@@ -510,7 +504,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                     ),
                                   ),
                                   child: Text(
-                                    'Buy Tickets',
+                                    'Already Purchased',
                                     style: TextStyle(
                                       fontSize: screenHeight * 0.02,
                                       fontWeight: FontWeight.bold,

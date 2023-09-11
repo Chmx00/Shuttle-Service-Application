@@ -1,11 +1,5 @@
 import 'package:flutter/material.dart';
 
-<<<<<<< HEAD
-void main() {
-  runApp(MyApp());
-}
-=======
->>>>>>> f31d5d4070ceb57312555529f412cebb0d6cde32
 
 class LostAndFoundPage extends StatelessWidget {
   @override
@@ -52,17 +46,6 @@ class LostAndFoundPage extends StatelessWidget {
                         child: Row(
                           children: [
                             Container(
-<<<<<<< HEAD
-                              alignment: Alignment.centerRight,
-                              child: Padding(
-                                  padding: EdgeInsets.only(left: 20.0),
-                                  child: ElevatedButton(
-                                    style: ButtonStyle(
-                                      backgroundColor:
-                                          MaterialStateProperty.all(
-                                              const Color.fromARGB(
-                                                  255, 123, 196, 255)),
-=======
                              width: double.infinity,
                              height: 86,
                              decoration: BoxDecoration(
@@ -94,7 +77,6 @@ class LostAndFoundPage extends StatelessWidget {
                                               ),
                                             ),
                                           )),
->>>>>>> f31d5d4070ceb57312555529f412cebb0d6cde32
                                     ),
                                     onPressed: () {
                                       Navigator.of(context)
@@ -131,12 +113,6 @@ class LostAndFoundPage extends StatelessWidget {
                               ],
                             )
                           ],
-<<<<<<< HEAD
-                        )),
-                  ],
-                ),
-                SizedBox(height: 20),
-=======
                         ),
                         SizedBox(height: 20),
                         Column(
@@ -261,16 +237,11 @@ class LostAndFoundPage extends StatelessWidget {
                     ],
                   ),
                 ),
->>>>>>> f31d5d4070ceb57312555529f412cebb0d6cde32
               ],
             ),
           ),
         ],
-<<<<<<< HEAD
-      ), //Stack
-=======
       ),
->>>>>>> f31d5d4070ceb57312555529f412cebb0d6cde32
     );
   }
 }

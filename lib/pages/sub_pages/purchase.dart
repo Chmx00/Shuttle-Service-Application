@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-// ignore_for_file: unused_import, prefer_const_constructors, use_key_in_widget_constructors, library_private_types_in_public_api
-
-=======
->>>>>>> c4610ebbde0af30dd0262c04160158029c6268b9
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:intl/intl.dart';
@@ -390,17 +385,6 @@ class _PaymentPageState extends State<PaymentPage> {
                                   ],
                                 ),
                               ),
-<<<<<<< HEAD
-                              // buy tickets button
-                              Container(
-                                width: 150,
-                                height: 60,
-                                decoration: BoxDecoration(
-                                  color: Colors.orange,
-                                  borderRadius: BorderRadius.circular(40.0),
-                                ),
-                                child: Center(
-=======
                               // Row containing the text and Buy Tickets button
                               Row(
                                 mainAxisAlignment:
@@ -524,7 +508,6 @@ class _PaymentPageState extends State<PaymentPage> {
                                           screenHeight * 0.04),
                                     ),
                                   ),
->>>>>>> c4610ebbde0af30dd0262c04160158029c6268b9
                                   child: Text(
                                     'Buy Tickets',
                                     style: TextStyle(

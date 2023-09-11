@@ -346,8 +346,8 @@ Widget buildTile(
   return GestureDetector(
     onTap: onPressed,
     child: Container(
-      width: 150,
-      height: 150,
+      width: 130,
+      height: 130,
       decoration: BoxDecoration(
         color: Color.fromARGB(124, 161, 159, 159),
         borderRadius: BorderRadius.circular(20),
@@ -357,8 +357,8 @@ Widget buildTile(
         children: [
           Image.asset(
             imagePath,
-            width: 50,
-            height: 50,
+            width: 40,
+            height: 40,
           ),
           SizedBox(height: 10),
           Text(

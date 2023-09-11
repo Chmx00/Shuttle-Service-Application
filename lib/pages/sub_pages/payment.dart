@@ -23,6 +23,9 @@ class PaymentPage extends StatefulWidget {
 class _PaymentPageState extends State<PaymentPage> {
   final TextEditingController expiryController = TextEditingController();
 
+bool isChecked = false; // Add this variable to your _PaymentPageState class
+
+
   @override
   void dispose() {
     // Clean up the controller when the widget is disposed.
@@ -278,24 +281,14 @@ class _PaymentPageState extends State<PaymentPage> {
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Container(
-                                width: 30,
-                                height: 30,
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                    color: Colors.black,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(5.0),
-                                ),
-                                child: Center(
-                                  child: Icon(
-                                    Icons.check,
-                                    size: 20.0,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
+                              Checkbox(
+          value: false, // You can bind this to a bool variable to track the state
+          onChanged: (bool? value) {
+            // Handle checkbox state change here
+            // You can use a bool variable to track the state
+            // For example: setState(() => isChecked = value);
+          },
+        ),
                               SizedBox(width: 10),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,

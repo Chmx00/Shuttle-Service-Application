@@ -11,7 +11,7 @@ class ReservationsPage extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/background.png'),
-                fit: BoxFit.fill,
+                fit: BoxFit.cover,
               ),
             ),
           ),
@@ -22,7 +22,7 @@ class ReservationsPage extends StatelessWidget {
             child: IconButton(
               icon: Icon(
                 Icons.arrow_back,
-                color: Colors.white,
+                color: Colors.grey,
                 size: 30.0,
               ),
               onPressed: () {
@@ -36,7 +36,7 @@ class ReservationsPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 60.0),
+                  padding: const EdgeInsets.only(top: 100.0),
                   child: Text(
                     'Login',
                     style: TextStyle(
@@ -48,7 +48,7 @@ class ReservationsPage extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
-                      top: 60.0), // Adjust the padding as needed
+                      top: 10.0), // Adjust the padding as needed
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -61,9 +61,10 @@ class ReservationsPage extends StatelessWidget {
                     ],
                   ),
                 ),
+                SizedBox(height: 10),
                 Container(
                   width: double.infinity,
-                  height: 465.8,
+                  height: 441,
                   decoration: BoxDecoration(
                     color: Color.fromARGB(252, 255, 255, 255),
                     borderRadius: BorderRadius.only(

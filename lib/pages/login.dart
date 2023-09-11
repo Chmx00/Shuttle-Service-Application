@@ -125,6 +125,7 @@ class ReservationsPage extends StatelessWidget {
                               hintText: 'Password',
                               border: InputBorder.none,
                             ),
+                            obscureText: true,
                           ),
                         ),
                       ),

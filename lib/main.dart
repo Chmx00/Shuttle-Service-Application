@@ -5,6 +5,7 @@ import 'pages/contact.dart';
 import 'pages/login.dart';
 import 'pages/shedule.dart';
 import 'pages/route.dart';
+import 'pages/notify.dart';
 
 import 'package:intl/intl.dart';
 
@@ -203,54 +204,64 @@ class _HomeScreenState extends State<HomeScreen> {
               top: 290,
               left: 20,
               right: 20,
-              child: Container(
-                width: 300,
-                height: 100,
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(93, 36, 109, 77),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: const Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.all(10.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Unavailability',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => NewsAndUpdatesPage()),
+                  );
+                },
+                child: Container(
+                  width: 300,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(93, 36, 109, 77),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: Padding(
+                          padding: EdgeInsets.all(10.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Unavailability',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
-                            ),
-                            Text(
-                              'KOTTAWA - NSBM 07.30 a.m Bus not available today as technical errors on the bus',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
+                              Text(
+                                'KOTTAWA - NSBM 07.30 a.m Bus not available today as technical errors on the bus',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 14,
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Icon(
-                        Icons.notification_important,
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        size: 40,
+                      Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Icon(
+                          Icons.notification_important,
+                          color: Color.fromARGB(255, 255, 255, 255),
+                          size: 40,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
+
             Positioned(
               top: 430,
               left: 40,
@@ -346,8 +357,8 @@ Widget buildTile(
   return GestureDetector(
     onTap: onPressed,
     child: Container(
-      width: 130,
-      height: 130,
+      width: 120,
+      height: 120,
       decoration: BoxDecoration(
         color: Color.fromARGB(124, 161, 159, 159),
         borderRadius: BorderRadius.circular(20),

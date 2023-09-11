@@ -510,10 +510,11 @@ class _PaymentPageState extends State<PaymentPage> {
                                     ),
                                   ),
                                   child: Text(
-                                    'Already Purchased',
+                                    'Buy Tickets',
                                     style: TextStyle(
                                       fontSize: screenHeight * 0.02,
                                       fontWeight: FontWeight.bold,
+                                      color: Colors.white,
                                     ),
                                   ),
                                 ),

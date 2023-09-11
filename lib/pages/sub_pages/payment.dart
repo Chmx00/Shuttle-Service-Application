@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +15,24 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class PaymentPage extends StatelessWidget {
+class PaymentPage extends StatefulWidget {
+  @override
+  _PaymentPageState createState() => _PaymentPageState();
+}
+
+class _PaymentPageState extends State<PaymentPage> {
+  final TextEditingController expiryController = TextEditingController();
+
+bool isChecked = false; // Add this variable to your _PaymentPageState class
+
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    expiryController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,7 +78,7 @@ class PaymentPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 21),
 
                 Image.asset(
                   'assets/girl.png',
@@ -155,7 +173,7 @@ class PaymentPage extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          //Expiry
+                          // Expiry
                           Container(
                             width: 150,
                             height: 50,
@@ -166,12 +184,18 @@ class PaymentPage extends StatelessWidget {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: TextField(
+                              controller: expiryController,
                               textAlign: TextAlign.left,
                               textAlignVertical: TextAlignVertical.center,
                               decoration: InputDecoration(
-                                hintText: 'Expiry',
+                                hintText: 'MM/YY', // Use MM/YY format
                                 border: InputBorder.none,
                               ),
+                              keyboardType: TextInputType.number,
+                              inputFormatters: [
+                                LengthLimitingTextInputFormatter(5),
+                                _ExpiryDateFormatter(),
+                              ],
                             ),
                           ),
 
@@ -191,9 +215,13 @@ class PaymentPage extends StatelessWidget {
                               decoration: InputDecoration(
                                 hintText: 'CVC',
                                 border: InputBorder.none,
+                                counterText: '',
                               ),
+                              obscureText: true,
+                              keyboardType: TextInputType.number,
+                              maxLength: 3,
                             ),
-                          ),
+                            ),
                         ],
                       ),
                       SizedBox(height: 10),
@@ -253,24 +281,14 @@ class PaymentPage extends StatelessWidget {
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Container(
-                                width: 30,
-                                height: 30,
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                    color: Colors.black,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(5.0),
-                                ),
-                                child: Center(
-                                  child: Icon(
-                                    Icons.check,
-                                    size: 20.0,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
+                              Checkbox(
+          value: false, // You can bind this to a bool variable to track the state
+          onChanged: (bool? value) {
+            // Handle checkbox state change here
+            // You can use a bool variable to track the state
+            // For example: setState(() => isChecked = value);
+          },
+        ),
                               SizedBox(width: 10),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -337,6 +355,32 @@ class PaymentPage extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class _ExpiryDateFormatter extends TextInputFormatter {
+  @override
+  TextEditingValue formatEditUpdate(
+      TextEditingValue oldValue, TextEditingValue newValue) {
+    final text = newValue.text;
+    var newText = '';
+
+    if (text.length == 0 && int.tryParse(text) != null) {
+      newText = '0$text/';
+    } else if (text.length == 2 && text.substring(0, 2) != '00' && int.tryParse(text.substring(0, 2)) != null) {
+      newText = '$text/';
+    } else if (text.length == 3 && text[2] != '/') {
+      newText = '${text.substring(0, 2)}/${text[2]}';
+    } else if (text.length >= 3) {
+      newText = text.substring(0, 5);
+    } else {
+      newText = text;
+    }
+
+    return TextEditingValue(
+      text: newText,
+      selection: TextSelection.collapsed(offset: newText.length),
     );
   }
 }

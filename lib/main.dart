@@ -5,6 +5,8 @@ import 'pages/contact.dart';
 import 'pages/login.dart';
 import 'pages/shedule.dart';
 import 'pages/route.dart';
+import 'pages/notify.dart';
+import 'pages/shedule.dart';
 
 import 'package:intl/intl.dart';
 
@@ -179,7 +181,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               // Navigate to the new page when the image is tapped
                               Navigator.of(context).push(
                                 MaterialPageRoute(
-                                    builder: (context) => RoutePage()),
+                                    builder: (context) => ShedulePage()),
                               );
                             },
                             child: Padding(
@@ -203,54 +205,64 @@ class _HomeScreenState extends State<HomeScreen> {
               top: 290,
               left: 20,
               right: 20,
-              child: Container(
-                width: 300,
-                height: 100,
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(93, 36, 109, 77),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: const Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.all(10.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Unavailability',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => NewsAndUpdatesPage()),
+                  );
+                },
+                child: Container(
+                  width: 300,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(93, 36, 109, 77),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: Padding(
+                          padding: EdgeInsets.all(10.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Unavailability',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
-                            ),
-                            Text(
-                              'KOTTAWA - NSBM 07.30 a.m Bus not available today as technical errors on the bus',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
+                              Text(
+                                'KOTTAWA - NSBM 07.30 a.m Bus not available today as technical errors on the bus',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 14,
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Icon(
-                        Icons.notification_important,
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        size: 40,
+                      Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Icon(
+                          Icons.notification_important,
+                          color: Color.fromARGB(255, 255, 255, 255),
+                          size: 40,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
+
             Positioned(
               top: 430,
               left: 40,
@@ -263,8 +275,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       buildTile('assets/Bus.png', 'Bus Schedule', () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) => BusSchedulePage()),
+                          MaterialPageRoute(builder: (context) => RoutePage()),
                         );
                       }),
                       buildTile('assets/cn.png', 'Important Contact', () {
@@ -346,8 +357,8 @@ Widget buildTile(
   return GestureDetector(
     onTap: onPressed,
     child: Container(
-      width: 150,
-      height: 150,
+      width: 120,
+      height: 120,
       decoration: BoxDecoration(
         color: Color.fromARGB(124, 161, 159, 159),
         borderRadius: BorderRadius.circular(20),
@@ -357,8 +368,8 @@ Widget buildTile(
         children: [
           Image.asset(
             imagePath,
-            width: 50,
-            height: 50,
+            width: 40,
+            height: 40,
           ),
           SizedBox(height: 10),
           Text(

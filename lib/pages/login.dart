@@ -7,11 +7,14 @@ class ReservationsPage extends StatelessWidget {
       body: Stack(
         children: [
           // Background Image
-          Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/background.png'),
-                fit: BoxFit.cover,
+          Padding(
+            padding: const EdgeInsets.all(0), // Adjust padding as needed
+            child: Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/Home.png'),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),
@@ -87,7 +90,8 @@ class ReservationsPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Center(
+                      Padding(
+                        padding: EdgeInsets.symmetric(vertical: 5),
                         child: Container(
                           width: double.infinity,
                           height: 50,
@@ -107,7 +111,7 @@ class ReservationsPage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(height: 30),
+                      SizedBox(height: 20),
                       // Card Number
                       Center(
                         child: Container(
@@ -130,7 +134,7 @@ class ReservationsPage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(height: 80),
+                      SizedBox(height: 70),
                       Container(
                         width: 200,
                         height: 50,

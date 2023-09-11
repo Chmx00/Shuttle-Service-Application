@@ -218,7 +218,6 @@ class _PaymentPageState extends State<PaymentPage> {
                               keyboardType: TextInputType.number,
                               maxLength: 3,
                             ),
-                              
                             ),
                         ],
                       ),

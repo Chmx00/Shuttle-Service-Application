@@ -215,9 +215,13 @@ class _PaymentPageState extends State<PaymentPage> {
                                 counterText: '',
                               ),
                               obscureText: true,
+<<<<<<< HEAD
                               keyboardType: TextInputType.number,
                               maxLength: 3,
                             ),
+=======
+                              maxLength: 3,
+>>>>>>> 61ebe754d17c455faed25ca5ee5bc5b7285e440d
                             ),
                         ],
                       ),

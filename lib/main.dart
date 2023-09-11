@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'pages/contact.dart';
-import 'pages/lf.dart';
+//import 'pages/lf.dart';
 import 'pages/login.dart';
 import 'pages/shedule.dart';
 import 'pages/route.dart';
@@ -284,7 +284,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => LostAndFoundPage()),
+                              builder: (context) => ImportantContactPage()),
                         );
                       }),
                       buildTile('assets/tik.png', 'Reservations', () {
@@ -346,8 +346,8 @@ Widget buildTile(
   return GestureDetector(
     onTap: onPressed,
     child: Container(
-      width: 150,
-      height: 150,
+      width: 130,
+      height: 130,
       decoration: BoxDecoration(
         color: Color.fromARGB(124, 161, 159, 159),
         borderRadius: BorderRadius.circular(20),
@@ -357,8 +357,8 @@ Widget buildTile(
         children: [
           Image.asset(
             imagePath,
-            width: 50,
-            height: 50,
+            width: 40,
+            height: 40,
           ),
           SizedBox(height: 10),
           Text(

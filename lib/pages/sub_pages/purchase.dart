@@ -273,7 +273,10 @@ class _PaymentPageState extends State<PaymentPage> {
                                       icon: Icon(Icons.arrow_drop_up),
                                       onPressed: () {
                                         setState(() {
-                                          seatCount++; // Increment the seat count
+                                          if (seatCount < 54) {
+                                            // Check if seatCount is less than 54
+                                            seatCount++; // Increment the seat count
+                                          }
                                         });
                                       },
                                       color: Colors.grey,

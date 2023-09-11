@@ -78,7 +78,7 @@ bool isChecked = false; // Add this variable to your _PaymentPageState class
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 21),
 
                 Image.asset(
                   'assets/girl.png',

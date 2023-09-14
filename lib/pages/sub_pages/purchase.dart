@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import, prefer_const_constructors, use_key_in_widget_constructors, library_private_types_in_public_api, deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:intl/intl.dart';
@@ -46,16 +48,11 @@ class _PaymentPageState extends State<PaymentPage> {
 
   @override
   Widget build(BuildContext context) {
-    final double screenHeight = MediaQuery.of(context).size.height;
-    final double screenWidth = MediaQuery.of(context).size.width;
-
     return Scaffold(
       body: Stack(
         children: [
           // Background Image
           Container(
-            height: screenHeight,
-            width: screenWidth,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/Payment.png'),
@@ -68,16 +65,18 @@ class _PaymentPageState extends State<PaymentPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(height: screenHeight * 0.1),
-                Center(
-                  child: Text(
-                    'Ticket\nPurchase',
-                    style: TextStyle(
-                      fontSize: screenHeight * 0.03,
-                      fontWeight: FontWeight.bold,
-                      color: Color.fromARGB(255, 82, 81, 81),
+                Padding(
+                  padding: const EdgeInsets.only(top: 100.0),
+                  child: Center(
+                    child: Text(
+                      'Ticket\nPurchase',
+                      style: TextStyle(
+                        fontSize: 30.0,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 82, 81, 81),
+                      ),
+                      textAlign: TextAlign.center,
                     ),
-                    textAlign: TextAlign.center,
                   ),
                 ),
                 Expanded(
@@ -88,25 +87,26 @@ class _PaymentPageState extends State<PaymentPage> {
                         Center(
                           child: Image.asset(
                             'assets/girl.png',
-                            width: screenWidth * 0.4,
-                            height: screenHeight * 0.2,
+                            width: MediaQuery.of(context).size.width * 0.4,
+                            height: MediaQuery.of(context).size.width * 0.3,
                             fit: BoxFit.contain,
                           ),
                         ),
-                        SizedBox(height: screenHeight * 0.01),
+                        SizedBox(height: 20),
                         Container(
                           width: double.infinity,
-                          height: screenHeight * 2,
+                          height: MediaQuery.of(context).size.width * 2,
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(screenHeight * 0.05),
-                              topRight: Radius.circular(screenHeight * 0.05),
+                              topLeft: Radius.circular(50.0),
+                              topRight: Radius.circular(50.0),
                             ),
                           ),
                           padding: EdgeInsets.symmetric(
-                            horizontal: screenWidth * 0.05,
-                            vertical: screenHeight * 0.02,
+                            horizontal:
+                                MediaQuery.of(context).size.width * 0.05,
+                            vertical: 20.0,
                           ),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -114,20 +114,18 @@ class _PaymentPageState extends State<PaymentPage> {
                               Text(
                                 'Select the Route',
                                 style: TextStyle(
-                                  fontSize: screenHeight * 0.021,
+                                  fontSize: 18.0,
                                   fontWeight: FontWeight.bold,
                                   color: Color.fromARGB(255, 82, 167, 237),
                                 ),
                               ),
-                              SizedBox(height: screenHeight * 0.01),
+                              SizedBox(height: 10),
                               Container(
                                 width: double.infinity,
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: screenWidth * 0.03),
+                                padding: EdgeInsets.symmetric(horizontal: 10.0),
                                 decoration: BoxDecoration(
                                   border: Border.all(color: Colors.grey),
-                                  borderRadius: BorderRadius.circular(
-                                      screenHeight * 0.01),
+                                  borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: DropdownButton<String>(
                                   value: selectedRoute,
@@ -154,36 +152,36 @@ class _PaymentPageState extends State<PaymentPage> {
                               // Horizontal black line
                               Divider(
                                 color: const Color.fromARGB(255, 93, 90, 90),
-                                height: screenHeight * 0.03,
-                                thickness: 1,
-                                indent: screenWidth * 0.01,
-                                endIndent: screenWidth * 0.01,
+                                height: 25, // Adjust the height as needed
+                                thickness: 1, // Adjust the thickness as needed
+                                indent: 2, // Adjust the left indent as needed
+                                endIndent:
+                                    2, // Adjust the right indent as needed
                               ),
-                              SizedBox(height: screenHeight * 0.001),
+                              SizedBox(height: 0),
                               Text(
                                 'Name of the bus',
                                 style: TextStyle(
-                                  fontSize: screenHeight * 0.021,
+                                  fontSize: 18.0,
                                   fontWeight: FontWeight.bold,
                                   color: Color.fromARGB(255, 82, 167, 237),
                                 ),
                               ),
-                              SizedBox(height: screenHeight * 0.01),
+                              SizedBox(height: 10),
                               // Text box for entering the bus
                               Container(
                                 width: double.infinity,
-                                height: screenHeight * 0.06,
+                                height: 50,
                                 decoration: BoxDecoration(
                                   border: Border.all(color: Colors.grey),
-                                  borderRadius: BorderRadius.circular(
-                                      screenHeight * 0.01),
+                                  borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsets.all(screenHeight * 0.015),
+                                  padding: const EdgeInsets.all(15.0),
                                   child: Text(
                                     'Name of the bus',
                                     style: TextStyle(
-                                      fontSize: screenHeight * 0.0192,
+                                      fontSize: 17.0,
                                       fontWeight: FontWeight.normal,
                                       color:
                                           const Color.fromARGB(255, 51, 52, 52),
@@ -194,21 +192,22 @@ class _PaymentPageState extends State<PaymentPage> {
                               // Horizontal black line
                               Divider(
                                 color: const Color.fromARGB(255, 93, 90, 90),
-                                height: screenHeight * 0.03,
-                                thickness: 1,
-                                indent: screenWidth * 0.01,
-                                endIndent: screenWidth * 0.01,
+                                height: 25, // Adjust the height as needed
+                                thickness: 1, // Adjust the thickness as needed
+                                indent: 02, // Adjust the left indent as needed
+                                endIndent:
+                                    02, // Adjust the right indent as needed
                               ),
-                              SizedBox(height: screenHeight * 0.001),
+                              SizedBox(height: 0),
                               Text(
                                 'Number of Seats',
                                 style: TextStyle(
-                                  fontSize: screenHeight * 0.021,
+                                  fontSize: 18.0,
                                   fontWeight: FontWeight.bold,
                                   color: Color.fromARGB(255, 82, 167, 237),
                                 ),
                               ),
-                              SizedBox(height: screenHeight * 0.01),
+                              SizedBox(height: 10),
                               // Row containing the seat number, up arrow, and down arrow buttons
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
@@ -216,18 +215,19 @@ class _PaymentPageState extends State<PaymentPage> {
                                   Container(
                                     decoration: BoxDecoration(
                                       border: Border.all(
-                                        color: Colors.grey,
+                                        color: Colors
+                                            .grey, // Define the border color
                                       ),
                                       borderRadius: BorderRadius.circular(
-                                          screenHeight * 0.01),
+                                          10.0), // Optional: Add rounded corners
                                     ),
                                     child: Padding(
-                                      padding:
-                                          EdgeInsets.all(screenHeight * 0.010),
+                                      padding: const EdgeInsets.all(
+                                          8.0), // Optional: Add padding inside the box
                                       child: Text(
                                         '$seatCount',
                                         style: TextStyle(
-                                          fontSize: screenHeight * 0.021,
+                                          fontSize: 18.0,
                                           fontWeight: FontWeight.bold,
                                           color:
                                               Color.fromARGB(255, 82, 167, 237),
@@ -235,16 +235,17 @@ class _PaymentPageState extends State<PaymentPage> {
                                       ),
                                     ),
                                   ),
-                                  SizedBox(width: screenHeight * 0.02),
+                                  SizedBox(width: 20),
                                   Container(
-                                    width: screenHeight * 0.05,
-                                    height: screenHeight * 0.05,
+                                    width: 40,
+                                    height: 40,
                                     decoration: BoxDecoration(
                                       border: Border.all(
-                                        color: Colors.grey,
+                                        color: Colors
+                                            .grey, // Define the border color
                                       ),
                                       borderRadius: BorderRadius.circular(
-                                          screenHeight * 0.03),
+                                          30.0), // Optional: Add rounded corners
                                     ),
                                     child: IconButton(
                                       icon: Icon(Icons.arrow_drop_down),
@@ -255,31 +256,31 @@ class _PaymentPageState extends State<PaymentPage> {
                                           }
                                         });
                                       },
-                                      color: Colors.grey,
+                                      color: Colors
+                                          .grey, // Set the icon color to gray
                                     ),
                                   ),
-                                  SizedBox(width: screenHeight * 0.01),
+                                  SizedBox(width: 10),
                                   Container(
-                                    width: screenHeight * 0.05,
-                                    height: screenHeight * 0.05,
+                                    width: 40,
+                                    height: 40,
                                     decoration: BoxDecoration(
                                       border: Border.all(
-                                        color: Colors.grey,
+                                        color: Colors
+                                            .grey, // Define the border color
                                       ),
                                       borderRadius: BorderRadius.circular(
-                                          screenHeight * 0.03),
+                                          30.0), // Optional: Add rounded corners
                                     ),
                                     child: IconButton(
                                       icon: Icon(Icons.arrow_drop_up),
                                       onPressed: () {
                                         setState(() {
-                                          if (seatCount < 54) {
-                                            // Check if seatCount is less than 54
-                                            seatCount++; // Increment the seat count
-                                          }
+                                          seatCount++; // Increment the seat count
                                         });
                                       },
-                                      color: Colors.grey,
+                                      color: Colors
+                                          .grey, // Set the icon color to gray
                                     ),
                                   ),
                                 ],
@@ -287,20 +288,21 @@ class _PaymentPageState extends State<PaymentPage> {
                               // Horizontal black line
                               Divider(
                                 color: const Color.fromARGB(255, 93, 90, 90),
-                                height: screenHeight * 0.03,
-                                thickness: 1,
-                                indent: screenWidth * 0.01,
-                                endIndent: screenWidth * 0.01,
+                                height: 25, // Adjust the height as needed
+                                thickness: 1, // Adjust the thickness as needed
+                                indent: 02, // Adjust the left indent as needed
+                                endIndent:
+                                    02, // Adjust the right indent as needed
                               ),
                               Text(
                                 'Select your Date',
                                 style: TextStyle(
-                                  fontSize: screenHeight * 0.021,
+                                  fontSize: 18.0,
                                   fontWeight: FontWeight.bold,
                                   color: Color.fromARGB(255, 82, 167, 237),
                                 ),
                               ),
-                              SizedBox(height: screenHeight * 0.01),
+                              SizedBox(height: 10),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
@@ -343,7 +345,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                           InkWell(
                                             onTap: () => _selectDate(context),
                                             child: Image.asset(
-                                              'assets/calendar.gif',
+                                              'assets/calendar.png',
                                               width: 45.0,
                                               height: 45.0,
                                             ),
@@ -356,11 +358,8 @@ class _PaymentPageState extends State<PaymentPage> {
                               ),
                               // Add the checkbox and text in the same row and center them
                               Padding(
-                                padding: EdgeInsets.only(
-                                    top: screenHeight * 0.01,
-                                    left: screenHeight * 0.0,
-                                    right: screenHeight * 0.016,
-                                    bottom: screenHeight * 0.016),
+                                padding: const EdgeInsets.only(
+                                    top: 0, left: 0, right: 16.0, bottom: 16.0),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -375,7 +374,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                     Text(
                                       'Are you sure to purchase tickets',
                                       style: TextStyle(
-                                        fontSize: screenHeight * 0.014,
+                                        fontSize: 14.0,
                                         fontWeight: FontWeight.bold,
                                         color: Color.fromARGB(255, 0, 0, 0),
                                       ),
@@ -385,20 +384,21 @@ class _PaymentPageState extends State<PaymentPage> {
                               ),
                               // Row containing the text and Buy Tickets button
                               Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment
+                                    .spaceBetween, // Adjust alignment as needed
                                 children: [
                                   // Container containing text
                                   Container(
-                                    padding: EdgeInsets.only(
-                                        top: screenHeight * 0.0,
-                                        left: screenHeight * 0.015,
-                                        right: screenHeight * 0.0,
-                                        bottom: screenHeight * 0.01),
+                                    padding: const EdgeInsets.only(
+                                        top: 0,
+                                        left: 15,
+                                        right: 0,
+                                        bottom:
+                                            10), // Adjust the padding as needed
                                     child: Text(
                                       'Your Text Here',
                                       style: TextStyle(
-                                        fontSize: screenHeight * 0.018,
+                                        fontSize: 18.0,
                                         fontWeight: FontWeight.bold,
                                         color: Colors.black,
                                       ),
@@ -406,8 +406,8 @@ class _PaymentPageState extends State<PaymentPage> {
                                   ),
                                   // Workable Buy Tickets button with width and height
                                   Container(
-                                    width: screenHeight * 0.15,
-                                    height: screenHeight * 0.06,
+                                    width: 150.0, // Set the width
+                                    height: 60.0, // Set the height
                                     child: ElevatedButton(
                                       onPressed: () {
                                         // Add your logic for buying tickets here
@@ -442,19 +442,18 @@ class _PaymentPageState extends State<PaymentPage> {
                                         );
                                       },
                                       style: ElevatedButton.styleFrom(
-                                        padding: EdgeInsets.all(
-                                            screenHeight * 0.016),
+                                        padding: EdgeInsets.all(16.0),
                                         primary: Colors.orange,
                                         onPrimary: Colors.white,
                                         shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(
-                                              screenHeight * 0.04),
+                                          borderRadius:
+                                              BorderRadius.circular(40.0),
                                         ),
                                       ),
                                       child: Text(
                                         'Buy Tickets',
                                         style: TextStyle(
-                                          fontSize: screenHeight * 0.018,
+                                          fontSize: 18.0,
                                           fontWeight: FontWeight.bold,
                                         ),
                                       ),
@@ -462,16 +461,13 @@ class _PaymentPageState extends State<PaymentPage> {
                                   ),
                                 ],
                               ),
-                              SizedBox(height: screenHeight * 0.05),
+                              SizedBox(height: 50),
                               // Add a workable "Already Purchased" button below the "Buy Tickets" button
                               Container(
-                                padding: EdgeInsets.only(
-                                    top: screenHeight * 0.0,
-                                    left: screenHeight * 0.08,
-                                    right: screenHeight * 0.0,
-                                    bottom: screenHeight * 0.0),
-                                width: screenHeight * 0.3,
-                                height: screenHeight * 0.06,
+                                padding: const EdgeInsets.only(
+                                    top: 0, left: 60, right: 0, bottom: 0),
+                                width: 300.0, // Set the width
+                                height: 60.0, // Set the height
                                 child: ElevatedButton(
                                   onPressed: () {
                                     // Add your logic for handling "Already purchased" here
@@ -497,21 +493,20 @@ class _PaymentPageState extends State<PaymentPage> {
                                     );
                                   },
                                   style: ElevatedButton.styleFrom(
-                                    padding:
-                                        EdgeInsets.all(screenHeight * 0.016),
-                                    primary: Colors.green,
-                                    onPrimary: Colors.white,
+                                    padding: EdgeInsets.all(16.0),
+                                    primary: Colors
+                                        .green, // Button color for "Already purchased"
+                                    onPrimary: Colors
+                                        .white, // Text color for "Already purchased"
                                     shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(
-                                          screenHeight * 0.04),
+                                      borderRadius: BorderRadius.circular(40.0),
                                     ),
                                   ),
                                   child: Text(
                                     'Already Purchased',
                                     style: TextStyle(
-                                      fontSize: screenHeight * 0.02,
+                                      fontSize: 18.0,
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.white,
                                     ),
                                   ),
                                 ),

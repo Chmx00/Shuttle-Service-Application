@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-void main() {
-  runApp(MyApp());
-}
+import 'purchase.dart';
 
 class MyApp extends StatelessWidget {
   @override
@@ -23,8 +20,7 @@ class PaymentPage extends StatefulWidget {
 class _PaymentPageState extends State<PaymentPage> {
   final TextEditingController expiryController = TextEditingController();
 
-bool isChecked = false; // Add this variable to your _PaymentPageState class
-
+  bool isChecked = false; // Add this variable to your _PaymentPageState class
 
   @override
   void dispose() {
@@ -221,7 +217,7 @@ bool isChecked = false; // Add this variable to your _PaymentPageState class
                               keyboardType: TextInputType.number,
                               maxLength: 3,
                             ),
-                            ),
+                          ),
                         ],
                       ),
                       SizedBox(height: 10),
@@ -282,13 +278,14 @@ bool isChecked = false; // Add this variable to your _PaymentPageState class
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Checkbox(
-          value: false, // You can bind this to a bool variable to track the state
-          onChanged: (bool? value) {
-            // Handle checkbox state change here
-            // You can use a bool variable to track the state
-            // For example: setState(() => isChecked = value);
-          },
-        ),
+                                value:
+                                    false, // You can bind this to a bool variable to track the state
+                                onChanged: (bool? value) {
+                                  // Handle checkbox state change here
+                                  // You can use a bool variable to track the state
+                                  // For example: setState(() => isChecked = value);
+                                },
+                              ),
                               SizedBox(width: 10),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -368,7 +365,9 @@ class _ExpiryDateFormatter extends TextInputFormatter {
 
     if (text.length == 0 && int.tryParse(text) != null) {
       newText = '0$text/';
-    } else if (text.length == 2 && text.substring(0, 2) != '00' && int.tryParse(text.substring(0, 2)) != null) {
+    } else if (text.length == 2 &&
+        text.substring(0, 2) != '00' &&
+        int.tryParse(text.substring(0, 2)) != null) {
       newText = '$text/';
     } else if (text.length == 3 && text[2] != '/') {
       newText = '${text.substring(0, 2)}/${text[2]}';

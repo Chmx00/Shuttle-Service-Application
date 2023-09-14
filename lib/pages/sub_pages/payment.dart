@@ -20,7 +20,14 @@ class PaymentPage extends StatefulWidget {
 class _PaymentPageState extends State<PaymentPage> {
   final TextEditingController expiryController = TextEditingController();
 
+<<<<<<< HEAD
   bool isChecked = false; // Add this variable to your _PaymentPageState class
+=======
+bool isChecked = false;
+bool _showCVC = false;
+ // Add this variable to your _PaymentPageState class
+
+>>>>>>> 15388b15c07e2932f5241ad6fd55beb9072266fd
 
   @override
   void dispose() {
@@ -88,15 +95,23 @@ class _PaymentPageState extends State<PaymentPage> {
 
                 // Large container with rounded top corners for card payment details
                 Container(
-                  width: double.infinity,
-                  height: 582.2,
-                  decoration: BoxDecoration(
-                    color: Color.fromARGB(252, 255, 255, 255),
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(50.0),
-                      topRight: Radius.circular(50.0),
-                    ),
-                  ),
+  decoration: BoxDecoration(
+    color: Color.fromARGB(252, 255, 255, 255),
+    borderRadius: BorderRadius.only(
+      topLeft: Radius.circular(50.0),
+      topRight: Radius.circular(50.0),
+    ),
+    boxShadow: [
+      BoxShadow(
+        color: Colors.black.withOpacity(0.2), // Shadow color
+        spreadRadius: 5, // Spread radius
+        blurRadius: 7, // Blur radius
+        offset: Offset(0, 3), // Offset in x and y direction
+      ),
+    ],
+  ),
+  width: double.infinity,
+  height: 582.2,
                   padding: const EdgeInsets.all(20),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -196,6 +211,7 @@ class _PaymentPageState extends State<PaymentPage> {
                           ),
 
                           // CVC
+<<<<<<< HEAD
                           Container(
                             width: 150,
                             height: 50,
@@ -218,6 +234,50 @@ class _PaymentPageState extends State<PaymentPage> {
                               maxLength: 3,
                             ),
                           ),
+=======
+Center(
+  child: Container(
+    width: 150,
+    height: 50,
+    padding: EdgeInsets.all(15),
+    decoration: BoxDecoration(
+      color: Color.fromARGB(
+          255, 236, 236, 236), // Gray color
+      borderRadius: BorderRadius.circular(10.0),
+    ),
+    child: Row(
+      children: [
+        Expanded(
+          child: TextField(
+            textAlign: TextAlign.left,
+            textAlignVertical: TextAlignVertical.center,
+            decoration: InputDecoration(
+              hintText: 'CVC',
+              border: InputBorder.none,
+              counterText: '',
+            ),
+            obscureText: !_showCVC, // Toggle obscuring based on _showCVC
+            keyboardType: TextInputType.number,
+            maxLength: 3,
+          ),
+        ),
+        GestureDetector(
+          onTap: () {
+            setState(() {
+              _showCVC = !_showCVC; // Toggle _showCVC when tapped
+            });
+          },
+          child: Icon(
+            _showCVC ? Icons.visibility : Icons.visibility_off,
+            color: Colors.grey,
+          ),
+        ),
+      ],
+    ),
+  ),
+),
+
+>>>>>>> 15388b15c07e2932f5241ad6fd55beb9072266fd
                         ],
                       ),
                       SizedBox(height: 10),

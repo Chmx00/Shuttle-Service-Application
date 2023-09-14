@@ -57,6 +57,12 @@ class RoutePage extends StatelessWidget {
               ],
             ),
           ),
+                Image.asset(
+                  'assets/School bus.png',
+                  width: 180,
+                  height: 180,
+                  fit: BoxFit.contain,
+                ),
           // Content
           // Large Container at the Bottom with Rounded Top Corners
           Positioned(

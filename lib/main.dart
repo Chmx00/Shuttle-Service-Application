@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:transport_portal/pages/sub_pages/purchase.dart';
 import 'dart:async';
 import 'pages/contact.dart';
 //import 'pages/lf.dart';
@@ -7,6 +8,7 @@ import 'pages/shedule.dart';
 import 'pages/route.dart';
 import 'pages/notify.dart';
 import 'pages/shedule.dart';
+import 'pages/sub_pages/payment.dart';
 
 import 'package:intl/intl.dart';
 
@@ -295,7 +297,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => ImportantContactPage()),
+                              builder: (context) => PaymentPage()),
                         );
                       }),
                       buildTile('assets/tik.png', 'Reservations', () {

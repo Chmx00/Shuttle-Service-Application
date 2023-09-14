@@ -345,7 +345,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                           InkWell(
                                             onTap: () => _selectDate(context),
                                             child: Image.asset(
-                                              'assets/calendar.gif',
+                                              'assets/calendar.png',
                                               width: 45.0,
                                               height: 45.0,
                                             ),

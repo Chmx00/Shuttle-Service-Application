@@ -23,7 +23,9 @@ class PaymentPage extends StatefulWidget {
 class _PaymentPageState extends State<PaymentPage> {
   final TextEditingController expiryController = TextEditingController();
 
-bool isChecked = false; // Add this variable to your _PaymentPageState class
+bool isChecked = false;
+bool _showCVC = false;
+ // Add this variable to your _PaymentPageState class
 
 
   @override
@@ -200,28 +202,48 @@ bool isChecked = false; // Add this variable to your _PaymentPageState class
                           ),
 
                           // CVC
-                          Container(
-                            width: 150,
-                            height: 50,
-                            padding: EdgeInsets.all(15),
-                            decoration: BoxDecoration(
-                              color: Color.fromARGB(
-                                  255, 236, 236, 236), // Gray color
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            child: TextField(
-                              textAlign: TextAlign.left,
-                              textAlignVertical: TextAlignVertical.center,
-                              decoration: InputDecoration(
-                                hintText: 'CVC',
-                                border: InputBorder.none,
-                                counterText: '',
-                              ),
-                              obscureText: true,
-                              keyboardType: TextInputType.number,
-                              maxLength: 3,
-                            ),
-                            ),
+Center(
+  child: Container(
+    width: 150,
+    height: 50,
+    padding: EdgeInsets.all(15),
+    decoration: BoxDecoration(
+      color: Color.fromARGB(
+          255, 236, 236, 236), // Gray color
+      borderRadius: BorderRadius.circular(10.0),
+    ),
+    child: Row(
+      children: [
+        Expanded(
+          child: TextField(
+            textAlign: TextAlign.left,
+            textAlignVertical: TextAlignVertical.center,
+            decoration: InputDecoration(
+              hintText: 'CVC',
+              border: InputBorder.none,
+              counterText: '',
+            ),
+            obscureText: !_showCVC, // Toggle obscuring based on _showCVC
+            keyboardType: TextInputType.number,
+            maxLength: 3,
+          ),
+        ),
+        GestureDetector(
+          onTap: () {
+            setState(() {
+              _showCVC = !_showCVC; // Toggle _showCVC when tapped
+            });
+          },
+          child: Icon(
+            _showCVC ? Icons.visibility : Icons.visibility_off,
+            color: Colors.grey,
+          ),
+        ),
+      ],
+    ),
+  ),
+),
+
                         ],
                       ),
                       SizedBox(height: 10),

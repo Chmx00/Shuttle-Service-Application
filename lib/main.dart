@@ -6,6 +6,7 @@ import 'pages/login.dart';
 import 'pages/shedule.dart';
 import 'pages/route.dart';
 import 'pages/notify.dart';
+import 'pages/shedule.dart';
 
 import 'package:intl/intl.dart';
 
@@ -180,7 +181,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               // Navigate to the new page when the image is tapped
                               Navigator.of(context).push(
                                 MaterialPageRoute(
-                                    builder: (context) => RoutePage()),
+                                    builder: (context) => ShedulePage()),
                               );
                             },
                             child: Padding(
@@ -274,8 +275,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       buildTile('assets/Bus.png', 'Bus Schedule', () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) => BusSchedulePage()),
+                          MaterialPageRoute(builder: (context) => RoutePage()),
                         );
                       }),
                       buildTile('assets/cn.png', 'Important Contact', () {

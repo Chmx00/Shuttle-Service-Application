@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:transport_portal/pages/lost_items.dart';
 
 import 'submit_lost.dart';
 
@@ -75,7 +76,7 @@ class lf extends StatelessWidget {
                                             onPressed: () { 
                                               Navigator.of(context).push(MaterialPageRoute(
                                                 builder: (_) {
-                                                 return TestPage();
+                                                 return lostitems();
                                                 },
                                               ));
                                              },

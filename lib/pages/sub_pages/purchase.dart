@@ -61,6 +61,21 @@ class _PaymentPageState extends State<PaymentPage> {
               ),
             ),
           ),
+          // Back Icon in the top-left corner
+          Positioned(
+            top: 40,
+            left: 20,
+            child: IconButton(
+              icon: Icon(
+                Icons.arrow_back,
+                color: Colors.white,
+                size: 30.0,
+              ),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ),
           // Content on top of the background image
           Center(
             child: Column(

@@ -38,6 +38,7 @@ dependencies:
   flutter_launcher_icons: ^0.13.1
   intl: ^0.18.1
   table_calendar: ^3.0.9
+  image_picker: ^1.0.4
 
 dev_dependencies:
   flutter_test:
@@ -79,6 +80,11 @@ flutter:
      - assets/Shedule.png
      - assets/calendar.png
      - assets/lost.PNG
+<<<<<<< HEAD
+     - assets/School bus.png
+=======
+     - assets/sbus.png
+>>>>>>> b15f88b180c8afc981b2db127492d9691c84db10
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

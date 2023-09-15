@@ -1,5 +1,19 @@
 import 'package:flutter/material.dart';
 
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: ShedulePage(),
+    );
+  }
+}
+
 class ShedulePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -30,6 +44,7 @@ class ShedulePage extends StatelessWidget {
             ),
           ),
           // Text "Change Your Route" (Two Rows)
+          // Text "Change Your Route" with Image after
           Positioned(
             top: 80.0,
             left: 0,
@@ -42,7 +57,7 @@ class ShedulePage extends StatelessWidget {
                   'Change Your',
                   style: TextStyle(
                     fontSize: screenWidth * 0.06, // Responsive font size
-                    color: const Color.fromARGB(255, 150, 149, 149),
+                    color: const Color.fromARGB(255, 42, 41, 41),
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -50,13 +65,22 @@ class ShedulePage extends StatelessWidget {
                   'Route',
                   style: TextStyle(
                     fontSize: screenWidth * 0.06, // Responsive font size
-                    color: const Color.fromARGB(255, 150, 149, 149),
+                    color: Color.fromARGB(255, 42, 41, 41),
                     fontWeight: FontWeight.bold,
                   ),
+                ),
+                SizedBox(
+                    height: 8.0), // Add some spacing between text and image
+                Image.asset(
+                  'assets/sbus.png', // Image asset path
+                  width: 200.0, // Set the image width
+                  height: 200.0, // Set the image height
+                  // You can adjust the width and height as needed
                 ),
               ],
             ),
           ),
+
           // Content
           // Large Container at the Bottom with Rounded Top Corners
           Positioned(
@@ -93,15 +117,16 @@ class ShedulePage extends StatelessWidget {
                           color: Colors.blue,
                           borderRadius: BorderRadius.circular(15.0),
                         ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 300.0,
-                      height: 60.0,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.blue,
-                          borderRadius: BorderRadius.circular(15.0),
+                        child: Center(
+                          child: Text(
+                            'Kottawa - NSBM', // Your text here
+                            style: TextStyle(
+                              color: Colors.white, // Set the text color
+                              fontSize: 16.0, // Set the text size
+                              fontWeight:
+                                  FontWeight.bold, // Set the text weight
+                            ),
+                          ),
                         ),
                       ),
                     ),
@@ -113,6 +138,17 @@ class ShedulePage extends StatelessWidget {
                           color: Colors.blue,
                           borderRadius: BorderRadius.circular(15.0),
                         ),
+                        child: Center(
+                          child: Text(
+                            'Padukka - NSBM', // Your text here
+                            style: TextStyle(
+                              color: Colors.white, // Set the text color
+                              fontSize: 16.0, // Set the text size
+                              fontWeight:
+                                  FontWeight.bold, // Set the text weight
+                            ),
+                          ),
+                        ),
                       ),
                     ),
                     SizedBox(
@@ -122,6 +158,38 @@ class ShedulePage extends StatelessWidget {
                         decoration: BoxDecoration(
                           color: Colors.blue,
                           borderRadius: BorderRadius.circular(15.0),
+                        ),
+                        child: Center(
+                          child: Text(
+                            'Nugegoda - NSBM', // Your text here
+                            style: TextStyle(
+                              color: Colors.white, // Set the text color
+                              fontSize: 16.0, // Set the text size
+                              fontWeight:
+                                  FontWeight.bold, // Set the text weight
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 300.0,
+                      height: 60.0,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(15.0),
+                        ),
+                        child: Center(
+                          child: Text(
+                            'Moragahena - NSBM', // Your text here
+                            style: TextStyle(
+                              color: Colors.white, // Set the text color
+                              fontSize: 16.0, // Set the text size
+                              fontWeight:
+                                  FontWeight.bold, // Set the text weight
+                            ),
+                          ),
                         ),
                       ),
                     ),

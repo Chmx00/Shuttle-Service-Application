@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 
 import 'package:flutter/material.dart';
+import 'package:transport_portal/pages/lost_items.dart';
 import 'lf.dart';
 
 class SubmitLost extends StatefulWidget {
@@ -102,7 +103,7 @@ class _SubmitLostState extends State<SubmitLost> {
             color: Colors.black,
             //back to the lost item page
             onPressed: () { 
-              Navigator.pop(context,lf());
+              Navigator.pop(context,lostitems());
              },
           ),
         title: Text("Submit Lost", style: TextStyle(

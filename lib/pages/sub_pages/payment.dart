@@ -7,17 +7,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: PaymentPage(),
+      home: buy(),
     );
   }
 }
 
-class PaymentPage extends StatefulWidget {
+class buy extends StatefulWidget {
   @override
-  _PaymentPageState createState() => _PaymentPageState();
+  _buyState createState() => _buyState();
 }
 
-class _PaymentPageState extends State<PaymentPage> {
+class _buyState extends State<buy> {
   final TextEditingController expiryController = TextEditingController();
 
   bool isChecked = false;

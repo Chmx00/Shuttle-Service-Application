@@ -7,6 +7,7 @@ import 'pages/login.dart';
 import 'pages/shedule.dart';
 import 'pages/notify.dart';
 import 'pages/shedule.dart';
+import 'pages/sub_pages/sheduleBus.dart';
 import 'pages/sub_pages/payment.dart';
 
 import 'package:intl/intl.dart';
@@ -277,7 +278,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => ShedulePage()),
+                              builder: (context) => BusSchedulePage()),
                         );
                       }),
                       buildTile('assets/cn.png', 'Important Contact', () {
@@ -359,8 +360,8 @@ Widget buildTile(
   return GestureDetector(
     onTap: onPressed,
     child: Container(
-      width: 120,
-      height: 120,
+      width: 125,
+      height: 125,
       decoration: BoxDecoration(
         color: Color.fromARGB(124, 161, 159, 159),
         borderRadius: BorderRadius.circular(20),

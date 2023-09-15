@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'sub_pages/purchase.dart'; // Import your purchase.dart file
 
 class ReservationsPage extends StatelessWidget {
   @override
@@ -40,12 +41,21 @@ class ReservationsPage extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(top: 100.0),
-                  child: Text(
-                    'Login',
-                    style: TextStyle(
-                      fontSize: 24.0,
-                      fontWeight: FontWeight.bold,
-                      color: const Color.fromARGB(255, 81, 79, 79),
+                  child: GestureDetector(
+                    onTap: () {
+                      // Redirect to purchase.dart when tapped
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => PaymentPage()),
+                      );
+                    },
+                    child: Text(
+                      'Login',
+                      style: TextStyle(
+                        fontSize: 24.0,
+                        fontWeight: FontWeight.bold,
+                        color: const Color.fromARGB(255, 81, 79, 79),
+                      ),
                     ),
                   ),
                 ),

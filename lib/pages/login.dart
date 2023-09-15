@@ -154,21 +154,30 @@ class ReservationsPage extends StatelessWidget {
                           boxShadow: [
                             BoxShadow(
                               color: Color.fromARGB(68, 29, 255, 119)
-                                  .withOpacity(0.7), // Shadow color
-                              spreadRadius: 2, // Spread radius
-                              blurRadius: 10, // Blur radius
-                              offset: Offset(0,
-                                  3), // Offset to control the shadow's position
+                                  .withOpacity(0.7),
+                              spreadRadius: 2,
+                              blurRadius: 10,
+                              offset: Offset(0, 3),
                             ),
                           ],
                         ),
-                        child: Center(
-                          child: Text(
-                            'Login',
-                            style: TextStyle(
-                              fontSize: 18.0,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                        child: GestureDetector(
+                          onTap: () {
+                            // Add your action here, e.g., navigate to another page
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => PaymentPage()),
+                            );
+                          },
+                          child: Center(
+                            child: Text(
+                              'Login',
+                              style: TextStyle(
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                         ),

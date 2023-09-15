@@ -180,8 +180,6 @@ class lf extends StatelessWidget {
                           ),
                         ),
                       ),
-<<<<<<< HEAD
-=======
                       SizedBox(height: 20),
 
                       // 3rd commit
@@ -241,7 +239,6 @@ class lf extends StatelessWidget {
                       ),
                       SizedBox(height: 20),
                      
->>>>>>> b491da1b5d329c8f0ff67484c81135f72b8b4449
                     ],
                   ),
                 ),

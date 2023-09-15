@@ -3,7 +3,7 @@ import 'package:image_picker/image_picker.dart';
 
 import 'package:flutter/material.dart';
 import 'package:transport_portal/pages/lost_items.dart';
-import 'lf.dart';
+
 
 class SubmitLost extends StatefulWidget {
   const SubmitLost({super.key});
@@ -17,12 +17,12 @@ class _SubmitLostState extends State<SubmitLost> {
   bool _agreeMe = false;
   File? _image1;
   File? _image2;
- // DateTime? _selectedDate;
-  //TimeOfDay? _selectedTime;
+  DateTime? _selectedDate;
+  TimeOfDay? _selectedTime;
 
-    /* Function to show date picker
+    // Function to show date picker
   Future<void> _selectDate(BuildContext context) async {
-    final DateTime picked = await showDatePicker(
+    final DateTime? picked = await showDatePicker(
       context: context,
       initialDate: DateTime.now(),
       firstDate: DateTime(2000),
@@ -38,7 +38,7 @@ class _SubmitLostState extends State<SubmitLost> {
 
   // Function to show time picker
   Future<void> _selectTime(BuildContext context) async {
-    final TimeOfDay picked = await showTimePicker(
+    final TimeOfDay? picked = await showTimePicker(
       context: context,
       initialTime: TimeOfDay.now(),
     );
@@ -48,7 +48,7 @@ class _SubmitLostState extends State<SubmitLost> {
         _selectedTime = picked;
       });
     }
-  } */
+  } 
 
   Future getImage(int containerNumber) async {
     final picker = ImagePicker();
@@ -230,14 +230,14 @@ class _SubmitLostState extends State<SubmitLost> {
                                 children: [
                                   GestureDetector(
                                     onTap: () {
-                                  //    _selectDate(context); // Show date picker when the date icon is tapped
+                                      _selectDate(context); // Show date picker when the date icon is tapped
                                     },
                                     child: Icon(Icons.date_range), // Date icon
                                   ),
                                   SizedBox(width: MediaQuery.of(context).size.width * 0.35),
                                   GestureDetector(
                                     onTap: () {
-                                   //   _selectTime(context); // Show time picker when the time icon is tapped
+                                      _selectTime(context); // Show time picker when the time icon is tapped
                                     },
                                     child: Icon(Icons.access_time), // Time icon
                                   ),

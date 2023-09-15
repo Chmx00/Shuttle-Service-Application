@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'lost_items.dart';
 import 'submit_lost.dart';
 
-class MyHomePage extends StatelessWidget {
+class LostAndFound extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

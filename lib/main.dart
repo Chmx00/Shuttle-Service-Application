@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, duplicate_import, use_key_in_widget_constructors, library_private_types_in_public_api, sized_box_for_whitespace
+
 import 'package:flutter/material.dart';
 import 'package:transport_portal/pages/sub_pages/purchase.dart';
 import 'dart:async';

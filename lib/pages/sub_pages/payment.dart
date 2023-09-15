@@ -1,32 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-void main() {
-  runApp(MyApp());
-}
+import 'purchase.dart';
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: PaymentPage(),
+      home: buy(),
     );
   }
 }
 
-class PaymentPage extends StatefulWidget {
+class buy extends StatefulWidget {
   @override
-  _PaymentPageState createState() => _PaymentPageState();
+  _buyState createState() => _buyState();
 }
 
-class _PaymentPageState extends State<PaymentPage> {
+class _buyState extends State<buy> {
   final TextEditingController expiryController = TextEditingController();
 
-bool isChecked = false;
-bool _showCVC = false;
- // Add this variable to your _PaymentPageState class
-
+  bool isChecked = false;
+  bool _showCVC = false;
+  // Add this variable to your _PaymentPageState class
 
   @override
   void dispose() {
@@ -94,23 +90,23 @@ bool _showCVC = false;
 
                 // Large container with rounded top corners for card payment details
                 Container(
-  decoration: BoxDecoration(
-    color: Color.fromARGB(252, 255, 255, 255),
-    borderRadius: BorderRadius.only(
-      topLeft: Radius.circular(50.0),
-      topRight: Radius.circular(50.0),
-    ),
-    boxShadow: [
-      BoxShadow(
-        color: Colors.black.withOpacity(0.2), // Shadow color
-        spreadRadius: 5, // Spread radius
-        blurRadius: 7, // Blur radius
-        offset: Offset(0, 3), // Offset in x and y direction
-      ),
-    ],
-  ),
-  width: double.infinity,
-  height: 582.2,
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(252, 255, 255, 255),
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(50.0),
+                      topRight: Radius.circular(50.0),
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.2), // Shadow color
+                        spreadRadius: 5, // Spread radius
+                        blurRadius: 7, // Blur radius
+                        offset: Offset(0, 3), // Offset in x and y direction
+                      ),
+                    ],
+                  ),
+                  width: double.infinity,
+                  height: 582.2,
                   padding: const EdgeInsets.all(20),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -210,48 +206,52 @@ bool _showCVC = false;
                           ),
 
                           // CVC
-Center(
-  child: Container(
-    width: 150,
-    height: 50,
-    padding: EdgeInsets.all(15),
-    decoration: BoxDecoration(
-      color: Color.fromARGB(
-          255, 236, 236, 236), // Gray color
-      borderRadius: BorderRadius.circular(10.0),
-    ),
-    child: Row(
-      children: [
-        Expanded(
-          child: TextField(
-            textAlign: TextAlign.left,
-            textAlignVertical: TextAlignVertical.center,
-            decoration: InputDecoration(
-              hintText: 'CVC',
-              border: InputBorder.none,
-              counterText: '',
-            ),
-            obscureText: !_showCVC, // Toggle obscuring based on _showCVC
-            keyboardType: TextInputType.number,
-            maxLength: 3,
-          ),
-        ),
-        GestureDetector(
-          onTap: () {
-            setState(() {
-              _showCVC = !_showCVC; // Toggle _showCVC when tapped
-            });
-          },
-          child: Icon(
-            _showCVC ? Icons.visibility : Icons.visibility_off,
-            color: Colors.grey,
-          ),
-        ),
-      ],
-    ),
-  ),
-),
-
+                          Center(
+                            child: Container(
+                              width: 150,
+                              height: 50,
+                              padding: EdgeInsets.all(15),
+                              decoration: BoxDecoration(
+                                color: Color.fromARGB(
+                                    255, 236, 236, 236), // Gray color
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    child: TextField(
+                                      textAlign: TextAlign.left,
+                                      textAlignVertical:
+                                          TextAlignVertical.center,
+                                      decoration: InputDecoration(
+                                        hintText: 'CVC',
+                                        border: InputBorder.none,
+                                        counterText: '',
+                                      ),
+                                      obscureText:
+                                          !_showCVC, // Toggle obscuring based on _showCVC
+                                      keyboardType: TextInputType.number,
+                                      maxLength: 3,
+                                    ),
+                                  ),
+                                  GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        _showCVC =
+                                            !_showCVC; // Toggle _showCVC when tapped
+                                      });
+                                    },
+                                    child: Icon(
+                                      _showCVC
+                                          ? Icons.visibility
+                                          : Icons.visibility_off,
+                                      color: Colors.grey,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                       SizedBox(height: 10),
@@ -312,13 +312,14 @@ Center(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Checkbox(
-          value: false, // You can bind this to a bool variable to track the state
-          onChanged: (bool? value) {
-            // Handle checkbox state change here
-            // You can use a bool variable to track the state
-            // For example: setState(() => isChecked = value);
-          },
-        ),
+                                value:
+                                    false, // You can bind this to a bool variable to track the state
+                                onChanged: (bool? value) {
+                                  // Handle checkbox state change here
+                                  // You can use a bool variable to track the state
+                                  // For example: setState(() => isChecked = value);
+                                },
+                              ),
                               SizedBox(width: 10),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -398,7 +399,9 @@ class _ExpiryDateFormatter extends TextInputFormatter {
 
     if (text.length == 0 && int.tryParse(text) != null) {
       newText = '0$text/';
-    } else if (text.length == 2 && text.substring(0, 2) != '00' && int.tryParse(text.substring(0, 2)) != null) {
+    } else if (text.length == 2 &&
+        text.substring(0, 2) != '00' &&
+        int.tryParse(text.substring(0, 2)) != null) {
       newText = '$text/';
     } else if (text.length == 3 && text[2] != '/') {
       newText = '${text.substring(0, 2)}/${text[2]}';

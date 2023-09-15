@@ -1,8 +1,9 @@
-// ignore_for_file: unused_import, prefer_const_constructors, use_key_in_widget_constructors, library_private_types_in_public_api, deprecated_member_use
+// ignore_for_file: unused_import, prefer_const_constructors, use_key_in_widget_constructors, library_private_types_in_public_api, deprecated_member_use, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:intl/intl.dart';
+import 'payment.dart';
 
 void main() {
   runApp(MyApp());
@@ -346,8 +347,8 @@ class _PaymentPageState extends State<PaymentPage> {
                                             onTap: () => _selectDate(context),
                                             child: Image.asset(
                                               'assets/calendar.png',
-                                              width: 45.0,
-                                              height: 45.0,
+                                              width: 43.0,
+                                              height: 43.0,
                                             ),
                                           ),
                                         ],
@@ -410,36 +411,37 @@ class _PaymentPageState extends State<PaymentPage> {
                                     height: 60.0, // Set the height
                                     child: ElevatedButton(
                                       onPressed: () {
-                                        // Add your logic for buying tickets here
-                                        // For example, you can show a confirmation dialog
-                                        showDialog(
-                                          context: context,
-                                          builder: (context) {
-                                            return AlertDialog(
-                                              title: Text("Confirmation"),
-                                              content: Text(
-                                                  "Are you sure you want to buy tickets?"),
-                                              actions: [
-                                                TextButton(
-                                                  onPressed: () {
-                                                    Navigator.of(context)
-                                                        .pop(); // Close the dialog
-                                                  },
-                                                  child: Text("Cancel"),
-                                                ),
-                                                TextButton(
-                                                  onPressed: () {
-                                                    // Place your code for purchasing tickets here
-                                                    // This is where you can perform the actual purchase action
-                                                    Navigator.of(context)
-                                                        .pop(); // Close the dialog
-                                                  },
-                                                  child: Text("Buy"),
-                                                ),
-                                              ],
-                                            );
-                                          },
-                                        );
+                                        if (!isCheckboxChecked) {
+                                          // Check if the checkbox is not checked
+                                          showDialog(
+                                            context: context,
+                                            builder: (context) {
+                                              return AlertDialog(
+                                                title: Text("Confirmation"),
+                                                content: Text(
+                                                    "Are you sure you want to buy tickets?"),
+                                                actions: [
+                                                  TextButton(
+                                                    onPressed: () {
+                                                      // Place your code for purchasing tickets here
+                                                      // This is where you can perform the actual purchase action
+
+                                                      // Navigate to a new screen (replace `YourPurchaseScreen` with the actual screen you want to navigate to)
+                                                      Navigator.of(context)
+                                                          .pushReplacement(
+                                                        MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              buy(), //error fix
+                                                        ),
+                                                      );
+                                                    },
+                                                    child: Text("Yes"),
+                                                  ),
+                                                ],
+                                              );
+                                            },
+                                          );
+                                        }
                                       },
                                       style: ElevatedButton.styleFrom(
                                         padding: EdgeInsets.all(16.0),
@@ -470,27 +472,8 @@ class _PaymentPageState extends State<PaymentPage> {
                                 height: 60.0, // Set the height
                                 child: ElevatedButton(
                                   onPressed: () {
-                                    // Add your logic for handling "Already purchased" here
-                                    // For example, you can show a message or navigate to a different screen
-                                    showDialog(
-                                      context: context,
-                                      builder: (context) {
-                                        return AlertDialog(
-                                          title: Text("Already Purchased"),
-                                          content: Text(
-                                              "You have already purchased tickets."),
-                                          actions: [
-                                            TextButton(
-                                              onPressed: () {
-                                                Navigator.of(context)
-                                                    .pop(); // Close the dialog
-                                              },
-                                              child: Text("OK"),
-                                            ),
-                                          ],
-                                        );
-                                      },
-                                    );
+                                    // Add your logic for buying tickets here
+                                    // For example, you can show a confirmation dialog
                                   },
                                   style: ElevatedButton.styleFrom(
                                     padding: EdgeInsets.all(16.0),

@@ -12,7 +12,7 @@ class RoutePage extends StatelessWidget {
           // Background Image
           Positioned.fill(
             child: Image.asset(
-              'assets/Payment.png', // Replace with your image asset
+              'assets/Payment.png',
               fit: BoxFit.cover,
             ),
           ),

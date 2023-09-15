@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'sub_pages/purchase.dart'; // Import your purchase.dart file
 
 class ReservationsPage extends StatelessWidget {
   @override
@@ -40,12 +41,21 @@ class ReservationsPage extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(top: 100.0),
-                  child: Text(
-                    'Login',
-                    style: TextStyle(
-                      fontSize: 24.0,
-                      fontWeight: FontWeight.bold,
-                      color: const Color.fromARGB(255, 81, 79, 79),
+                  child: GestureDetector(
+                    onTap: () {
+                      // Redirect to purchase.dart when tapped
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => PaymentPage()),
+                      );
+                    },
+                    child: Text(
+                      'Login',
+                      style: TextStyle(
+                        fontSize: 24.0,
+                        fontWeight: FontWeight.bold,
+                        color: const Color.fromARGB(255, 81, 79, 79),
+                      ),
                     ),
                   ),
                 ),
@@ -144,21 +154,30 @@ class ReservationsPage extends StatelessWidget {
                           boxShadow: [
                             BoxShadow(
                               color: Color.fromARGB(68, 29, 255, 119)
-                                  .withOpacity(0.7), // Shadow color
-                              spreadRadius: 2, // Spread radius
-                              blurRadius: 10, // Blur radius
-                              offset: Offset(0,
-                                  3), // Offset to control the shadow's position
+                                  .withOpacity(0.7),
+                              spreadRadius: 2,
+                              blurRadius: 10,
+                              offset: Offset(0, 3),
                             ),
                           ],
                         ),
-                        child: Center(
-                          child: Text(
-                            'Login',
-                            style: TextStyle(
-                              fontSize: 18.0,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                        child: GestureDetector(
+                          onTap: () {
+                            // Add your action here, e.g., navigate to another page
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => PaymentPage()),
+                            );
+                          },
+                          child: Center(
+                            child: Text(
+                              'Login',
+                              style: TextStyle(
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                         ),

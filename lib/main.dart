@@ -5,7 +5,6 @@ import 'pages/contact.dart';
 //import 'pages/lf.dart';
 import 'pages/login.dart';
 import 'pages/shedule.dart';
-import 'pages/route.dart';
 import 'pages/notify.dart';
 import 'pages/shedule.dart';
 import 'pages/sub_pages/payment.dart';
@@ -277,7 +276,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       buildTile('assets/Bus.png', 'Bus Schedule', () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => RoutePage()),
+                          MaterialPageRoute(
+                              builder: (context) => ShedulePage()),
                         );
                       }),
                       buildTile('assets/cn.png', 'Important Contact', () {
@@ -297,7 +297,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => PaymentPage()),
+                              builder: (context) => ShedulePage()),
                         );
                       }),
                       buildTile('assets/tik.png', 'Reservations', () {

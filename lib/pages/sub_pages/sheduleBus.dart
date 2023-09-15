@@ -84,7 +84,7 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
                     startingPoint = newValue!;
                   });
                 },
-                items: <String>['Nugegoda', 'Maharagama', 'Kottawa', 'Padukka']
+                items: <String>['Nugegoda', 'Maharagama', 'Kottawa', 'Padukka','NSBM']
                     .map<DropdownMenuItem<String>>((String value) {
                   return DropdownMenuItem<String>(
                     value: value,
@@ -118,7 +118,7 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
                     endPoint = newValue!;
                   });
                 },
-                items: <String>['NSBM']
+                items: <String>['NSBM','Nugegoda', 'Maharagama', 'Kottawa', 'Padukka']
                     .map<DropdownMenuItem<String>>((String value) {
                   return DropdownMenuItem<String>(
                     value: value,

@@ -1,4 +1,4 @@
-// ignore_for_file: unused_import, prefer_const_constructors, use_key_in_widget_constructors, library_private_types_in_public_api, deprecated_member_use, sized_box_for_whitespace
+// ignore_for_file: unused_import, prefer_const_constructors, use_key_in_widget_constructors, library_private_types_in_public_api, deprecated_member_use, sized_box_for_whitespace, unnecessary_string_interpolations
 
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -59,6 +59,21 @@ class _PaymentPageState extends State<PaymentPage> {
                 image: AssetImage('assets/Payment.png'),
                 fit: BoxFit.cover,
               ),
+            ),
+          ),
+          // Back Icon in the top-left corner
+          Positioned(
+            top: 40,
+            left: 20,
+            child: IconButton(
+              icon: Icon(
+                Icons.arrow_back,
+                color: Colors.white,
+                size: 30.0,
+              ),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
             ),
           ),
           // Content on top of the background image
@@ -431,7 +446,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                                           .pushReplacement(
                                                         MaterialPageRoute(
                                                           builder: (context) =>
-                                                              buy(),
+                                                              buy(), //error fix
                                                         ),
                                                       );
                                                     },

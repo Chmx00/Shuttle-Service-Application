@@ -431,7 +431,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                                           .pushReplacement(
                                                         MaterialPageRoute(
                                                           builder: (context) =>
-                                                              buy(),
+                                                              buy(), //error fix
                                                         ),
                                                       );
                                                     },

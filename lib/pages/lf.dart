@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:transport_portal/pages/lost_items.dart';
-
+import 'lost_items.dart';
 import 'submit_lost.dart';
 
-class lf extends StatelessWidget {
+class LostAndFound extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,8 +75,8 @@ class lf extends StatelessWidget {
                                             onPressed: () { 
                                               Navigator.of(context).push(MaterialPageRoute(
                                                 builder: (_) {
-                                                 return lostitems();
-                                                },
+                                                  return lostitems();
+                                                }
                                               ));
                                              },
                                             child: Text(
@@ -141,7 +140,7 @@ class lf extends StatelessWidget {
                                             onPressed: () { 
                                               Navigator.of(context).push(MaterialPageRoute(
                                                 builder: (_) {
-                                                 return SubmitLost();
+                                                  return SubmitLost();
                                                 }
                                               ));
                                              },
@@ -178,7 +177,8 @@ class lf extends StatelessWidget {
                                   ],
                                 )
                           ),
-                        ),
+                          
+                        ],
                       ),
                       SizedBox(height: 20),
 
@@ -237,8 +237,7 @@ class lf extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(height: 20),
-                     
+                      SizedBox(height: 20),                    
                     ],
                   ),
                 ),

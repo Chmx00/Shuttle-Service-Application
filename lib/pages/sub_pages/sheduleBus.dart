@@ -57,7 +57,7 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
             right: 0,
             child: Center(
               child: Text(
-                'Bus Schedule',
+                'Find Schedule',
                 style: TextStyle(
                   fontSize: 24.0,
                   fontWeight: FontWeight.bold,
@@ -66,47 +66,46 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
               ),
             ),
           ),
-          // Container for Starting Point Dropdown
           Positioned(
-            top: 150.0,
-            left: 20.0,
-            right: 20.0,
-            child: Container(
-              alignment: Alignment.center, // Align to the right
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10.0),
-              ),
-              child: DropdownButton<String>(
-                value: startingPoint,
-                onChanged: (String? newValue) {
-                  setState(() {
-                    startingPoint = newValue!;
-                  });
-                },
-                items: <String>['Nugegoda', 'Maharagama', 'Kottawa', 'Padukka']
-                    .map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(
-                      value,
-                      style: TextStyle(
-                        fontSize: 18.0,
-                        color: Colors.black,
-                      ),
-                    ),
-                  );
-                }).toList(),
+            top: 90.0, // Adjust the top position as needed
+            left: 0,
+            right: 0,
+            child: Center(
+              child: Image.asset(
+                'assets/Searching.png', // Replace with your image asset path
+                width: 200.0, // Set the width as needed
+                height: 200.0, // Set the height as needed
               ),
             ),
           ),
-          // Container for End Point Dropdown
+          // Container for Starting Point Dropdown
+          // Row with Starting Point Text and End Point Dropdown
           Positioned(
-            top: 200.0,
-            left: 20.0,
-            right: 20.0,
-            child: Container(
-              alignment: Alignment.center, // Align to the right
+            top: 320.0, // Adjust the top position as needed
+            left: 40,
+            right: 0,
+            child: Center(
+              child: Row(
+                children: [
+                  // First Column for "Starting Point" Text
+                  Expanded(
+                    flex: 1,
+                    child: Text(
+                      'Starting Point:',
+                      style: TextStyle(
+                        fontSize: 16.0,
+                        color: const Color.fromARGB(255, 54, 53, 53),
+                      ),
+                    ),
+                  ),
+                  // Second Column for End Point Dropdown Container
+                  
+                  Expanded(
+                    flex: 2,
+                    child: Padding(
+                      padding: EdgeInsets.only(right: 20.0),
+                    child: Container(
+                    alignment: Alignment.center, // Align to the right
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10.0),
@@ -118,8 +117,13 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
                     endPoint = newValue!;
                   });
                 },
-                items: <String>['NSBM']
-                    .map<DropdownMenuItem<String>>((String value) {
+                items: <String>[
+                  'NSBM',
+                  'Nugegoda',
+                  'Maharagama',
+                  'Kottawa',
+                  'Padukka'
+                  ].map<DropdownMenuItem<String>>((String value) {
                   return DropdownMenuItem<String>(
                     value: value,
                     child: Text(
@@ -132,10 +136,78 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
                   );
                 }).toList(),
               ),
+             ),
             ),
+           ),
+           ],
           ),
-        ],
+         ),
+        ),
+        Positioned(
+            top: 380.0, // Adjust the top position as needed
+            left: 40,
+            right: 0,
+            child: Center(
+              child: Row(
+                children: [
+                  // First Column for "Starting Point" Text
+                  Expanded(
+                    flex: 1,
+                    child: Text(
+                      'End Point:',
+                      style: TextStyle(
+                        fontSize: 16.0,
+                        color: const Color.fromARGB(255, 54, 53, 53),
+                      ),
+                    ),
+                  ),
+                  // Second Column for End Point Dropdown Container
+                  
+                  Expanded(
+                    flex: 2,
+                    child: Padding(
+                      padding: EdgeInsets.only(right: 20.0),
+                    child: Container(
+                    alignment: Alignment.center, // Align to the right
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              child: DropdownButton<String>(
+                value: endPoint,
+                onChanged: (String? newValue) {
+                  setState(() {
+                    endPoint = newValue!;
+                  });
+                },
+                items: <String>[
+                  'Nugegoda',
+                  'Maharagama',
+                  'Kottawa',
+                  'Padukka',
+                  'NSBM'
+                  ].map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(
+                      value,
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        color: Colors.black,
+                      ),
+                    ),
+                  );
+                }).toList(),
+              ),
+             ),
+            ),
+           ),
+           ],
+          ),
+         ),
+        ),
+       ],
       ),
-    );
-  }
+   );      
+ }
 }

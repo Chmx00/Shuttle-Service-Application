@@ -1,4 +1,4 @@
-// ignore_for_file: unused_import, prefer_const_constructors, use_key_in_widget_constructors, library_private_types_in_public_api, deprecated_member_use, sized_box_for_whitespace
+// ignore_for_file: unused_import, prefer_const_constructors, use_key_in_widget_constructors, library_private_types_in_public_api, deprecated_member_use, sized_box_for_whitespace, unnecessary_string_interpolations
 
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -61,6 +61,21 @@ class _PaymentPageState extends State<PaymentPage> {
               ),
             ),
           ),
+          // Back Icon in the top-left corner
+          Positioned(
+            top: 40,
+            left: 20,
+            child: IconButton(
+              icon: Icon(
+                Icons.arrow_back,
+                color: Colors.white,
+                size: 30.0,
+              ),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ),
           // Content on top of the background image
           Center(
             child: Column(
@@ -96,7 +111,7 @@ class _PaymentPageState extends State<PaymentPage> {
                         SizedBox(height: 20),
                         Container(
                           width: double.infinity,
-                          height: MediaQuery.of(context).size.width * 2,
+                          height: MediaQuery.of(context).size.width * 1.78,
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.only(
@@ -469,7 +484,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                 padding: const EdgeInsets.only(
                                     top: 0, left: 60, right: 0, bottom: 0),
                                 width: 300.0, // Set the width
-                                height: 60.0, // Set the height
+                                height: 60.0, // Set the heightq
                                 child: ElevatedButton(
                                   onPressed: () {
                                     // Add your logic for buying tickets here

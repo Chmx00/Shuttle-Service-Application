@@ -57,7 +57,7 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
             right: 0,
             child: Center(
               child: Text(
-                'Bus Schedule',
+                'Find Schedule',
                 style: TextStyle(
                   fontSize: 24.0,
                   fontWeight: FontWeight.bold,

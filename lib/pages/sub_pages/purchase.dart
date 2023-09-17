@@ -111,7 +111,7 @@ class _PaymentPageState extends State<PaymentPage> {
                         SizedBox(height: 20),
                         Container(
                           width: double.infinity,
-                          height: MediaQuery.of(context).size.width * 2,
+                          height: MediaQuery.of(context).size.width * 1.78,
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.only(
@@ -484,7 +484,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                 padding: const EdgeInsets.only(
                                     top: 0, left: 60, right: 0, bottom: 0),
                                 width: 300.0, // Set the width
-                                height: 60.0, // Set the height
+                                height: 60.0, // Set the heightq
                                 child: ElevatedButton(
                                   onPressed: () {
                                     // Add your logic for buying tickets here

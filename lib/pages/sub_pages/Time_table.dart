@@ -73,8 +73,9 @@ class timeTablePage extends StatelessWidget {
                     height: 8.0), // Add some spacing between text and image
                 Image.asset(
                   'assets/sbus.png', // Image asset path
-                  width: 200.0, // Set the image width
-                  height: 200.0, // Set the image height
+                  width: MediaQuery.of(context).size.width * 0.8,
+                  height: MediaQuery.of(context).size.width * 0.5,
+                  fit: BoxFit.contain, // Set the image height
                   // You can adjust the width and height as needed
                 ),
               ],
@@ -88,7 +89,7 @@ class timeTablePage extends StatelessWidget {
             left: 0,
             right: 0,
             child: SizedBox(
-              height: 570.0,
+              height: 600.0,
               width: double.infinity,
               child: Container(
                 decoration: BoxDecoration(
@@ -199,8 +200,8 @@ class timeTablePage extends StatelessWidget {
                     ),
                     SizedBox(height: 20),
                     SizedBox(
-                      width: 320.0,
-                      height: 90.0,
+                      width: 370.0,
+                      height: 100.0,
                       child: Container(
                         decoration: BoxDecoration(
                           color: Colors.blue,

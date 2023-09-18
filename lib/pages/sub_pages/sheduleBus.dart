@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Time_table.dart';
 
 void main() {
   runApp(MyApp());
@@ -36,6 +37,15 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
         selectedDate = picked;
       });
     }
+  }
+
+  // Function to handle navigation to the TimeTable page
+  void _navigateToTimeTable() {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => TimeTablePage(), // Replace with your TimeTable page widget
+      ),
+    );
   }
 
   @override
@@ -221,26 +231,25 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
           ),
          ),
         ),
-       
                   // First Column for "Starting Point" Text
                   Positioned(
-  top: 440.0, // Adjust the top position as needed
-  left: 40,
-  right: 0,
-  child: Center(
-    child: Row(
-      children: [
-        // First Column for "Date" Text
-        Expanded(
-          flex: 1,
-          child: Text(
-            'Date:',
-            style: TextStyle(
-              fontSize: 16.0,
-              color: const Color.fromARGB(255, 54, 53, 53),
-            ),
-          ),
-        ),
+                  top: 440.0, // Adjust the top position as needed
+                  left: 40,
+                  right: 0,
+                  child: Center(
+                  child: Row(
+                  children: [
+                  // First Column for "Date" Text
+                  Expanded(
+                  flex: 1,
+                  child: Text(
+                  'Date:',
+                   style: TextStyle(
+                   fontSize: 16.0,
+                   color: const Color.fromARGB(255, 54, 53, 53),
+                   ),
+                  ),
+                 ),
         // Second Column for Date Picker and Calendar Icon
         Expanded(
           flex: 2,
@@ -279,14 +288,36 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
                       width: 24.0, // Set the width as needed
                       height: 24.0, // Set the height as needed
                     ),
-                  ),),
+                  ),
+                  ),
                 ],
               ),
-            ),),),
+            ),
+            ),
+            ),
           ],
               ),
           ),
          ),
+          // Search Button
+          Positioned(
+            top: 500.0, // Adjust the top position as needed
+            left: 40,
+            right: 40,
+            child: ElevatedButton(
+              onPressed: _navigateToTimeTable, // Navigate to TimeTable page when pressed
+              child: Text(
+                'Search',
+                style: TextStyle(
+                  fontSize: 18.0,
+                  color: Colors.white,
+                ),
+              ),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.blue, // Change button color as needed
+              ),
+            ),
+          ), 
        ],
       ),
       );

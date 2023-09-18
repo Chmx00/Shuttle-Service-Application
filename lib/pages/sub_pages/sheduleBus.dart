@@ -48,7 +48,7 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
     );
   }
 
-// Function to handle resetting the input data
+  // Function to handle resetting the input data
   void _resetInputData() {
     setState(() {
       startingPoint = 'Nugegoda'; // Reset starting point to the default value
@@ -131,8 +131,8 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
                       ),
                     ),
                   ),
+
                   // Second Column for End Point Dropdown Container
-                  
                   Expanded(
                     flex: 2,
                     child: Padding(
@@ -144,7 +144,7 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
                 borderRadius: BorderRadius.circular(10.0),
               ),
               child: DropdownButton<String>(
-                value: endPoint,
+                value: startingPoint,
                 onChanged: (String? newValue) {
                   setState(() {
                     endPoint = newValue!;
@@ -155,7 +155,7 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
                   'Nugegoda',
                   'Maharagama',
                   'Kottawa',
-                  'Padukka'
+                  'Padukka',
                   ].map<DropdownMenuItem<String>>((String value) {
                   return DropdownMenuItem<String>(
                     value: value,
@@ -195,8 +195,8 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
                       ),
                     ),
                   ),
-                  // Second Column for End Point Dropdown Container
                   
+                  // Second Column for End Point Dropdown Container
                   Expanded(
                     flex: 2,
                     child: Padding(

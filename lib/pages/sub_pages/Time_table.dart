@@ -45,7 +45,6 @@ class TimeTablePage extends StatelessWidget {
               },
             ),
           ),
-
           // Text "Change Your Route" (Two Rows)
           // Text "Change Your Route" with Image after
           Positioned(
@@ -57,7 +56,7 @@ class TimeTablePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Route',
+                  'Bus Schedule',
                   style: TextStyle(
                     fontSize: screenWidth * 0.06, // Responsive font size
                     color: Color.fromARGB(255, 42, 41, 41),
@@ -66,7 +65,7 @@ class TimeTablePage extends StatelessWidget {
                 ),
                 // Add some spacing between text and image
                 Image.asset(
-                  'assets/sbus.png', // Image asset path
+                  'assets/BS.png', // Image asset path
                   width: MediaQuery.of(context).size.width * 0.8,
                   height: MediaQuery.of(context).size.width * 0.5,
                   fit: BoxFit.contain, // Set the image height

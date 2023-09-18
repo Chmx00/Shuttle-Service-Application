@@ -175,14 +175,115 @@ class TimeTablePage extends StatelessWidget {
                             ),
                             // Second Column (Text)
                             Expanded(
-                              flex:
-                                  3, // Adjust the flex as needed to control column widths
-                              child: Text(
-                                'Your Text', // Your text here
-                                style: TextStyle(
-                                  fontSize: 16.0,
-                                  fontWeight: FontWeight.bold,
-                                  color: const Color.fromARGB(255, 141, 42, 42),
+                              flex: 3,
+                              child: Padding(
+                                padding: EdgeInsets.only(
+                                    left: 10.0,
+                                    top:
+                                        20.0), // Adjust the flex as needed to control column widths
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    // First Text Row
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 10.0),
+                                      child: Text(
+                                        '6.45 A.M', // Your date text here
+                                        style: TextStyle(
+                                          fontSize: 10.0,
+                                          fontWeight: FontWeight.bold,
+                                          color: const Color.fromARGB(
+                                              255, 129, 35, 35),
+                                        ),
+                                      ),
+                                    ),
+                                    // Second Text Row
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 10.0),
+                                      child: Text(
+                                        'NUGEGODA --> NSBM', // Your date text here
+                                        style: TextStyle(
+                                          fontSize: 12.0,
+                                          fontWeight: FontWeight.bold,
+                                          color: const Color.fromARGB(
+                                              255, 129, 35, 35),
+                                        ),
+                                      ),
+                                    ),
+                                    // Third Text Row
+                                    Row(
+                                      children: [
+                                        // First Sub-Column (Text and Time)
+                                        Expanded(
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'Your Text', // Your text here
+                                                style: TextStyle(
+                                                  fontSize: 16.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: const Color.fromARGB(
+                                                      255, 141, 42, 42),
+                                                ),
+                                              ),
+                                              Text(
+                                                '10:00 AM', // Time in the first sub-column
+                                                style: TextStyle(
+                                                  fontSize: 12.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: const Color.fromARGB(
+                                                      255, 135, 31, 31),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        // Second Sub-Column (Dotted Line)
+                                        Container(
+                                          width: 1.0,
+                                          height: 40.0,
+                                          decoration: BoxDecoration(
+                                            border: Border(
+                                              left: BorderSide(
+                                                color: Colors.black,
+                                                style: BorderStyle.solid,
+                                                width: 1.0,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        // Third Sub-Column (Text and Time)
+                                        Expanded(
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'Your Text', // Your text here
+                                                style: TextStyle(
+                                                  fontSize: 16.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: const Color.fromARGB(
+                                                      255, 141, 42, 42),
+                                                ),
+                                              ),
+                                              Text(
+                                                '11:00 AM', // Time in the third sub-column
+                                                style: TextStyle(
+                                                  fontSize: 12.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: const Color.fromARGB(
+                                                      255, 135, 31, 31),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),

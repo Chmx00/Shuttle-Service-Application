@@ -300,10 +300,13 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
           ),
          ),
           // Search Button
-          Positioned(
-            top: 500.0, // Adjust the top position as needed
+        Positioned(
+            top: 550.0, // Adjust the top position as needed
             left: 40,
             right: 40,
+            child:Container(
+             width: 10.0, // Set the desired width
+    height: 50.0, // Set the desired height 
             child: ElevatedButton(
               onPressed: _navigateToTimeTable, // Navigate to TimeTable page when pressed
               child: Text(
@@ -314,10 +317,15 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
                 ),
               ),
               style: ElevatedButton.styleFrom(
-                primary: Colors.blue, // Change button color as needed
+                primary: Colors.blue, 
+                padding: EdgeInsets.all(0), // Remove padding
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30.0), // Adjust border radius as needed
+        ),// Change button color as needed
               ),
             ),
-          ), 
+          ),
+        ),    
        ],
       ),
       );

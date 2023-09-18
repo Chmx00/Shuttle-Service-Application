@@ -247,6 +247,7 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
           child: Padding(
             padding: EdgeInsets.only(right: 20.0),
             child: Container(
+              height: 45.0,
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -257,12 +258,15 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
                   Expanded(
                     child: GestureDetector(
                       onTap: () => _selectDate(context),
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 70.0),
                       child: Text(
                         "${selectedDate.toLocal()}".split(' ')[0],
                         style: TextStyle(
                           fontSize: 18.0,
                           color: Colors.black,
                         ),
+                      ),
                       ),
                     ),
                   ),

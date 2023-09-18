@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,12 +11,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: timeTablePage(),
+      home: TimeTablePage(),
     );
   }
 }
 
-class timeTablePage extends StatelessWidget {
+class TimeTablePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -81,7 +83,6 @@ class timeTablePage extends StatelessWidget {
               ],
             ),
           ),
-
           // Content
           // Large Container at the Bottom with Rounded Top Corners
           Positioned(
@@ -91,137 +92,312 @@ class timeTablePage extends StatelessWidget {
             child: SizedBox(
               height: 600.0,
               width: double.infinity,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white, // Set your desired color
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(30.0),
-                    topRight: Radius.circular(30.0),
+              child: SingleChildScrollView(
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white, // Set your desired color
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(30.0),
+                      topRight: Radius.circular(30.0),
+                    ),
                   ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.2),
-                      spreadRadius: 8,
-                      blurRadius: 10,
-                      offset: Offset(0, 3),
-                    ),
-                  ],
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    SizedBox(height: 20),
-                    SizedBox(
-                      width: 320.0,
-                      height: 90.0,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.blue,
-                          borderRadius: BorderRadius.circular(15.0),
-                        ),
-                        child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      SizedBox(height: 20),
+                      Padding(
+                        padding: EdgeInsets.only(left: 16.0, top: 16.0),
+                        child: Align(
+                          alignment: Alignment.topLeft,
                           child: Text(
-                            'Kottawa - NSBM', // Your text here
+                            'Text',
                             style: TextStyle(
-                              color: Colors.white, // Set the text color
-                              fontSize: 16.0, // Set the text size
-                              fontWeight:
-                                  FontWeight.bold, // Set the text weight
+                              fontSize: 18.0,
+                              fontWeight: FontWeight.bold,
+                              color: Color.fromARGB(255, 82, 167, 237),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                    SizedBox(height: 20),
-                    SizedBox(
-                      width: 320.0,
-                      height: 90.0,
-                      child: Container(
+                      SizedBox(height: 20),
+                      Container(
+                        width: 370.0,
+                        height: 130.0,
                         decoration: BoxDecoration(
-                          color: Colors.blue,
-                          borderRadius: BorderRadius.circular(15.0),
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(15.0),
+                            bottomLeft: Radius.circular(15.0),
+                            topRight: Radius.circular(15.0),
+                            bottomRight: Radius.circular(15.0), // Border width
+                          ),
+                          color: Color.fromARGB(255, 214, 236, 254),
                         ),
-                        child: Center(
-                          child: Text(
-                            'Padukka - NSBM', // Your text here
-                            style: TextStyle(
-                              color: Colors.white, // Set the text color
-                              fontSize: 16.0, // Set the text size
-                              fontWeight:
-                                  FontWeight.bold, // Set the text weight
+                        child: Row(
+                          children: [
+                            // First Column (Two Rows)
+                            Expanded(
+                              flex:
+                                  2, // Adjust the flex as needed to control column widths
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  // First Row (Time)
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 16.0), // Add left padding
+                                    child: Text(
+                                      '9:00 AM', // Your time text here
+                                      style: TextStyle(
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold,
+                                        color: const Color.fromARGB(
+                                            255, 135, 31, 31),
+                                      ),
+                                    ),
+                                  ),
+                                  // Second Row (Date)
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 16.0), // Add left padding
+                                    child: Text(
+                                      'Mon, 25', // Your date text here
+                                      style: TextStyle(
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold,
+                                        color: const Color.fromARGB(
+                                            255, 129, 35, 35),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+
+                            // Vertical Line (Adjust the height as needed)
+                            Container(
+                              width: 1.0, // Width of the vertical line
+                              height:
+                                  100.0, // Height of the vertical line (adjust as needed)
+                              color: const Color.fromARGB(255, 163, 45,
+                                  45), // Color of the vertical line
+                            ),
+                            // Second Column (Text)
+                            Row(
+                              children: [
+                                // First Row (Time)
+                                Text(
+                                  '9:00 AM', // Your time text here
+                                  style: TextStyle(
+                                    fontSize: 14.0, // Smaller font size
+                                    fontWeight: FontWeight.bold,
+                                    color:
+                                        const Color.fromARGB(255, 135, 31, 31),
+                                  ),
+                                ),
+                                SizedBox(
+                                    width:
+                                        8.0), // Add space between the first and second columns
+                                // Second Row (Formatted Text)
+                                Expanded(
+                                  child: Text(
+                                    'NUGEGODA --> NSBM', // Your formatted text here
+                                    style: TextStyle(
+                                      fontSize: 18.0, // Larger font size
+                                      fontWeight: FontWeight.bold,
+                                      color: const Color.fromARGB(
+                                          255, 129, 35, 35),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                    width:
+                                        8.0), // Add space between the second and third columns
+                                // Third Row (Three Columns)
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    // First Column (Two Rows)
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Your Text', // Your text here
+                                          style: TextStyle(
+                                            fontSize: 16.0,
+                                            fontWeight: FontWeight.bold,
+                                            color: const Color.fromARGB(
+                                                255, 141, 42, 42),
+                                          ),
+                                        ),
+                                        Text(
+                                          '10:00 AM', // Time in the first column
+                                          style: TextStyle(
+                                            fontSize:
+                                                12.0, // Smaller font size for time
+                                            fontWeight: FontWeight.bold,
+                                            color: const Color.fromARGB(
+                                                255, 135, 31, 31),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    // Second Column (Dotted Line)
+                                    Container(
+                                      width: 1.0, // Width of the vertical line
+                                      height:
+                                          40.0, // Height of the dotted line (adjust as needed)
+                                      decoration: BoxDecoration(
+                                        border: Border(
+                                          left: BorderSide(
+                                            color: Colors
+                                                .black, // Color of the dotted line
+                                            style: BorderStyle.solid,
+                                            width: 1.0,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    // Third Column (Two Rows)
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Your Text', // Your text here
+                                          style: TextStyle(
+                                            fontSize: 16.0,
+                                            fontWeight: FontWeight.bold,
+                                            color: const Color.fromARGB(
+                                                255, 141, 42, 42),
+                                          ),
+                                        ),
+                                        Text(
+                                          '11:00 AM', // Time in the third column
+                                          style: TextStyle(
+                                            fontSize:
+                                                12.0, // Smaller font size for time
+                                            fontWeight: FontWeight.bold,
+                                            color: const Color.fromARGB(
+                                                255, 135, 31, 31),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+
+                            // Third Column (Image)
+                            Expanded(
+                              flex:
+                                  2, // Adjust the flex as needed to control column widths
+                              child: Center(
+                                child: Image.asset(
+                                  'assets/Bus.png', // Image asset path
+                                  width:
+                                      80.0, // Adjust the image width as needed
+                                  height:
+                                      80.0, // Adjust the image height as needed
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      SizedBox(
+                        width: 370.0,
+                        height: 130.0,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.blue,
+                            borderRadius: BorderRadius.circular(15.0),
+                          ),
+                          child: Center(
+                            child: Text(
+                              'Padukka - NSBM', // Your text here
+                              style: TextStyle(
+                                color: Colors.white, // Set the text color
+                                fontSize: 16.0, // Set the text size
+                                fontWeight:
+                                    FontWeight.bold, // Set the text weight
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                    SizedBox(height: 20),
-                    SizedBox(
-                      width: 320.0,
-                      height: 90.0,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.blue,
-                          borderRadius: BorderRadius.circular(15.0),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'Nugegoda - NSBM', // Your text here
-                            style: TextStyle(
-                              color: Colors.white, // Set the text color
-                              fontSize: 16.0, // Set the text size
-                              fontWeight:
-                                  FontWeight.bold, // Set the text weight
+                      SizedBox(height: 20),
+                      SizedBox(
+                        width: 370.0,
+                        height: 130.0,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.blue,
+                            borderRadius: BorderRadius.circular(15.0),
+                          ),
+                          child: Center(
+                            child: Text(
+                              'Nugegoda - NSBM', // Your text here
+                              style: TextStyle(
+                                color: Colors.white, // Set the text color
+                                fontSize: 16.0, // Set the text size
+                                fontWeight:
+                                    FontWeight.bold, // Set the text weight
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                    SizedBox(height: 20),
-                    SizedBox(
-                      width: 320.0,
-                      height: 90.0,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.blue,
-                          borderRadius: BorderRadius.circular(15.0),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'Moragahena - NSBM', // Your text here
-                            style: TextStyle(
-                              color: Colors.white, // Set the text color
-                              fontSize: 16.0, // Set the text size
-                              fontWeight:
-                                  FontWeight.bold, // Set the text weight
+                      SizedBox(height: 20),
+                      SizedBox(
+                        width: 370.0,
+                        height: 130.0,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.blue,
+                            borderRadius: BorderRadius.circular(15.0),
+                          ),
+                          child: Center(
+                            child: Text(
+                              'Moragahena - NSBM', // Your text here
+                              style: TextStyle(
+                                color: Colors.white, // Set the text color
+                                fontSize: 16.0, // Set the text size
+                                fontWeight:
+                                    FontWeight.bold, // Set the text weight
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                    SizedBox(height: 20),
-                    SizedBox(
-                      width: 370.0,
-                      height: 100.0,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.blue,
-                          borderRadius: BorderRadius.circular(15.0),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'Moragahena - NSBM', // Your text here
-                            style: TextStyle(
-                              color: Colors.white, // Set the text color
-                              fontSize: 16.0, // Set the text size
-                              fontWeight:
-                                  FontWeight.bold, // Set the text weight
+                      SizedBox(height: 20),
+                      SizedBox(
+                        width: 370.0,
+                        height: 130.0,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.blue,
+                            borderRadius: BorderRadius.circular(15.0),
+                          ),
+                          child: Center(
+                            child: Text(
+                              'Moragahena - NSBM', // Your text here
+                              style: TextStyle(
+                                color: Colors.white, // Set the text color
+                                fontSize: 16.0, // Set the text size
+                                fontWeight:
+                                    FontWeight.bold, // Set the text weight
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                    SizedBox(height: 20),
-                  ],
+                      SizedBox(height: 20),
+                    ],
+                  ),
                 ),
               ),
             ),

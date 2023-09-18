@@ -47,6 +47,14 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
       ),
     );
   }
+// Function to handle resetting the input data
+  void _resetInputData() {
+    setState(() {
+      startingPoint = 'Nugegoda'; // Reset starting point to the default value
+      endPoint = 'NSBM'; // Reset end point to the default value
+      selectedDate = DateTime.now(); // Reset selected date to the default value
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -317,7 +325,7 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
                 ),
               ),
               style: ElevatedButton.styleFrom(
-                primary: Colors.blue, 
+                primary: Color.fromARGB(255, 87, 234, 104), 
                 padding: EdgeInsets.all(0), // Remove padding
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30.0), // Adjust border radius as needed
@@ -325,7 +333,34 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
               ),
             ),
           ),
-        ),    
+        ),
+        // Reset Button
+      Positioned(
+        top: 610.0, // Adjust the top position as needed
+        left: 40,
+        right: 40,
+        child: Container(
+          width: 10.0, // Set the desired width
+          height: 50.0, // Set the desired height
+          child: ElevatedButton(
+            onPressed: _resetInputData, // Reset input data when pressed
+            child: Text(
+              'Reset',
+              style: TextStyle(
+                fontSize: 18.0,
+                color: Colors.white,
+              ),
+            ),
+            style: ElevatedButton.styleFrom(
+              primary:Color.fromARGB(255, 87, 234, 104), // Change button color as needed
+              padding: EdgeInsets.all(0), // Remove padding
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30.0), // Adjust border radius as needed
+              ),
+            ),
+          ),
+        ),
+      ),    
        ],
       ),
       );

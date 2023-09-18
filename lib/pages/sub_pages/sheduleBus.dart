@@ -43,12 +43,13 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
   void _navigateToTimeTable() {
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => TimeTablePage(), // Replace with your TimeTable page widget
+        builder: (context) =>
+            TimeTablePage(), // Replace with your TimeTable page widget
       ),
     );
   }
 
-// Function to handle resetting the input data
+  // Function to handle resetting the input data
   void _resetInputData() {
     setState(() {
       startingPoint = 'Nugegoda'; // Reset starting point to the default value
@@ -131,53 +132,53 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
                       ),
                     ),
                   ),
+
                   // Second Column for End Point Dropdown Container
-                  
                   Expanded(
                     flex: 2,
                     child: Padding(
                       padding: EdgeInsets.only(right: 20.0),
-                    child: Container(
-                    alignment: Alignment.center, // Align to the right
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10.0),
-              ),
-              child: DropdownButton<String>(
-                value: endPoint,
-                onChanged: (String? newValue) {
-                  setState(() {
-                    endPoint = newValue!;
-                  });
-                },
-                items: <String>[
-                  'NSBM',
-                  'Nugegoda',
-                  'Maharagama',
-                  'Kottawa',
-                  'Padukka'
-                  ].map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(
-                      value,
-                      style: TextStyle(
-                        fontSize: 18.0,
-                        color: Colors.black,
+                      child: Container(
+                        alignment: Alignment.center, // Align to the right
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        child: DropdownButton<String>(
+                          value: startingPoint,
+                          onChanged: (String? newValue) {
+                            setState(() {
+                              startingPoint = newValue!;
+                            });
+                          },
+                          items: <String>[
+                            'NSBM',
+                            'Nugegoda',
+                            'Maharagama',
+                            'Kottawa',
+                            'Padukka'
+                          ].map<DropdownMenuItem<String>>((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(
+                                value,
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            );
+                          }).toList(),
+                        ),
                       ),
                     ),
-                  );
-                }).toList(),
+                  ),
+                ],
               ),
-             ),
             ),
-           ),
-           ],
           ),
-         ),
-        ),
-       
-        Positioned(
+
+          Positioned(
             top: 380.0, // Adjust the top position as needed
             left: 40,
             right: 0,
@@ -196,174 +197,179 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
                     ),
                   ),
                   // Second Column for End Point Dropdown Container
-                  
+
                   Expanded(
                     flex: 2,
                     child: Padding(
                       padding: EdgeInsets.only(right: 20.0),
-                    child: Container(
-                    alignment: Alignment.center, // Align to the right
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10.0),
-              ),
-              child: DropdownButton<String>(
-                value: endPoint,
-                onChanged: (String? newValue) {
-                  setState(() {
-                    endPoint = newValue!;
-                  });
-                },
-                items: <String>[
-                  'Nugegoda',
-                  'Maharagama',
-                  'Kottawa',
-                  'Padukka',
-                  'NSBM'
-                  ].map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(
-                      value,
-                      style: TextStyle(
-                        fontSize: 18.0,
-                        color: Colors.black,
-                      ),
-                    ),
-                  );
-                }).toList(),
-              ),
-             ),
-            ),
-           ),
-           ],
-          ),
-         ),
-        ),
-                  // First Column for "Starting Point" Text
-                  Positioned(
-                  top: 440.0, // Adjust the top position as needed
-                  left: 40,
-                  right: 0,
-                  child: Center(
-                  child: Row(
-                  children: [
-                  // First Column for "Date" Text
-                  Expanded(
-                  flex: 1,
-                  child: Text(
-                  'Date:',
-                   style: TextStyle(
-                   fontSize: 16.0,
-                   color: const Color.fromARGB(255, 54, 53, 53),
-                   ),
-                  ),
-                 ),
-        // Second Column for Date Picker and Calendar Icon
-        Expanded(
-          flex: 2,
-          child: Padding(
-            padding: EdgeInsets.only(right: 20.0),
-            child: Container(
-              height: 45.0,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10.0),
-              ),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: GestureDetector(
-                      onTap: () => _selectDate(context),
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 70.0),
-                      child: Text(
-                        "${selectedDate.toLocal()}".split(' ')[0],
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          color: Colors.black,
+                      child: Container(
+                        alignment: Alignment.center, // Align to the right
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        child: DropdownButton<String>(
+                          value: endPoint,
+                          onChanged: (String? newValue) {
+                            setState(() {
+                              endPoint = newValue!;
+                            });
+                          },
+                          items: <String>[
+                            'Nugegoda',
+                            'Maharagama',
+                            'Kottawa',
+                            'Padukka',
+                            'NSBM'
+                          ].map<DropdownMenuItem<String>>((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(
+                                value,
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            );
+                          }).toList(),
                         ),
                       ),
-                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(right: 10.0), // Adjust the spacing as needed
-                    child: GestureDetector(
-                    onTap: () => _selectDate(context),
-                    child: Image.asset(
-                      'assets/calendar.png', // Replace with your calendar image asset path
-                      width: 24.0, // Set the width as needed
-                      height: 24.0, // Set the height as needed
-                    ),
-                  ),
                   ),
                 ],
               ),
             ),
-            ),
-            ),
-          ],
-              ),
           ),
-         ),
+          // First Column for "Starting Point" Text
+          Positioned(
+            top: 440.0, // Adjust the top position as needed
+            left: 40,
+            right: 0,
+            child: Center(
+              child: Row(
+                children: [
+                  // First Column for "Date" Text
+                  Expanded(
+                    flex: 1,
+                    child: Text(
+                      'Date:',
+                      style: TextStyle(
+                        fontSize: 16.0,
+                        color: const Color.fromARGB(255, 54, 53, 53),
+                      ),
+                    ),
+                  ),
+                  // Second Column for Date Picker and Calendar Icon
+                  Expanded(
+                    flex: 2,
+                    child: Padding(
+                      padding: EdgeInsets.only(right: 20.0),
+                      child: Container(
+                        height: 45.0,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: GestureDetector(
+                                onTap: () => _selectDate(context),
+                                child: Padding(
+                                  padding: EdgeInsets.only(left: 70.0),
+                                  child: Text(
+                                    "${selectedDate.toLocal()}".split(' ')[0],
+                                    style: TextStyle(
+                                      fontSize: 18.0,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(
+                                  right: 10.0), // Adjust the spacing as needed
+                              child: GestureDetector(
+                                onTap: () => _selectDate(context),
+                                child: Image.asset(
+                                  'assets/calendar.png', // Replace with your calendar image asset path
+                                  width: 24.0, // Set the width as needed
+                                  height: 24.0, // Set the height as needed
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
           // Search Button
-        Positioned(
+          Positioned(
             top: 550.0, // Adjust the top position as needed
             left: 40,
             right: 40,
-            child:Container(
-             width: 10.0, // Set the desired width
-    height: 50.0, // Set the desired height 
-            child: ElevatedButton(
-              onPressed: _navigateToTimeTable, // Navigate to TimeTable page when pressed
-              child: Text(
-                'Search',
-                style: TextStyle(
-                  fontSize: 18.0,
-                  color: Colors.white,
+            child: Container(
+              width: 10.0, // Set the desired width
+              height: 50.0, // Set the desired height
+              child: ElevatedButton(
+                onPressed:
+                    _navigateToTimeTable, // Navigate to TimeTable page when pressed
+                child: Text(
+                  'Search',
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    color: Colors.white,
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: Color.fromARGB(255, 87, 234, 104),
+                  padding: EdgeInsets.all(0), // Remove padding
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                        30.0), // Adjust border radius as needed
+                  ), // Change button color as needed
                 ),
               ),
-              style: ElevatedButton.styleFrom(
-                primary: Color.fromARGB(255, 87, 234, 104), 
-                padding: EdgeInsets.all(0), // Remove padding
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30.0), // Adjust border radius as needed
-        ),// Change button color as needed
+            ),
+          ),
+          // Reset Button
+          Positioned(
+            top: 610.0, // Adjust the top position as needed
+            left: 40,
+            right: 40,
+            child: Container(
+              width: 10.0, // Set the desired width
+              height: 50.0, // Set the desired height
+              child: ElevatedButton(
+                onPressed: _resetInputData, // Reset input data when pressed
+                child: Text(
+                  'Reset',
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    color: Colors.white,
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: Color.fromARGB(
+                      255, 87, 234, 104), // Change button color as needed
+                  padding: EdgeInsets.all(0), // Remove padding
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                        30.0), // Adjust border radius as needed
+                  ),
+                ),
               ),
             ),
           ),
-        ),
-        // Reset Button
-      Positioned(
-        top: 610.0, // Adjust the top position as needed
-        left: 40,
-        right: 40,
-        child: Container(
-          width: 10.0, // Set the desired width
-          height: 50.0, // Set the desired height
-          child: ElevatedButton(
-            onPressed: _resetInputData, // Reset input data when pressed
-            child: Text(
-              'Reset',
-              style: TextStyle(
-                fontSize: 18.0,
-                color: Colors.white,
-              ),
-            ),
-            style: ElevatedButton.styleFrom(
-              primary:Color.fromARGB(255, 87, 234, 104), // Change button color as needed
-              padding: EdgeInsets.all(0), // Remove padding
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30.0), // Adjust border radius as needed
-              ),
-            ),
-          ),
-        ),
-      ),    
-       ],
+        ],
       ),
-      );
- }
+    );
+  }
 }

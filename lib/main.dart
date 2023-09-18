@@ -11,10 +11,9 @@ import 'pages/notify.dart';
 import 'pages/shedule.dart';
 import 'pages/sub_pages/sheduleBus.dart';
 import 'pages/sub_pages/payment.dart';
-//test
+//test my app
 
 import 'package:intl/intl.dart';
-//hy
 
 void main() {
   runApp(MyApp());
@@ -35,7 +34,7 @@ class SplashScreen extends StatefulWidget {
   _SplashScreenState createState() => _SplashScreenState();
 }
 
-//hello
+// new commit
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {

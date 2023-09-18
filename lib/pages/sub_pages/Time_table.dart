@@ -45,24 +45,17 @@ class TimeTablePage extends StatelessWidget {
               },
             ),
           ),
+
           // Text "Change Your Route" (Two Rows)
           // Text "Change Your Route" with Image after
           Positioned(
-            top: 80.0,
+            top: 100.0,
             left: 0,
             right: 0,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  'Change Your',
-                  style: TextStyle(
-                    fontSize: screenWidth * 0.06, // Responsive font size
-                    color: const Color.fromARGB(255, 42, 41, 41),
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
                 Text(
                   'Route',
                   style: TextStyle(
@@ -71,8 +64,7 @@ class TimeTablePage extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(
-                    height: 8.0), // Add some spacing between text and image
+                // Add some spacing between text and image
                 Image.asset(
                   'assets/sbus.png', // Image asset path
                   width: MediaQuery.of(context).size.width * 0.8,
@@ -183,113 +175,18 @@ class TimeTablePage extends StatelessWidget {
                                   45), // Color of the vertical line
                             ),
                             // Second Column (Text)
-                            Row(
-                              children: [
-                                // First Row (Time)
-                                Text(
-                                  '9:00 AM', // Your time text here
-                                  style: TextStyle(
-                                    fontSize: 14.0, // Smaller font size
-                                    fontWeight: FontWeight.bold,
-                                    color:
-                                        const Color.fromARGB(255, 135, 31, 31),
-                                  ),
+                            Expanded(
+                              flex:
+                                  3, // Adjust the flex as needed to control column widths
+                              child: Text(
+                                'Your Text', // Your text here
+                                style: TextStyle(
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: const Color.fromARGB(255, 141, 42, 42),
                                 ),
-                                SizedBox(
-                                    width:
-                                        8.0), // Add space between the first and second columns
-                                // Second Row (Formatted Text)
-                                Expanded(
-                                  child: Text(
-                                    'NUGEGODA --> NSBM', // Your formatted text here
-                                    style: TextStyle(
-                                      fontSize: 18.0, // Larger font size
-                                      fontWeight: FontWeight.bold,
-                                      color: const Color.fromARGB(
-                                          255, 129, 35, 35),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(
-                                    width:
-                                        8.0), // Add space between the second and third columns
-                                // Third Row (Three Columns)
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    // First Column (Two Rows)
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Your Text', // Your text here
-                                          style: TextStyle(
-                                            fontSize: 16.0,
-                                            fontWeight: FontWeight.bold,
-                                            color: const Color.fromARGB(
-                                                255, 141, 42, 42),
-                                          ),
-                                        ),
-                                        Text(
-                                          '10:00 AM', // Time in the first column
-                                          style: TextStyle(
-                                            fontSize:
-                                                12.0, // Smaller font size for time
-                                            fontWeight: FontWeight.bold,
-                                            color: const Color.fromARGB(
-                                                255, 135, 31, 31),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    // Second Column (Dotted Line)
-                                    Container(
-                                      width: 1.0, // Width of the vertical line
-                                      height:
-                                          40.0, // Height of the dotted line (adjust as needed)
-                                      decoration: BoxDecoration(
-                                        border: Border(
-                                          left: BorderSide(
-                                            color: Colors
-                                                .black, // Color of the dotted line
-                                            style: BorderStyle.solid,
-                                            width: 1.0,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    // Third Column (Two Rows)
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Your Text', // Your text here
-                                          style: TextStyle(
-                                            fontSize: 16.0,
-                                            fontWeight: FontWeight.bold,
-                                            color: const Color.fromARGB(
-                                                255, 141, 42, 42),
-                                          ),
-                                        ),
-                                        Text(
-                                          '11:00 AM', // Time in the third column
-                                          style: TextStyle(
-                                            fontSize:
-                                                12.0, // Smaller font size for time
-                                            fontWeight: FontWeight.bold,
-                                            color: const Color.fromARGB(
-                                                255, 135, 31, 31),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ],
+                              ),
                             ),
-
                             // Third Column (Image)
                             Expanded(
                               flex:

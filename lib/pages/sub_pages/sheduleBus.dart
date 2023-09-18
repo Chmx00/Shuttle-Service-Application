@@ -77,7 +77,7 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
             child: IconButton(
               icon: Icon(
                 Icons.arrow_back,
-                color: Color.fromARGB(255, 54, 53, 53),
+                color: Color.fromARGB(255, 4, 4, 4),
                 size: 30.0,
               ),
               onPressed: () {
@@ -87,7 +87,7 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
           ),
           // Text "Bus Schedule" at the Top Center
           Positioned(
-            top: 80.0,
+            top: 130.0,
             left: 0,
             right: 0,
             child: Center(
@@ -102,7 +102,7 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
             ),
           ),
           Positioned(
-            top: 90.0, // Adjust the top position as needed
+            top: 140.0, // Adjust the top position as needed
             left: 0,
             right: 0,
             child: Center(
@@ -115,7 +115,7 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
           ),
           // Row with Starting Point Text and End Point Dropdown
           Positioned(
-            top: 320.0, // Adjust the top position as needed
+            top: 360.0, // Adjust the top position as needed
             left: 40,
             right: 0,
             child: Center(
@@ -179,7 +179,7 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
           ),
 
           Positioned(
-            top: 380.0, // Adjust the top position as needed
+            top: 420.0, // Adjust the top position as needed
             left: 40,
             right: 0,
             child: Center(
@@ -243,7 +243,7 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
           ),
           // First Column for "Starting Point" Text
           Positioned(
-            top: 440.0, // Adjust the top position as needed
+            top: 480.0, // Adjust the top position as needed
             left: 40,
             right: 0,
             child: Center(
@@ -312,7 +312,7 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
           ),
           // Search Button
           Positioned(
-            top: 550.0, // Adjust the top position as needed
+            top: 580.0, // Adjust the top position as needed
             left: 40,
             right: 40,
             child: Container(
@@ -341,7 +341,7 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
           ),
           // Reset Button
           Positioned(
-            top: 610.0, // Adjust the top position as needed
+            top: 640.0, // Adjust the top position as needed
             left: 40,
             right: 40,
             child: Container(

@@ -37,7 +37,7 @@ class TimeTablePage extends StatelessWidget {
             child: IconButton(
               icon: Icon(
                 Icons.arrow_back,
-                color: Color.fromARGB(255, 96, 96, 96),
+                color: Color.fromARGB(255, 29, 29, 29),
               ),
               onPressed: () {
                 Navigator.of(context).pop();

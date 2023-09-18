@@ -277,7 +277,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      buildTile('assets/Bus.png', 'Bus Schedule', () {
+                      buildTile('assets/Bus1.png', 'Bus Schedule', () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(

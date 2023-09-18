@@ -13,7 +13,7 @@ class ReservationsPage extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/Home.png'),
+                  image: AssetImage('assets/Payment.png'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -26,7 +26,7 @@ class ReservationsPage extends StatelessWidget {
             child: IconButton(
               icon: Icon(
                 Icons.arrow_back,
-                color: Colors.grey,
+                color: const Color.fromARGB(255, 0, 0, 0),
                 size: 30.0,
               ),
               onPressed: () {
@@ -40,7 +40,7 @@ class ReservationsPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 100.0),
+                  padding: const EdgeInsets.only(top: 130.0),
                   child: GestureDetector(
                     onTap: () {
                       // Redirect to purchase.dart when tapped
@@ -74,10 +74,10 @@ class ReservationsPage extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: 40),
                 Container(
                   width: double.infinity,
-                  height: 567.2,
+                  height: 507,
                   decoration: BoxDecoration(
                     color: Color.fromARGB(252, 255, 255, 255),
                     borderRadius: BorderRadius.only(
@@ -95,7 +95,7 @@ class ReservationsPage extends StatelessWidget {
                     ],
                   ),
                   padding: const EdgeInsets.only(
-                      top: 150, left: 20, right: 20, bottom: 20),
+                      top: 115, left: 20, right: 20, bottom: 20),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,

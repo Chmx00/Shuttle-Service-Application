@@ -48,6 +48,7 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
       ),
     );
   }
+
 // Function to handle resetting the input data
   void _resetInputData() {
     setState(() {

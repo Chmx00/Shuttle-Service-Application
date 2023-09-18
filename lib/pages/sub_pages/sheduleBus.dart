@@ -48,6 +48,14 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
       ),
     );
   }
+// Function to handle resetting the input data
+  void _resetInputData() {
+    setState(() {
+      startingPoint = 'Nugegoda'; // Reset starting point to the default value
+      endPoint = 'NSBM'; // Reset end point to the default value
+      selectedDate = DateTime.now(); // Reset selected date to the default value
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

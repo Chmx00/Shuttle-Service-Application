@@ -22,6 +22,21 @@ class BusSchedulePage extends StatefulWidget {
 class _BusSchedulePageState extends State<BusSchedulePage> {
   String startingPoint = 'Nugegoda'; // Default starting point
   String endPoint = 'NSBM'; // Default end point
+  DateTime selectedDate = DateTime.now(); // Selected date, with a default value
+
+  Future<void> _selectDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: selectedDate,
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2101),
+    );
+    if (picked != null && picked != selectedDate) {
+      setState(() {
+        selectedDate = picked;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +93,6 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
               ),
             ),
           ),
-          // Container for Starting Point Dropdown
           // Row with Starting Point Text and End Point Dropdown
           Positioned(
             top: 320.0, // Adjust the top position as needed
@@ -143,6 +157,7 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
           ),
          ),
         ),
+       
         Positioned(
             top: 380.0, // Adjust the top position as needed
             left: 40,
@@ -206,8 +221,75 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
           ),
          ),
         ),
+       
+                  // First Column for "Starting Point" Text
+                  Positioned(
+  top: 440.0, // Adjust the top position as needed
+  left: 40,
+  right: 0,
+  child: Center(
+    child: Row(
+      children: [
+        // First Column for "Date" Text
+        Expanded(
+          flex: 1,
+          child: Text(
+            'Date:',
+            style: TextStyle(
+              fontSize: 16.0,
+              color: const Color.fromARGB(255, 54, 53, 53),
+            ),
+          ),
+        ),
+        // Second Column for Date Picker and Calendar Icon
+        Expanded(
+          flex: 2,
+          child: Padding(
+            padding: EdgeInsets.only(right: 20.0),
+            child: Container(
+              height: 45.0,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: GestureDetector(
+                      onTap: () => _selectDate(context),
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 70.0),
+                      child: Text(
+                        "${selectedDate.toLocal()}".split(' ')[0],
+                        style: TextStyle(
+                          fontSize: 18.0,
+                          color: Colors.black,
+                        ),
+                      ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(right: 10.0), // Adjust the spacing as needed
+                    child: GestureDetector(
+                    onTap: () => _selectDate(context),
+                    child: Image.asset(
+                      'assets/calendar.png', // Replace with your calendar image asset path
+                      width: 24.0, // Set the width as needed
+                      height: 24.0, // Set the height as needed
+                    ),
+                  ),),
+                ],
+              ),
+            ),),),
+            
+          ],
+              ),
+          ),
+         ),
        ],
       ),
-   );      
+      );
  }
 }

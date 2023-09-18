@@ -81,6 +81,7 @@ flutter:
      - assets/calendar.png
      - assets/lost.PNG
      - assets/sbus.png
+     - assets/Searching.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

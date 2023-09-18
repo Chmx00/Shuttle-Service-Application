@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:transport_portal/main.dart';
+
+void main() {
+  runApp(MyApp());
+}
 
 
 class RoutePage extends StatelessWidget {
@@ -58,12 +63,12 @@ class RoutePage extends StatelessWidget {
               ],
             ),
           ),
-                Image.asset(
-                  'assets/School bus.png',
-                  width: 180,
-                  height: 180,
-                  fit: BoxFit.contain,
-                ),
+          Image.asset(
+            'assets/School bus.png',
+            width: 180,
+            height: 180,
+            fit: BoxFit.contain,
+          ),
           // Content
           // Large Container at the Bottom with Rounded Top Corners
           Positioned(

@@ -105,7 +105,7 @@ class TimeTablePage extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 18.0,
                               fontWeight: FontWeight.bold,
-                              color: Color.fromARGB(255, 82, 167, 237),
+                              color: Color.fromARGB(255, 61, 167, 253),
                             ),
                           ),
                         ),
@@ -121,7 +121,7 @@ class TimeTablePage extends StatelessWidget {
                             topRight: Radius.circular(15.0),
                             bottomRight: Radius.circular(15.0), // Border width
                           ),
-                          color: Color.fromARGB(255, 214, 236, 254),
+                          color: Color.fromARGB(255, 159, 206, 244),
                         ),
                         child: Row(
                           children: [
@@ -136,28 +136,28 @@ class TimeTablePage extends StatelessWidget {
                                   // First Row (Time)
                                   Padding(
                                     padding: EdgeInsets.only(
-                                        left: 16.0), // Add left padding
+                                        left: 14.0), // Add left padding
                                     child: Text(
                                       '9:00 AM', // Your time text here
                                       style: TextStyle(
                                         fontSize: 16.0,
                                         fontWeight: FontWeight.bold,
-                                        color: const Color.fromARGB(
-                                            255, 135, 31, 31),
+                                        color:
+                                            Color.fromARGB(255, 246, 138, 29),
                                       ),
                                     ),
                                   ),
                                   // Second Row (Date)
                                   Padding(
                                     padding: EdgeInsets.only(
-                                        left: 16.0), // Add left padding
+                                        left: 14.0), // Add left padding
                                     child: Text(
                                       'Mon, 25', // Your date text here
                                       style: TextStyle(
                                         fontSize: 16.0,
                                         fontWeight: FontWeight.bold,
-                                        color: const Color.fromARGB(
-                                            255, 129, 35, 35),
+                                        color:
+                                            Color.fromARGB(255, 251, 250, 250),
                                       ),
                                     ),
                                   ),
@@ -170,43 +170,43 @@ class TimeTablePage extends StatelessWidget {
                               width: 1.0, // Width of the vertical line
                               height:
                                   100.0, // Height of the vertical line (adjust as needed)
-                              color: const Color.fromARGB(255, 163, 45,
-                                  45), // Color of the vertical line
+                              color: Color.fromARGB(255, 250, 250,
+                                  250), // Color of the vertical line
                             ),
                             // Second Column (Text)
                             Expanded(
-                              flex: 3,
+                              flex: 5,
                               child: Padding(
                                 padding: EdgeInsets.only(
                                     left: 10.0,
                                     top:
-                                        20.0), // Adjust the flex as needed to control column widths
+                                        35.0), // Adjust the flex as needed to control column widths
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     // First Text Row
                                     Padding(
-                                      padding: EdgeInsets.only(left: 10.0),
+                                      padding: EdgeInsets.only(left: 0.0),
                                       child: Text(
                                         '6.45 A.M', // Your date text here
                                         style: TextStyle(
                                           fontSize: 10.0,
                                           fontWeight: FontWeight.bold,
-                                          color: const Color.fromARGB(
-                                              255, 129, 35, 35),
+                                          color: Color.fromARGB(
+                                              255, 248, 247, 247),
                                         ),
                                       ),
                                     ),
                                     // Second Text Row
                                     Padding(
-                                      padding: EdgeInsets.only(left: 10.0),
+                                      padding: EdgeInsets.only(left: 0.0),
                                       child: Text(
                                         'NUGEGODA --> NSBM', // Your date text here
                                         style: TextStyle(
-                                          fontSize: 12.0,
+                                          fontSize: 18.0,
                                           fontWeight: FontWeight.bold,
-                                          color: const Color.fromARGB(
-                                              255, 129, 35, 35),
+                                          color: Color.fromARGB(
+                                              255, 248, 246, 246),
                                         ),
                                       ),
                                     ),
@@ -220,40 +220,62 @@ class TimeTablePage extends StatelessWidget {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                'Your Text', // Your text here
+                                                'KOTTAWA', // Your text here
                                                 style: TextStyle(
-                                                  fontSize: 16.0,
+                                                  fontSize: 10.0,
                                                   fontWeight: FontWeight.bold,
-                                                  color: const Color.fromARGB(
-                                                      255, 141, 42, 42),
+                                                  color: Color.fromARGB(
+                                                      255, 118, 110, 110),
                                                 ),
                                               ),
                                               Text(
-                                                '10:00 AM', // Time in the first sub-column
+                                                '07:10 AM', // Time in the first sub-column
                                                 style: TextStyle(
-                                                  fontSize: 12.0,
+                                                  fontSize: 8.0,
                                                   fontWeight: FontWeight.bold,
-                                                  color: const Color.fromARGB(
-                                                      255, 135, 31, 31),
+                                                  color: Color.fromARGB(
+                                                      255, 118, 110, 110),
                                                 ),
                                               ),
                                             ],
                                           ),
                                         ),
-                                        // Second Sub-Column (Dotted Line)
-                                        Container(
-                                          width: 1.0,
-                                          height: 40.0,
-                                          decoration: BoxDecoration(
-                                            border: Border(
-                                              left: BorderSide(
-                                                color: Colors.black,
-                                                style: BorderStyle.solid,
-                                                width: 1.0,
+
+                                        // Second Column (Text and Horizontal Line)
+                                        // Second Column (Text and Horizontal Line)
+                                        Expanded(
+                                          flex:
+                                              2, // Adjust the flex value to make the column narrower
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              // Text
+                                              Padding(
+                                                padding: EdgeInsets.only(
+                                                    left:
+                                                        10.0), // Add left padding
                                               ),
-                                            ),
+                                              // Horizontal Line (Divider)
+                                              Divider(
+                                                color: Color.fromARGB(
+                                                    255,
+                                                    118,
+                                                    110,
+                                                    110), // Color of the line
+                                                thickness:
+                                                    1.0, // Thickness of the line
+                                                height:
+                                                    1.0, // Height of the line
+                                                indent:
+                                                    10.0, // Indent from the left
+                                                endIndent:
+                                                    10.0, // Indent from the right
+                                              ),
+                                            ],
                                           ),
                                         ),
+
                                         // Third Sub-Column (Text and Time)
                                         Expanded(
                                           child: Column(
@@ -261,21 +283,21 @@ class TimeTablePage extends StatelessWidget {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                'Your Text', // Your text here
+                                                'NSBM', // Your text here
                                                 style: TextStyle(
-                                                  fontSize: 16.0,
+                                                  fontSize: 10.0,
                                                   fontWeight: FontWeight.bold,
-                                                  color: const Color.fromARGB(
-                                                      255, 141, 42, 42),
+                                                  color: Color.fromARGB(
+                                                      255, 118, 110, 110),
                                                 ),
                                               ),
                                               Text(
-                                                '11:00 AM', // Time in the third sub-column
+                                                '07:50 AM', // Time in the third sub-column
                                                 style: TextStyle(
-                                                  fontSize: 12.0,
+                                                  fontSize: 8.0,
                                                   fontWeight: FontWeight.bold,
-                                                  color: const Color.fromARGB(
-                                                      255, 135, 31, 31),
+                                                  color: Color.fromARGB(
+                                                      255, 118, 110, 110),
                                                 ),
                                               ),
                                             ],
@@ -305,91 +327,867 @@ class TimeTablePage extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 10),
-                      SizedBox(
+                      Container(
                         width: 370.0,
                         height: 130.0,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(15.0),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(15.0),
+                            bottomLeft: Radius.circular(15.0),
+                            topRight: Radius.circular(15.0),
+                            bottomRight: Radius.circular(15.0), // Border width
                           ),
-                          child: Center(
-                            child: Text(
-                              'Padukka - NSBM', // Your text here
-                              style: TextStyle(
-                                color: Colors.white, // Set the text color
-                                fontSize: 16.0, // Set the text size
-                                fontWeight:
-                                    FontWeight.bold, // Set the text weight
+                          color: Color.fromARGB(255, 159, 206, 244),
+                        ),
+                        child: Row(
+                          children: [
+                            // First Column (Two Rows)
+                            Expanded(
+                              flex:
+                                  2, // Adjust the flex as needed to control column widths
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  // First Row (Time)
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 14.0), // Add left padding
+                                    child: Text(
+                                      '9:00 AM', // Your time text here
+                                      style: TextStyle(
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold,
+                                        color:
+                                            Color.fromARGB(255, 246, 138, 29),
+                                      ),
+                                    ),
+                                  ),
+                                  // Second Row (Date)
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 14.0), // Add left padding
+                                    child: Text(
+                                      'Mon, 25', // Your date text here
+                                      style: TextStyle(
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold,
+                                        color:
+                                            Color.fromARGB(255, 251, 250, 250),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                          ),
+
+                            // Vertical Line (Adjust the height as needed)
+                            Container(
+                              width: 1.0, // Width of the vertical line
+                              height:
+                                  100.0, // Height of the vertical line (adjust as needed)
+                              color: Color.fromARGB(255, 250, 250,
+                                  250), // Color of the vertical line
+                            ),
+                            // Second Column (Text)
+                            Expanded(
+                              flex: 5,
+                              child: Padding(
+                                padding: EdgeInsets.only(
+                                    left: 10.0,
+                                    top:
+                                        35.0), // Adjust the flex as needed to control column widths
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    // First Text Row
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 0.0),
+                                      child: Text(
+                                        '6.45 A.M', // Your date text here
+                                        style: TextStyle(
+                                          fontSize: 10.0,
+                                          fontWeight: FontWeight.bold,
+                                          color: Color.fromARGB(
+                                              255, 248, 247, 247),
+                                        ),
+                                      ),
+                                    ),
+                                    // Second Text Row
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 0.0),
+                                      child: Text(
+                                        'NUGEGODA --> NSBM', // Your date text here
+                                        style: TextStyle(
+                                          fontSize: 18.0,
+                                          fontWeight: FontWeight.bold,
+                                          color: Color.fromARGB(
+                                              255, 248, 246, 246),
+                                        ),
+                                      ),
+                                    ),
+                                    // Third Text Row
+                                    Row(
+                                      children: [
+                                        // First Sub-Column (Text and Time)
+                                        Expanded(
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'KOTTAWA', // Your text here
+                                                style: TextStyle(
+                                                  fontSize: 10.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Color.fromARGB(
+                                                      255, 118, 110, 110),
+                                                ),
+                                              ),
+                                              Text(
+                                                '07:10 AM', // Time in the first sub-column
+                                                style: TextStyle(
+                                                  fontSize: 8.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Color.fromARGB(
+                                                      255, 118, 110, 110),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+
+                                        // Second Column (Text and Horizontal Line)
+                                        // Second Column (Text and Horizontal Line)
+                                        Expanded(
+                                          flex:
+                                              2, // Adjust the flex value to make the column narrower
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              // Text
+                                              Padding(
+                                                padding: EdgeInsets.only(
+                                                    left:
+                                                        10.0), // Add left padding
+                                              ),
+                                              // Horizontal Line (Divider)
+                                              Divider(
+                                                color: Color.fromARGB(
+                                                    255,
+                                                    118,
+                                                    110,
+                                                    110), // Color of the line
+                                                thickness:
+                                                    1.0, // Thickness of the line
+                                                height:
+                                                    1.0, // Height of the line
+                                                indent:
+                                                    10.0, // Indent from the left
+                                                endIndent:
+                                                    10.0, // Indent from the right
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+
+                                        // Third Sub-Column (Text and Time)
+                                        Expanded(
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'NSBM', // Your text here
+                                                style: TextStyle(
+                                                  fontSize: 10.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Color.fromARGB(
+                                                      255, 118, 110, 110),
+                                                ),
+                                              ),
+                                              Text(
+                                                '07:50 AM', // Time in the third sub-column
+                                                style: TextStyle(
+                                                  fontSize: 8.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Color.fromARGB(
+                                                      255, 118, 110, 110),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            // Third Column (Image)
+                            Expanded(
+                              flex:
+                                  2, // Adjust the flex as needed to control column widths
+                              child: Center(
+                                child: Image.asset(
+                                  'assets/Bus.png', // Image asset path
+                                  width:
+                                      80.0, // Adjust the image width as needed
+                                  height:
+                                      80.0, // Adjust the image height as needed
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       SizedBox(height: 20),
-                      SizedBox(
+                      Container(
                         width: 370.0,
                         height: 130.0,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(15.0),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(15.0),
+                            bottomLeft: Radius.circular(15.0),
+                            topRight: Radius.circular(15.0),
+                            bottomRight: Radius.circular(15.0), // Border width
                           ),
-                          child: Center(
-                            child: Text(
-                              'Nugegoda - NSBM', // Your text here
-                              style: TextStyle(
-                                color: Colors.white, // Set the text color
-                                fontSize: 16.0, // Set the text size
-                                fontWeight:
-                                    FontWeight.bold, // Set the text weight
+                          color: Color.fromARGB(255, 159, 206, 244),
+                        ),
+                        child: Row(
+                          children: [
+                            // First Column (Two Rows)
+                            Expanded(
+                              flex:
+                                  2, // Adjust the flex as needed to control column widths
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  // First Row (Time)
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 14.0), // Add left padding
+                                    child: Text(
+                                      '9:00 AM', // Your time text here
+                                      style: TextStyle(
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold,
+                                        color:
+                                            Color.fromARGB(255, 246, 138, 29),
+                                      ),
+                                    ),
+                                  ),
+                                  // Second Row (Date)
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 14.0), // Add left padding
+                                    child: Text(
+                                      'Mon, 25', // Your date text here
+                                      style: TextStyle(
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold,
+                                        color:
+                                            Color.fromARGB(255, 251, 250, 250),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                          ),
+
+                            // Vertical Line (Adjust the height as needed)
+                            Container(
+                              width: 1.0, // Width of the vertical line
+                              height:
+                                  100.0, // Height of the vertical line (adjust as needed)
+                              color: Color.fromARGB(255, 250, 250,
+                                  250), // Color of the vertical line
+                            ),
+                            // Second Column (Text)
+                            Expanded(
+                              flex: 5,
+                              child: Padding(
+                                padding: EdgeInsets.only(
+                                    left: 10.0,
+                                    top:
+                                        35.0), // Adjust the flex as needed to control column widths
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    // First Text Row
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 0.0),
+                                      child: Text(
+                                        '6.45 A.M', // Your date text here
+                                        style: TextStyle(
+                                          fontSize: 10.0,
+                                          fontWeight: FontWeight.bold,
+                                          color: Color.fromARGB(
+                                              255, 248, 247, 247),
+                                        ),
+                                      ),
+                                    ),
+                                    // Second Text Row
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 0.0),
+                                      child: Text(
+                                        'NUGEGODA --> NSBM', // Your date text here
+                                        style: TextStyle(
+                                          fontSize: 18.0,
+                                          fontWeight: FontWeight.bold,
+                                          color: Color.fromARGB(
+                                              255, 248, 246, 246),
+                                        ),
+                                      ),
+                                    ),
+                                    // Third Text Row
+                                    Row(
+                                      children: [
+                                        // First Sub-Column (Text and Time)
+                                        Expanded(
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'KOTTAWA', // Your text here
+                                                style: TextStyle(
+                                                  fontSize: 10.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Color.fromARGB(
+                                                      255, 118, 110, 110),
+                                                ),
+                                              ),
+                                              Text(
+                                                '07:10 AM', // Time in the first sub-column
+                                                style: TextStyle(
+                                                  fontSize: 8.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Color.fromARGB(
+                                                      255, 118, 110, 110),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+
+                                        // Second Column (Text and Horizontal Line)
+                                        // Second Column (Text and Horizontal Line)
+                                        Expanded(
+                                          flex:
+                                              2, // Adjust the flex value to make the column narrower
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              // Text
+                                              Padding(
+                                                padding: EdgeInsets.only(
+                                                    left:
+                                                        10.0), // Add left padding
+                                              ),
+                                              // Horizontal Line (Divider)
+                                              Divider(
+                                                color: Color.fromARGB(
+                                                    255,
+                                                    118,
+                                                    110,
+                                                    110), // Color of the line
+                                                thickness:
+                                                    1.0, // Thickness of the line
+                                                height:
+                                                    1.0, // Height of the line
+                                                indent:
+                                                    10.0, // Indent from the left
+                                                endIndent:
+                                                    10.0, // Indent from the right
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+
+                                        // Third Sub-Column (Text and Time)
+                                        Expanded(
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'NSBM', // Your text here
+                                                style: TextStyle(
+                                                  fontSize: 10.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Color.fromARGB(
+                                                      255, 118, 110, 110),
+                                                ),
+                                              ),
+                                              Text(
+                                                '07:50 AM', // Time in the third sub-column
+                                                style: TextStyle(
+                                                  fontSize: 8.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Color.fromARGB(
+                                                      255, 118, 110, 110),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            // Third Column (Image)
+                            Expanded(
+                              flex:
+                                  2, // Adjust the flex as needed to control column widths
+                              child: Center(
+                                child: Image.asset(
+                                  'assets/Bus.png', // Image asset path
+                                  width:
+                                      80.0, // Adjust the image width as needed
+                                  height:
+                                      80.0, // Adjust the image height as needed
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       SizedBox(height: 20),
-                      SizedBox(
+                      Container(
                         width: 370.0,
                         height: 130.0,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(15.0),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(15.0),
+                            bottomLeft: Radius.circular(15.0),
+                            topRight: Radius.circular(15.0),
+                            bottomRight: Radius.circular(15.0), // Border width
                           ),
-                          child: Center(
-                            child: Text(
-                              'Moragahena - NSBM', // Your text here
-                              style: TextStyle(
-                                color: Colors.white, // Set the text color
-                                fontSize: 16.0, // Set the text size
-                                fontWeight:
-                                    FontWeight.bold, // Set the text weight
+                          color: Color.fromARGB(255, 159, 206, 244),
+                        ),
+                        child: Row(
+                          children: [
+                            // First Column (Two Rows)
+                            Expanded(
+                              flex:
+                                  2, // Adjust the flex as needed to control column widths
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  // First Row (Time)
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 14.0), // Add left padding
+                                    child: Text(
+                                      '9:00 AM', // Your time text here
+                                      style: TextStyle(
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold,
+                                        color:
+                                            Color.fromARGB(255, 246, 138, 29),
+                                      ),
+                                    ),
+                                  ),
+                                  // Second Row (Date)
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 14.0), // Add left padding
+                                    child: Text(
+                                      'Mon, 25', // Your date text here
+                                      style: TextStyle(
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold,
+                                        color:
+                                            Color.fromARGB(255, 251, 250, 250),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                          ),
+
+                            // Vertical Line (Adjust the height as needed)
+                            Container(
+                              width: 1.0, // Width of the vertical line
+                              height:
+                                  100.0, // Height of the vertical line (adjust as needed)
+                              color: Color.fromARGB(255, 250, 250,
+                                  250), // Color of the vertical line
+                            ),
+                            // Second Column (Text)
+                            Expanded(
+                              flex: 5,
+                              child: Padding(
+                                padding: EdgeInsets.only(
+                                    left: 10.0,
+                                    top:
+                                        35.0), // Adjust the flex as needed to control column widths
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    // First Text Row
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 0.0),
+                                      child: Text(
+                                        '6.45 A.M', // Your date text here
+                                        style: TextStyle(
+                                          fontSize: 10.0,
+                                          fontWeight: FontWeight.bold,
+                                          color: Color.fromARGB(
+                                              255, 248, 247, 247),
+                                        ),
+                                      ),
+                                    ),
+                                    // Second Text Row
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 0.0),
+                                      child: Text(
+                                        'NUGEGODA --> NSBM', // Your date text here
+                                        style: TextStyle(
+                                          fontSize: 18.0,
+                                          fontWeight: FontWeight.bold,
+                                          color: Color.fromARGB(
+                                              255, 248, 246, 246),
+                                        ),
+                                      ),
+                                    ),
+                                    // Third Text Row
+                                    Row(
+                                      children: [
+                                        // First Sub-Column (Text and Time)
+                                        Expanded(
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'KOTTAWA', // Your text here
+                                                style: TextStyle(
+                                                  fontSize: 10.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Color.fromARGB(
+                                                      255, 118, 110, 110),
+                                                ),
+                                              ),
+                                              Text(
+                                                '07:10 AM', // Time in the first sub-column
+                                                style: TextStyle(
+                                                  fontSize: 8.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Color.fromARGB(
+                                                      255, 118, 110, 110),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+
+                                        // Second Column (Text and Horizontal Line)
+                                        // Second Column (Text and Horizontal Line)
+                                        Expanded(
+                                          flex:
+                                              2, // Adjust the flex value to make the column narrower
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              // Text
+                                              Padding(
+                                                padding: EdgeInsets.only(
+                                                    left:
+                                                        10.0), // Add left padding
+                                              ),
+                                              // Horizontal Line (Divider)
+                                              Divider(
+                                                color: Color.fromARGB(
+                                                    255,
+                                                    118,
+                                                    110,
+                                                    110), // Color of the line
+                                                thickness:
+                                                    1.0, // Thickness of the line
+                                                height:
+                                                    1.0, // Height of the line
+                                                indent:
+                                                    10.0, // Indent from the left
+                                                endIndent:
+                                                    10.0, // Indent from the right
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+
+                                        // Third Sub-Column (Text and Time)
+                                        Expanded(
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'NSBM', // Your text here
+                                                style: TextStyle(
+                                                  fontSize: 10.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Color.fromARGB(
+                                                      255, 118, 110, 110),
+                                                ),
+                                              ),
+                                              Text(
+                                                '07:50 AM', // Time in the third sub-column
+                                                style: TextStyle(
+                                                  fontSize: 8.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Color.fromARGB(
+                                                      255, 118, 110, 110),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            // Third Column (Image)
+                            Expanded(
+                              flex:
+                                  2, // Adjust the flex as needed to control column widths
+                              child: Center(
+                                child: Image.asset(
+                                  'assets/Bus.png', // Image asset path
+                                  width:
+                                      80.0, // Adjust the image width as needed
+                                  height:
+                                      80.0, // Adjust the image height as needed
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       SizedBox(height: 20),
-                      SizedBox(
+                      Container(
                         width: 370.0,
                         height: 130.0,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(15.0),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(15.0),
+                            bottomLeft: Radius.circular(15.0),
+                            topRight: Radius.circular(15.0),
+                            bottomRight: Radius.circular(15.0), // Border width
                           ),
-                          child: Center(
-                            child: Text(
-                              'Moragahena - NSBM', // Your text here
-                              style: TextStyle(
-                                color: Colors.white, // Set the text color
-                                fontSize: 16.0, // Set the text size
-                                fontWeight:
-                                    FontWeight.bold, // Set the text weight
+                          color: Color.fromARGB(255, 159, 206, 244),
+                        ),
+                        child: Row(
+                          children: [
+                            // First Column (Two Rows)
+                            Expanded(
+                              flex:
+                                  2, // Adjust the flex as needed to control column widths
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  // First Row (Time)
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 14.0), // Add left padding
+                                    child: Text(
+                                      '9:00 AM', // Your time text here
+                                      style: TextStyle(
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold,
+                                        color:
+                                            Color.fromARGB(255, 246, 138, 29),
+                                      ),
+                                    ),
+                                  ),
+                                  // Second Row (Date)
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 14.0), // Add left padding
+                                    child: Text(
+                                      'Mon, 25', // Your date text here
+                                      style: TextStyle(
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold,
+                                        color:
+                                            Color.fromARGB(255, 251, 250, 250),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                          ),
+
+                            // Vertical Line (Adjust the height as needed)
+                            Container(
+                              width: 1.0, // Width of the vertical line
+                              height:
+                                  100.0, // Height of the vertical line (adjust as needed)
+                              color: Color.fromARGB(255, 250, 250,
+                                  250), // Color of the vertical line
+                            ),
+                            // Second Column (Text)
+                            Expanded(
+                              flex: 5,
+                              child: Padding(
+                                padding: EdgeInsets.only(
+                                    left: 10.0,
+                                    top:
+                                        35.0), // Adjust the flex as needed to control column widths
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    // First Text Row
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 0.0),
+                                      child: Text(
+                                        '6.45 A.M', // Your date text here
+                                        style: TextStyle(
+                                          fontSize: 10.0,
+                                          fontWeight: FontWeight.bold,
+                                          color: Color.fromARGB(
+                                              255, 248, 247, 247),
+                                        ),
+                                      ),
+                                    ),
+                                    // Second Text Row
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 0.0),
+                                      child: Text(
+                                        'NUGEGODA --> NSBM', // Your date text here
+                                        style: TextStyle(
+                                          fontSize: 18.0,
+                                          fontWeight: FontWeight.bold,
+                                          color: Color.fromARGB(
+                                              255, 248, 246, 246),
+                                        ),
+                                      ),
+                                    ),
+                                    // Third Text Row
+                                    Row(
+                                      children: [
+                                        // First Sub-Column (Text and Time)
+                                        Expanded(
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'KOTTAWA', // Your text here
+                                                style: TextStyle(
+                                                  fontSize: 10.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Color.fromARGB(
+                                                      255, 118, 110, 110),
+                                                ),
+                                              ),
+                                              Text(
+                                                '07:10 AM', // Time in the first sub-column
+                                                style: TextStyle(
+                                                  fontSize: 8.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Color.fromARGB(
+                                                      255, 118, 110, 110),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+
+                                        // Second Column (Text and Horizontal Line)
+                                        // Second Column (Text and Horizontal Line)
+                                        Expanded(
+                                          flex:
+                                              2, // Adjust the flex value to make the column narrower
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              // Text
+                                              Padding(
+                                                padding: EdgeInsets.only(
+                                                    left:
+                                                        10.0), // Add left padding
+                                              ),
+                                              // Horizontal Line (Divider)
+                                              Divider(
+                                                color: Color.fromARGB(
+                                                    255,
+                                                    118,
+                                                    110,
+                                                    110), // Color of the line
+                                                thickness:
+                                                    1.0, // Thickness of the line
+                                                height:
+                                                    1.0, // Height of the line
+                                                indent:
+                                                    10.0, // Indent from the left
+                                                endIndent:
+                                                    10.0, // Indent from the right
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+
+                                        // Third Sub-Column (Text and Time)
+                                        Expanded(
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'NSBM', // Your text here
+                                                style: TextStyle(
+                                                  fontSize: 10.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Color.fromARGB(
+                                                      255, 118, 110, 110),
+                                                ),
+                                              ),
+                                              Text(
+                                                '07:50 AM', // Time in the third sub-column
+                                                style: TextStyle(
+                                                  fontSize: 8.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Color.fromARGB(
+                                                      255, 118, 110, 110),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            // Third Column (Image)
+                            Expanded(
+                              flex:
+                                  2, // Adjust the flex as needed to control column widths
+                              child: Center(
+                                child: Image.asset(
+                                  'assets/Bus.png', // Image asset path
+                                  width:
+                                      80.0, // Adjust the image width as needed
+                                  height:
+                                      80.0, // Adjust the image height as needed
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       SizedBox(height: 20),

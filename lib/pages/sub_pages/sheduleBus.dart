@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Time_table.dart';
 
 void main() {
   runApp(MyApp());
@@ -36,6 +37,24 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
         selectedDate = picked;
       });
     }
+  }
+
+  // Function to handle navigation to the TimeTable page
+  void _navigateToTimeTable() {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => TimeTablePage(), // Replace with your TimeTable page widget
+      ),
+    );
+  }
+
+// Function to handle resetting the input data
+  void _resetInputData() {
+    setState(() {
+      startingPoint = 'Nugegoda'; // Reset starting point to the default value
+      endPoint = 'NSBM'; // Reset end point to the default value
+      selectedDate = DateTime.now(); // Reset selected date to the default value
+    });
   }
 
   @override
@@ -221,26 +240,25 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
           ),
          ),
         ),
-       
                   // First Column for "Starting Point" Text
                   Positioned(
-  top: 440.0, // Adjust the top position as needed
-  left: 40,
-  right: 0,
-  child: Center(
-    child: Row(
-      children: [
-        // First Column for "Date" Text
-        Expanded(
-          flex: 1,
-          child: Text(
-            'Date:',
-            style: TextStyle(
-              fontSize: 16.0,
-              color: const Color.fromARGB(255, 54, 53, 53),
-            ),
-          ),
-        ),
+                  top: 440.0, // Adjust the top position as needed
+                  left: 40,
+                  right: 0,
+                  child: Center(
+                  child: Row(
+                  children: [
+                  // First Column for "Date" Text
+                  Expanded(
+                  flex: 1,
+                  child: Text(
+                  'Date:',
+                   style: TextStyle(
+                   fontSize: 16.0,
+                   color: const Color.fromARGB(255, 54, 53, 53),
+                   ),
+                  ),
+                 ),
         // Second Column for Date Picker and Calendar Icon
         Expanded(
           flex: 2,
@@ -279,15 +297,71 @@ class _BusSchedulePageState extends State<BusSchedulePage> {
                       width: 24.0, // Set the width as needed
                       height: 24.0, // Set the height as needed
                     ),
-                  ),),
+                  ),
+                  ),
                 ],
               ),
-            ),),),
-            
+            ),
+            ),
+            ),
           ],
               ),
           ),
          ),
+          // Search Button
+        Positioned(
+            top: 550.0, // Adjust the top position as needed
+            left: 40,
+            right: 40,
+            child:Container(
+             width: 10.0, // Set the desired width
+    height: 50.0, // Set the desired height 
+            child: ElevatedButton(
+              onPressed: _navigateToTimeTable, // Navigate to TimeTable page when pressed
+              child: Text(
+                'Search',
+                style: TextStyle(
+                  fontSize: 18.0,
+                  color: Colors.white,
+                ),
+              ),
+              style: ElevatedButton.styleFrom(
+                primary: Color.fromARGB(255, 87, 234, 104), 
+                padding: EdgeInsets.all(0), // Remove padding
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30.0), // Adjust border radius as needed
+        ),// Change button color as needed
+              ),
+            ),
+          ),
+        ),
+        // Reset Button
+      Positioned(
+        top: 610.0, // Adjust the top position as needed
+        left: 40,
+        right: 40,
+        child: Container(
+          width: 10.0, // Set the desired width
+          height: 50.0, // Set the desired height
+          child: ElevatedButton(
+            onPressed: _resetInputData, // Reset input data when pressed
+            child: Text(
+              'Reset',
+              style: TextStyle(
+                fontSize: 18.0,
+                color: Colors.white,
+              ),
+            ),
+            style: ElevatedButton.styleFrom(
+              primary:Color.fromARGB(255, 87, 234, 104), // Change button color as needed
+              padding: EdgeInsets.all(0), // Remove padding
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30.0), // Adjust border radius as needed
+              ),
+            ),
+          ),
+        ),
+      ),    
        ],
       ),
       );

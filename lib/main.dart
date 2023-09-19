@@ -194,7 +194,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Image.asset(
                                 'assets/swap.png',
                                 fit: BoxFit.contain,
-                                width: 70,
+                                width: 70, //ggh
                                 height: 70,
                               ),
                             ),
@@ -277,7 +277,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      buildTile('assets/Bus.png', 'Bus Schedule', () {
+                      buildTile('assets/Bus1.png', 'Bus Schedule', () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(

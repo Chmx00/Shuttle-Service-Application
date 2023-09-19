@@ -68,7 +68,7 @@ class _PaymentPageState extends State<PaymentPage> {
             child: IconButton(
               icon: Icon(
                 Icons.arrow_back,
-                color: Colors.white,
+                color: const Color.fromARGB(255, 0, 0, 0),
                 size: 30.0,
               ),
               onPressed: () {

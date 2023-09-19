@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:transport_portal/pages/sub_pages/purchase.dart';
 import 'dart:async';
 import 'pages/contact.dart';
-//import 'pages/lf.dart';
+import 'pages/lf.dart';
 import 'pages/login.dart';
 import 'pages/shedule.dart';
 import 'pages/notify.dart';
@@ -301,7 +301,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => ShedulePage()),
+                              builder: (context) => LostAndFound()),
                         );
                       }),
                       buildTile('assets/tik.png', 'Reservations', () {

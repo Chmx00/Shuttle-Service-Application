@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:transport_portal/pages/sub_pages/purchase.dart';
 import 'dart:async';
 import 'pages/contact.dart';
-//import 'pages/lf.dart';
+import 'pages/lf.dart';
 import 'pages/login.dart';
 import 'pages/shedule.dart';
 import 'pages/notify.dart';
 import 'pages/shedule.dart';
 import 'pages/sub_pages/sheduleBus.dart';
 import 'pages/sub_pages/payment.dart';
-//test
+//test my app
 
 import 'package:intl/intl.dart';
 
@@ -34,7 +34,7 @@ class SplashScreen extends StatefulWidget {
   _SplashScreenState createState() => _SplashScreenState();
 }
 
-//hello
+// new commit
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
@@ -194,7 +194,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Image.asset(
                                 'assets/swap.png',
                                 fit: BoxFit.contain,
-                                width: 70,
+                                width: 70, //ggh
                                 height: 70,
                               ),
                             ),
@@ -277,7 +277,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      buildTile('assets/Bus.png', 'Bus Schedule', () {
+                      buildTile('assets/Bus1.png', 'Bus Schedule', () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -301,7 +301,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => ShedulePage()),
+                              builder: (context) => LostAndFound()),
                         );
                       }),
                       buildTile('assets/tik.png', 'Reservations', () {

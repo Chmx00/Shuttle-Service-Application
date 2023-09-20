@@ -13,7 +13,7 @@ class ReservationsPage extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/Home.png'),
+                  image: AssetImage('assets/Payment.png'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -26,7 +26,7 @@ class ReservationsPage extends StatelessWidget {
             child: IconButton(
               icon: Icon(
                 Icons.arrow_back,
-                color: Colors.grey,
+                color: const Color.fromARGB(255, 0, 0, 0),
                 size: 30.0,
               ),
               onPressed: () {
@@ -40,7 +40,7 @@ class ReservationsPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 100.0),
+                  padding: const EdgeInsets.only(top: 130.0),
                   child: GestureDetector(
                     onTap: () {
                       // Redirect to purchase.dart when tapped
@@ -74,10 +74,10 @@ class ReservationsPage extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: 40),
                 Container(
                   width: double.infinity,
-                  height: 441,
+                  height: 507,
                   decoration: BoxDecoration(
                     color: Color.fromARGB(252, 255, 255, 255),
                     borderRadius: BorderRadius.only(
@@ -95,7 +95,7 @@ class ReservationsPage extends StatelessWidget {
                     ],
                   ),
                   padding: const EdgeInsets.only(
-                      top: 100, left: 20, right: 20, bottom: 20),
+                      top: 115, left: 20, right: 20, bottom: 20),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -104,7 +104,7 @@ class ReservationsPage extends StatelessWidget {
                         padding: EdgeInsets.symmetric(vertical: 5),
                         child: Container(
                           width: double.infinity,
-                          height: 50,
+                          height: 60,
                           padding: EdgeInsets.all(15),
                           decoration: BoxDecoration(
                             color: Color.fromARGB(
@@ -126,7 +126,7 @@ class ReservationsPage extends StatelessWidget {
                       Center(
                         child: Container(
                           width: double.infinity,
-                          height: 50,
+                          height: 60,
                           padding: EdgeInsets.all(15),
                           decoration: BoxDecoration(
                             color: Color.fromARGB(
@@ -145,31 +145,31 @@ class ReservationsPage extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 70),
-                      Container(
-                        width: 200,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 31, 158, 69),
-                          borderRadius: BorderRadius.circular(25.0),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Color.fromARGB(68, 29, 255, 119)
-                                  .withOpacity(0.7),
-                              spreadRadius: 2,
-                              blurRadius: 10,
-                              offset: Offset(0, 3),
-                            ),
-                          ],
-                        ),
-                        child: GestureDetector(
-                          onTap: () {
-                            // Add your action here, e.g., navigate to another page
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => PaymentPage()),
-                            );
-                          },
+                      GestureDetector(
+                        onTap: () {
+                          // Redirect to the purchase page (assuming PurchasePage is the name of your purchase page)
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => PaymentPage()),
+                          );
+                        },
+                        child: Container(
+                          width: 200,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 31, 158, 69),
+                            borderRadius: BorderRadius.circular(25.0),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Color.fromARGB(68, 148, 214, 175)
+                                    .withOpacity(0.7),
+                                spreadRadius: 2,
+                                blurRadius: 10,
+                                offset: Offset(0, 3),
+                              ),
+                            ],
+                          ),
                           child: Center(
                             child: Text(
                               'Login',

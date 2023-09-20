@@ -124,9 +124,28 @@ class lostitems extends StatelessWidget {
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(
                                     10), // Half of the width or height to create a circle
-                                child: Image.asset(
-                                  item.imageUrl,
-                                  fit: BoxFit.cover,
+                                child: CarouselSlider(
+                                  items: [
+                                    Image.asset(item.imageUrl),
+                                    Image.asset(item.imageUrl),
+                                  ],
+                                  options: CarouselOptions(
+                                    height: 150.0,
+                                    aspectRatio: 16 / 9,
+                                    viewportFraction: 1.0,
+                                    initialPage: 0,
+                                    enableInfiniteScroll: true,
+                                    reverse: false,
+                                    autoPlay: true,
+                                    autoPlayInterval: Duration(seconds: 3),
+                                    autoPlayAnimationDuration:
+                                        Duration(milliseconds: 800),
+                                    autoPlayCurve: Curves.fastOutSlowIn,
+                                    enlargeCenterPage: false,
+                                    onPageChanged: (index, reason) {
+                                      // Handle on page changed
+                                    },
+                                  ),
                                 ),
                               ),
                             ),

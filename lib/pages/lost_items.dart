@@ -219,7 +219,7 @@ class lostitems extends StatelessWidget {
                                   10), // Set the radius here
                             ), // Increase font size
                           ),
-                          child: Text("Button 1"),
+                          child: Text("Add Lost OR found"),
                         ),
                       ],
                     ),

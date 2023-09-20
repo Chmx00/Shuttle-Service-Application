@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "350402003964",
+    "project_id": "shuttleservice-001",
+    "storage_bucket": "shuttleservice-001.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:350402003964:android:b6bb17dfda583f28e5e879",
+        "android_client_info": {
+          "package_name": "Transport.portal"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUjUWZqELSHI-cThqSyXdOtvfaAeWVu34"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

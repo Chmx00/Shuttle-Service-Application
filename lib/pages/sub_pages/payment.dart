@@ -52,7 +52,7 @@ class _buyState extends State<buy> {
             child: IconButton(
               icon: Icon(
                 Icons.arrow_back,
-                color: Colors.white,
+                color: Color.fromARGB(255, 0, 0, 0),
                 size: 30.0,
               ),
               onPressed: () {
@@ -106,7 +106,7 @@ class _buyState extends State<buy> {
                     ],
                   ),
                   width: double.infinity,
-                  height: 582.2,
+                  height: 581.2,
                   padding: const EdgeInsets.all(20),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,

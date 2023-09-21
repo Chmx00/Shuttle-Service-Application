@@ -75,8 +75,7 @@ class lostitems extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage('assets/lostandfound.png'),
-                  fit: BoxFit.fill),
+                  image: AssetImage('assets/Shedule.png'), fit: BoxFit.fill),
             ),
           ),
 
